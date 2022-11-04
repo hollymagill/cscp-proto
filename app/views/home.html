@@ -1,0 +1,481 @@
+{% extends "layout.html" %} {% block pageTitle %} Find and compare schools in
+England {% endblock %} {% block content %}
+
+<div
+  class="govuk-notification-banner"
+  role="region"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner"
+  id="covid-banner"
+>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      More information on how the COVID-19 pandemic has affected the data we
+      publish can be found
+      <a class="govuk-notification-banner__link" href="#">here</a>.
+    </p>
+  </div>
+</div>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body" id="my-schools">
+        <img src="/public/images/school-list-icon.png" id="school-list-logo" />
+        <span class="school-list-count">0</span>
+        <a href="">My schools</a>
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Search for schools, colleges, multi-academy trusts and sponsors
+      </h1>
+
+      <p class="govuk-body">
+        You can search for schools, colleges, multi-academy trusts and sponsors
+        in England and check their performance.
+      </p>
+      <p class="govuk-body">
+        <a href="">What information can I find here?</a>
+      </p>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">Contents</h2>
+        <ul class="govuk-tabs__list" id="school-finder">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#school-college">
+              Find a school or college
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trust-sponsor">
+              Find a multi-academy trust or sponsor
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="school-college">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="name-or-reference-number"
+                      name="school-or-college"
+                      type="radio"
+                      value="text"
+                      data-aria-controls="name-or-reference-number-conditional"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label"
+                      for="name-or-reference-number"
+                    >
+                      Name or reference number
+                    </label>
+                  </div>
+                  <div
+                    class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="name-or-reference-number-conditional"
+                  >
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="school-college-urn">
+                        Enter school, college name or URN
+                      </label>
+                      <input
+                        class="govuk-input govuk-!-width-full"
+                        id="school-college-urn"
+                        name="school-or-college"
+                        type="text"
+                        spellcheck="false"
+                      />
+                    </div>
+
+                    <br />
+                    <button class="govuk-button" data-module="govuk-button">
+                      Search
+                    </button>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="location"
+                      name="school-or-college"
+                      type="radio"
+                      value="location"
+                      data-aria-controls="location-conditional"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label"
+                      for="location"
+                    >
+                      Location
+                    </label>
+                  </div>
+
+                  <div
+                    class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="location-conditional"
+                  >
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="town-city-postcode">
+                        Enter a town, city or postcode in England
+                      </label>
+                      <p class="govuk-body">
+                        <a href="">Use your current location</a>
+                      </p>
+
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <input
+                            class="govuk-input govuk-input--width-10"
+                            id="town-city-postcode"
+                            name="school-or-college"
+                            type="text"
+                            spellcheck="false"
+                          />
+                          <select
+                            id="search-radius"
+                            class="govuk-form-group"
+                            name="school-or-college"
+                          >
+                            <option value="1">1 mile</option>
+                            <option value="3" selected="">3 miles</option>
+                            <option value="5">5 miles</option>
+                            <option value="10">10 miles</option>
+                            <option value="15">15 miles</option>
+                            <option value="20">20 miles</option>
+                            <option value="25">25 miles</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <button class="govuk-button" data-module="govuk-button">
+                      Search
+                    </button>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="local-authority"
+                      name="school-or-college"
+                      type="radio"
+                      value="local authority"
+                      data-aria-controls="local-authority-conditional"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label"
+                      for="local-authority"
+                    >
+                      Local authority
+                    </label>
+                  </div>
+                  <div
+                    class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="local-authority-conditional"
+                  >
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="authority-name-code">
+                        Enter local authority name or code
+                      </label>
+                      <input
+                        class="govuk-input govuk-!-width-full"
+                        id="authority-name-code"
+                        name="school-or-college"
+                        type="text"
+                        spellcheck="false"
+                      />
+                    </div>
+                    <br />
+                    <button class="govuk-button" data-module="govuk-button">
+                      Search
+                    </button>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="parliamentary-constituency"
+                      name="school-or-college"
+                      type="radio"
+                      value="parliamentary-constituency"
+                      data-aria-controls="parliamentary-constituency-conditional"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label"
+                      for="parliamentary-constituency"
+                    >
+                      Parliamentary constituency
+                    </label>
+                  </div>
+                  <div
+                    class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="parliamentary-constituency-conditional"
+                  >
+                    <div class="govuk-form-group">
+                      <label
+                        class="govuk-label"
+                        for="parliamentary-constituency-name"
+                      >
+                        Enter parliamentary constituency name
+                      </label>
+                      <input
+                        class="govuk-input govuk-!-width-full"
+                        id="parliamentary-constituency-name"
+                        name="school-or-college"
+                        type="text"
+                        spellcheck="false"
+                      />
+                    </div>
+                    <br />
+                    <button class="govuk-button" data-module="govuk-button">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div
+          class="govuk-tabs__panel govuk-tabs__panel--hidden"
+          id="trust-sponsor"
+        >
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="academy-trust-or-sponsor"
+                      name="trust-or-sponsor"
+                      type="radio"
+                      value="text"
+                      data-aria-controls="academy-trust-or-sponsor-conditional"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label"
+                      for="academy-trust-or-sponsor"
+                    >
+                      Multi-academy trust or sponsor name
+                    </label>
+                  </div>
+                  <div
+                    class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="academy-trust-or-sponsor-conditional"
+                  >
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="trust-or-sponsor-name">
+                        Enter a multi-academy trust or sponsor name
+                      </label>
+                      <input
+                        class="govuk-input govuk-!-width-full"
+                        id="trust-or-sponsor-name"
+                        name="trust-or-sponsor"
+                        type="text"
+                        spellcheck="false"
+                      />
+                    </div>
+
+                    <br />
+                    <button class="govuk-button" data-module="govuk-button">
+                      Search
+                    </button>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="trust-sponsor-location"
+                      name="trust-or-sponsor"
+                      type="radio"
+                      value="trust-sponsor-location"
+                      data-aria-controls="trust-sponsor-location-conditional"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label"
+                      for="trust-sponsor-location"
+                    >
+                      Multi-academy trust or sponsor by location (postcode,
+                      town, street)
+                    </label>
+                  </div>
+
+                  <div
+                    class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="trust-sponsor-location-conditional"
+                  >
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="trust-sponsor-england">
+                        Enter a town, city or postcode in England
+                      </label>
+                      <p class="govuk-body">
+                        <a href="">Use your current location</a>
+                      </p>
+
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <input
+                            class="govuk-input govuk-input--width-10"
+                            id="trust-sponsor-england"
+                            name="trust-or-sponsor"
+                            type="text"
+                            spellcheck="false"
+                          />
+                          <select
+                            id="search-radius-trust-sponsor"
+                            class="govuk-form-group"
+                            name="trust-or-sponsor"
+                          >
+                            <option value="1">1 mile</option>
+                            <option value="3" selected="">3 miles</option>
+                            <option value="5">5 miles</option>
+                            <option value="10">10 miles</option>
+                            <option value="15">15 miles</option>
+                            <option value="20">20 miles</option>
+                            <option value="25">25 miles</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <button class="govuk-button" data-module="govuk-button">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m" id="column-data-tables">Data tables</h2>
+      <ul class="govuk-list">
+        <li><a href="">All schools and colleges in England</a></li>
+        <li>
+          <a href="">All multi-academy trusts (MATs)/ sponsors in England</a>
+        </li>
+        <li>
+          <a href=""
+            >Download data for all of England or a local authority
+            (1991-2021)</a
+          >
+        </li>
+      </ul>
+      <h3 class="govuk-heading-m">Related services</h3>
+      <ul class="govuk-list">
+        <li><a href="">Statistics at DfE</a></li>
+        <li><a href="">Explore education statistics</a></li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-full" id="footer">
+      <div class="govuk-form-group" id="footer-links">
+        <ul class="govuk-list">
+          <li><a href="">Guidance</a></li>
+          <li><a href="">Download data (1991-2021)</a></li>
+          <li><a href="">Publication timetable</a></li>
+        </ul>
+        <img
+          src="/public/images/ns_logo.png"
+          id="ns-logo"
+          alt="The figures on this page are National Statistics. 
+            Learn more about National Statistics on the Office for National Statistics 
+            website."
+        />
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Is there anything wrong with this page?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h2 class="govuk-heading-m">Help us improve GOV.UK</h2>
+          <h3 class="govuk-heading-s">Ofsted data incorrect?</h3>
+
+          <p>
+            It typically takes 1 to 2 months, and can take longer in some
+            circumstances, for Ofsted data to be made available and updated here
+            following an inspection. For the very latest Ofsted data, please
+            visit the Ofsted website
+          </p>
+          <h3 class="govuk-heading-s">School information incorrect?</h3>
+          <p>
+            Information such as headteacher's name, school website, address,
+            location on the map, gender, age-range and school type also
+            typically take 1 to 2 months to be updated here after first being
+            updated, by the school, in Get information about schools. If
+            information is incorrect in Get information about schools, please
+            report it to the school.
+          </p>
+          <h3 class="govuk-heading-s">Report a problem</h3>
+          <p>
+            This form is for reporting problems with the Find and Compare
+            Schools in England section of the GOV.UK website.
+          </p>
+          <p>
+            Don't include any personal or financial information, for example
+            your National Insurance number or credit card details.
+          </p>
+          <p>
+            To make a complaint about a school, or a general complaint or
+            enquiry, contact the Department for Education This link opens in a
+            new window. Illegal behaviour should be reported to the police.
+          </p>
+          <div class="govuk-form-group">
+            <h4 class="govuk-label-wrapper">
+              <label
+                class="govuk-label govuk-label--s"
+                for="what-you-were-doing"
+              >
+                What you were doing
+              </label>
+            </h4>
+            <div id="what-you-were-doing-hint" class="govuk-hint">
+              Please explain, step by step, what you did. If we can reproduce a
+              problem, we can try to fix it.
+            </div>
+            <textarea
+              class="govuk-textarea"
+              id="what-you-were-doing"
+              name="what-you-were-doing"
+              type="text"
+              aria-describedby="what-you-did-hint"
+            ></textarea>
+          </div>
+          <div class="govuk-form-group">
+            <h4 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--s" for="what-went-wrong">
+                What went wrong
+              </label>
+            </h4>
+            <div id="what-went-wrong-hint" class="govuk-hint">
+              Please explain what you expected to happen, and what actually
+              happened. A clear explanation will help us fix the problem.
+            </div>
+            <textarea
+              class="govuk-textarea"
+              id="what-went-wrong"
+              name="what-went-wrong"
+              type="text"
+              aria-describedby="what-went-wrong-hint"
+            ></textarea>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">Send</button>
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

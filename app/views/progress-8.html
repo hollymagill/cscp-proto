@@ -1,0 +1,78 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Find school and college
+performance data {% endblock %} {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group">
+        <a href="index" class="govuk-back-link">Back to index</a>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Progress 8 chart ideas</h1>
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Current chart</h2>
+        <img id="progress-8" src="/public/images/progress-8.png" />
+      </div>
+
+      <div class="govuk-form-group">
+        <canvas id="educationEmployment"></canvas>
+        <script>
+          Chart.register(ChartDataLabels);
+          const chart1 = document.getElementById("educationEmployment");
+          const educationEmployment = new Chart(chart1, {
+            type: "line",
+            data: {
+              labels: [
+                -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -0.75, -0.5,
+                -0.25, 0, 0.25, 0.5, 0.75, 1, 1.25,
+              ],
+              datasets: [
+                {
+                  label: "hELLO",
+                  data: [
+                    50, 25, 50, 75, 40, 10, 25, 50, 90, 180, 490, 770, 750, 450,
+                    250, 80, 25,
+                  ],
+                  pointBackgroundColor: [],
+                  pointBorderColor: [],
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              //maintainAspectRatio: false,
+
+              plugins: {
+                legend: {
+                  position: "top",
+                  labels: {
+                    usePointStyle: true,
+                  },
+                },
+                title: {
+                  display: true,
+                  text: "Chart.js Line Chart",
+                },
+              },
+            },
+          });
+
+          if (educationEmployment.datasets[0].points[10].value > 0) {
+    educationEmployment.datasets[0].points[4].fillColor =  "lightgreen";
+    educationEmployment.update();
+ }
+
+
+      
+        </script>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

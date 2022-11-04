@@ -1,0 +1,487 @@
+{% extends "layout-no-cookies.html" %} {% block pageTitle %} Find school and
+college performance data {% endblock %} {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group back-search">
+        <a href="school-secondary" class="govuk-back-link"
+          >Back to MAT secondary</a
+        >
+        <div class="search">
+          <img src="/public/images/search.svg" id="search-icon" />
+          <a href="">Search</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <span class="govuk-caption-m"
+        >Multi-academy trust
+        <img id="multi-info" src="/public/images/information.svg"
+      /></span>
+      <h1 class="govuk-heading-l">Acme Academy Trust</h1>
+    </div>
+    <div class="govuk-grid-column-one-half share-this-page">
+      <h2 class="govuk-heading-s">Share this page</h2>
+      <div class="govuk-form-group share-page">
+        <p class="govuk-body">
+          <a href=""
+            ><img
+              src="/public/images/twitter.svg"
+              class="social-media"
+            />Twitter</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/facebook.svg"
+              class="social-media"
+            />Facebook</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/email.svg"
+              class="social-media"
+              id="email"
+            />Email</a
+          >
+          <a href=""
+            ><img src="/public/images/linkedin.svg" class="social-media" />
+            Linkedin</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">MAT secondary characteristics</h1>
+      <p class="govuk-body">Lorem ipsum dolor…</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          % disadvantaged pupils
+          <img id="multi-info" src="/public/images/information.svg" />
+        </h3>
+        <p class="govuk-body">Lorem ipsum</p>
+        <div class="school-charts">
+          <canvas id="disadvantagedPupils"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart1 = document.getElementById("disadvantagedPupils");
+            const disadvantagedPupils = new Chart(chart1, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [51.9, 27],
+                    backgroundColor: [
+                      "rgba(213, 231, 243, 1)",
+                      "rgba(191, 193, 195, 1)",
+                    ],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart1) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          % English as an additional language pupils
+          <img id="multi-info" src="/public/images/information.svg" />
+        </h3>
+        <p class="govuk-body">Lorem ipsum</p>
+
+        <div class="school-charts">
+          <canvas id="additionalLanguage"></canvas>
+          <script>
+            const chart2 = document.getElementById("additionalLanguage");
+            const additionalLanguage = new Chart(chart2, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [40.2, 17],
+                    backgroundColor: [
+                      "rgba(213, 231, 243, 1)",
+                      "rgba(191, 193, 195, 1)",
+                    ],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart2) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          Years in MAT
+          <img id="multi-info" src="/public/images/information.svg" />
+        </h3>
+        <p class="govuk-body">Lorem ipsum</p>
+
+        <div class="school-charts-three">
+          <canvas id="yearsMAT"></canvas>
+          <script>
+            const chart3 = document.getElementById("yearsMAT");
+            const yearsMAT = new Chart(chart3, {
+              type: "bar",
+              data: {
+                labels: ["3 years", "4 years", "5+ years"],
+                datasets: [
+                  {
+                    data: [0, 0, 12],
+                    backgroundColor: [
+                      "rgba(191, 193, 195, 1)",
+                      "rgba(191, 193, 195, 1)",
+                      "rgba(213, 231, 243, 1)",
+                    ],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 20,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          % SEN pupils
+          <img id="multi-info" src="/public/images/information.svg" />
+        </h3>
+        <p class="govuk-body">Lorem ipsum</p>
+
+        <div class="school-charts">
+          <canvas id="senPupils"></canvas>
+          <script>
+            const chart4 = document.getElementById("senPupils");
+            const senPupils = new Chart(chart4, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [14.6, 14],
+                    backgroundColor: [
+                      "rgba(213, 231, 243, 1)",
+                      "rgba(191, 193, 195, 1)",
+                    ],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart4) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          Type of schools
+          <img id="multi-info" src="/public/images/information.svg" />
+        </h3>
+        <p class="govuk-body">Lorem ipsum</p>
+
+        <div class="school-charts-three">
+          <canvas id="typeSchool"></canvas>
+          <script>
+            const chart5 = document.getElementById("typeSchool");
+            const typeSchool = new Chart(chart5, {
+              type: "bar",
+              data: {
+                labels: ["Converter academies", "Sponsored academies", "Other"],
+                datasets: [
+                  {
+                    data: [0, 12, 0],
+                    backgroundColor: [
+                      "rgba(191, 193, 195, 1)",
+                      "rgba(213, 231, 243, 1)",
+                      "rgba(191, 193, 195, 1)",
+                    ],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 20,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group about-data">
+        <h3 class="govuk-heading-s"><br />About this data</h3>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"> Abbreviations </span>
+          </summary>
+          <div class="govuk-details__text">
+            LOWCOV = Low coverage: shown for the ‘value added’ measure and
+            coverage indicator where schools have less than 50% of pupils
+            included in calculation of the measure<br />
+
+            NA = Not applicable: figures are either not available for the year
+            in question, or the data field is not applicable to the school or
+            college<br />
+
+            NE = No entries: the school or college did not enter any pupils or
+            students for the qualifications covered by the measure<br />
+
+            NEW = New school or college<br />
+
+            NP = Not published: for example, we do not publish Progress 8 data
+            for independent schools and independent special schools, or
+            breakdowns by disadvantaged and other pupils for independent
+            schools, independent special schools and non-maintained special
+            schools<br />
+
+            SP = Small percentage: the number is between 0% and 0.5%<br />
+
+            SUPP = Suppressed: In certain circumstances we will suppress an
+            establishment's data. This is usually when there are 5 or fewer
+            pupils or students covered by the measure (10 in the case of
+            destination measures). We avoid making these figures public to
+            protect individual privacy. We may also suppress data on a
+            case-by-case basis.
+          </div>
+        </details>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"> Further guidance </span>
+          </summary>
+          <div class="govuk-details__text about-data">
+            Figures in the performance tables will only include those
+            qualifications documented on the list of approved qualifications for
+            the performance tables. <br />
+
+            Guidance and supporting documentation on school performance tables:
+            <br />
+
+            <a href=""
+              >Understanding school and college performance measures (opens in a
+              new window)</a
+            ><br />
+
+            <a href=""
+              >Methodology and technical documents (opens in a new window)</a
+            ><br />
+
+            <a href=""
+              >Guidance on approved qualifications (opens in a new window)<br
+            /></a>
+
+            State-funded schools (local authority maintained schools and
+            academies) are held to account for their performance against these
+            measures. We publish results for independent schools, but they are
+            not accountable against these measures.
+          </div>
+        </details>
+        <div class="govuk-form-group print-information">
+          <img src="/public/images/printer.svg" id="printer-icon" />
+          <a href="">Print full information about this school/college</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "layout-no-cookies.html" %} {% block pageTitle %} Find school and
+college performance data {% endblock %} {% block content %}
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body search">
+        <img src="/public/images/search.svg" id="search-icon" />
+        <a href="">Search</a>
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <span class="govuk-caption-m"
+        >Multi-academy trust
+        <img id="multi-info" src="/public/images/information.svg"
+      /></span>
+
+      <h1 class="govuk-heading-l">Acme Academy Trust</h1>
+      <button class="govuk-button view-trusts" data-module="govuk-button">
+        View all multi-academy trusts
+      </button>
+      <button class="govuk-button view-trusts" data-module="govuk-button">
+        View all schools in this trust
+      </button>
+      <table class="govuk-table school-info-table" id="school-info">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Company number</th>
+            <td class="govuk-table__cell"><a href="">09382048</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Group identifier</th>
+            <td class="govuk-table__cell">TR20482</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Region</th>
+            <td class="govuk-table__cell">
+              North West London and South Central
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Further information</th>
+            <td class="govuk-table__cell">
+              <a href="">Get information about schools</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Financial information
+            </th>
+            <td class="govuk-table__cell">
+              <a href="">Schools financial benchmarking</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-grid-column-one-half share-this-page">
+      <h2 class="govuk-heading-s">Share this page</h2>
+      <div class="govuk-form-group share-page">
+        <p class="govuk-body">
+          <a href=""
+            ><img
+              src="/public/images/twitter.svg"
+              class="social-media"
+            />Twitter</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/facebook.svg"
+              class="social-media"
+            />Facebook</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/email.svg"
+              class="social-media"
+              id="email"
+            />Email</a
+          >
+          <a href=""
+            ><img src="/public/images/linkedin.svg" class="social-media" />
+            Linkedin</a
+          >
+        </p>
+        <p class="govuk-body">
+          <a href="">
+            <img
+              src="https://govuk-elements.herokuapp.com/public/images/icon-locator-2x.png"
+              id="view-map"
+            />
+            View map</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full school-panel">
+      <h2 class="govuk-heading-m">Primary performance</h2>
+      <p class="govuk-body">
+        These results are based on all primary schools which are eligible for
+        inclusion in the multi-academy trust performance measures.
+        <button
+          class="govuk-button govuk-button--secondary"
+          data-module="govuk-button"
+        >
+          View
+        </button>
+      </p>
+    </div>
+    <div class="govuk-grid-column-full school-panel">
+      <h2 class="govuk-heading-m">Secondary performance</h2>
+      <p class="govuk-body">
+        These results are based on all secondary schools which are eligible for
+        inclusion in the multi-academy trust performance measures.
+        <button
+          class="govuk-button govuk-button--secondary"
+          data-module="govuk-button"
+        >
+          View
+        </button>
+      </p>
+    </div>
+    <div class="govuk-grid-column-full school-panel">
+      <h2 class="govuk-heading-m">16 to 18 performance</h2>
+      <p class="govuk-body">
+        These results are based on all 16 to 18 schools and colleges which are
+        eligible for inclusion in the multi-academy trust performance measures.
+        <button
+          class="govuk-button govuk-button--secondary"
+          data-module="govuk-button"
+        >
+          View
+        </button>
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

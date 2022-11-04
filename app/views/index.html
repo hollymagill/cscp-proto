@@ -1,44 +1,123 @@
-
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-  Home – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block content %}
-
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Prototype your service using GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+        <span class="govuk-caption-m">Find and compare schools in England</span
+        >Creating toolkit prototypes
+      </h1>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">
+          Live system
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Page</th>
+            <th scope="col" class="govuk-table__header">Prototype link</th>
+            <th scope="col" class="govuk-table__header">Live link</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Home</td>
+            <td class="govuk-table__cell">
+              <a href="home">Link</a>
+            </td>
+            <td class="govuk-table__cell">
+              <a href="https://www.compare-school-performance.service.gov.uk/"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">School search</td>
+            <td class="govuk-table__cell">
+              <a href="school-search">Link</a>
+            </td>
+            <td class="govuk-table__cell">
+              <a
+                href="https://www.find-school-performance-data.service.gov.uk/?searchtype=search-by-location&LocationCoordinates=54.97784%2C-1.61292&keywords=Newcastle-upon-Tyne%2C+Tyne+%26+Wear&radius=3"
+                >Link</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">
+          New prototype - copied from Axure
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Page</th>
+            <th scope="col" class="govuk-table__header">Prototype link</th>
+            <th scope="col" class="govuk-table__header">Live link</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">School overview</td>
+            <td class="govuk-table__cell">
+              <a href="school-overview">Link</a>
+            </td>
+            <td class="govuk-table__cell">
+              <a
+                href="https://htk2y5.axshare.com/#id=kdinia&p=mat_2022_-_selected_overview&view=default"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">School overview - updated</td>
+            <td class="govuk-table__cell">
+              <a href="school-overview-update">Link</a>
+            </td>
+            <td class="govuk-table__cell">
+              <a
+                href="https://htk2y5.axshare.com/#id=mihccd&p=mat_2022_-_selected_primary_a__as_is__without_scho&view=default"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">School secondary</td>
+            <td class="govuk-table__cell">
+              <a href="school-secondary">Link</a>
+            </td>
+            <td class="govuk-table__cell">
+              <a
+                href="https://htk2y5.axshare.com/#id=pc8243&p=mat_2022_-_selected_secondary&view=default&c=1"
+                >Link</a
+              >
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              School secondary - different colours
+            </td>
+            <td class="govuk-table__cell">
+              <a href="school-secondary-purple">Link</a>
+            </td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">School secondary characteristics</td>
+            <td class="govuk-table__cell">
+              <a href="school-secondary-characteristics">Link</a>
+            </td>
+            <td class="govuk-table__cell">
+              <a
+                href="https://htk2y5.axshare.com/#id=6h1y8u&p=mat_2022_-_secondary_characteristics&view=default"
+                >Link</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
+</main>
 {% endblock %}

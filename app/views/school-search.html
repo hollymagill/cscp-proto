@@ -1,0 +1,672 @@
+{% extends "layout.html" %} {% block pageTitle %} Find and compare schools in
+England {% endblock %} {% block content %}
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body search">
+        <img src="/public/images/search.svg" id="search-icon" />
+        <a href="">Search</a>
+      </p>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Schools and colleges in and near "Newcastle-upon-Tyne, Tyne & Wear"
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-form-group">
+        <p class="govuk-body">
+          <strong>Filters</strong>
+          <a class="clear-filters" href="">Clear all filters</a>
+        </p>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-body">
+              <strong>Education phase</strong>
+              <img src="/public/images/help.svg" />
+            </legend>
+            <div
+              class="govuk-radios search-school-radios"
+              data-module="govuk-radios"
+            >
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="education-phase"
+                  name="education-phase"
+                  type="radio"
+                  value="all"
+                />
+                <label
+                  class="govuk-label govuk-radios__label"
+                  for="education-phase"
+                >
+                  <p>All</p>
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="education-phase-2"
+                  name="education-phase"
+                  type="radio"
+                  value="primary"
+                />
+                <label
+                  class="govuk-label govuk-radios__label"
+                  for="education-phase-2"
+                >
+                  <p>Primary</p>
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input
+                  class="govuk-radios__input"
+                  id="education-phase-3"
+                  name="education-phase"
+                  type="radio"
+                  value="secondary"
+                />
+                <label
+                  class="govuk-label govuk-radios__label"
+                  for="education-phase-3"
+                >
+                  <p>Secondary</p>
+                </label>
+              </div>
+              <div class="govuk-radios__item last-input">
+                <input
+                  class="govuk-radios__input"
+                  id="education-phase-4"
+                  name="education-phase"
+                  type="radio"
+                  value="16-to-18"
+                />
+                <label
+                  class="govuk-label govuk-radios__label"
+                  for="education-phase-4"
+                >
+                  <p>16 to 18</p>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="within-radius">
+            <strong>Within a radius of</strong>
+          </label>
+          <select id="within-radius">
+            <option value="1">1 mile</option>
+            <option value="3" selected="">3 miles</option>
+            <option value="5">5 miles</option>
+            <option value="10">10 miles</option>
+            <option value="15">15 miles</option>
+            <option value="20">20 miles</option>
+            <option value="25">25 miles</option>
+          </select>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-body">
+              <strong>Ofsted rating</strong>
+            </legend>
+            <div
+              class="govuk-checkboxes search-school-checkbox"
+              data-module="govuk-checkboxes"
+            >
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="ofsted-rating"
+                  name="ofsted-rating"
+                  type="checkbox"
+                  value="outstanding"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="ofsted-rating"
+                >
+                  <p>Outstanding</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="ofsted-rating-2"
+                  name="ofsted-rating"
+                  type="checkbox"
+                  value="good"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="ofsted-rating-2"
+                >
+                  <p>Good</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="ofsted-rating-3"
+                  name="ofsted-rating"
+                  type="checkbox"
+                  value="requires-improvement"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="ofsted-rating-3"
+                >
+                  <p>Requires improvement</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item last-input">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="ofsted-rating-4"
+                  name="ofsted-rating"
+                  type="checkbox"
+                  value="inadequate"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="ofsted-rating-4"
+                >
+                  <p>Inadequate</p>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-body">
+              <strong>School type</strong>
+              <img src="/public/images/help.svg" />
+            </legend>
+            <div
+              class="govuk-checkboxes search-school-checkbox"
+              data-module="govuk-checkboxes"
+            >
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-type"
+                  name="school-type"
+                  type="checkbox"
+                  value="academy"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-type"
+                >
+                  <p>Academy</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-type-2"
+                  name="school-type"
+                  type="checkbox"
+                  value="maintained-school"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-type-2"
+                >
+                  <p>Maintained school</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-type-3"
+                  name="school-type"
+                  type="checkbox"
+                  value="independent-school"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-type-3"
+                >
+                  <p>Independent school</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-type-4"
+                  name="school-type"
+                  type="checkbox"
+                  value="special-school"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-type-4"
+                >
+                  <p>Special school</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item last-input">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="school-type-5"
+                  name="school-type"
+                  type="checkbox"
+                  value="college"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="school-type-5"
+                >
+                  <p>College</p>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-body">
+              <strong>Pupil gender</strong>
+            </legend>
+            <div
+              class="govuk-checkboxes search-school-checkbox"
+              data-module="govuk-checkboxes"
+            >
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="pupil-gender"
+                  name="pupil-gender"
+                  type="checkbox"
+                  value="mixed"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="pupil-gender"
+                >
+                  <p>Mixed</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="pupil-gender-2"
+                  name="pupil-gender"
+                  type="checkbox"
+                  value="boys"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="pupil-gender-2"
+                >
+                  <p>Boys</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item last-input">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="pupil-gender-3"
+                  name="pupil-gender"
+                  type="checkbox"
+                  value="girls"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="pupil-gender-3"
+                >
+                  <p>Girls</p>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-body">
+              <strong>Religious character</strong>
+              <img src="/public/images/help.svg" />
+            </legend>
+            <div
+              class="govuk-checkboxes search-school-checkbox"
+              data-module="govuk-checkboxes"
+            >
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character"
+                  name="religious-character"
+                  type="checkbox"
+                  value="anglican"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character"
+                >
+                  <p>Anglican</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-2"
+                  name="religious-character"
+                  type="checkbox"
+                  value="catholic"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-2"
+                >
+                  <p>Catholic</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-3"
+                  name="religious-character"
+                  type="checkbox"
+                  value="christian"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-3"
+                >
+                  <p>Christian</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-4"
+                  name="religious-character"
+                  type="checkbox"
+                  value="church-of-england"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-4"
+                >
+                  <p>Church of England</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-5"
+                  name="religious-character"
+                  type="checkbox"
+                  value="church-of-england-methodist"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-5"
+                >
+                  <p>Church of England / Methodist</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-6"
+                  name="religious-character"
+                  type="checkbox"
+                  value="church-of-england-roman-catholic"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-6"
+                >
+                  <p>Church of England / Roman Catholic</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-7"
+                  name="religious-character"
+                  type="checkbox"
+                  value="hindu"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-7"
+                >
+                  <p>Hindu</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-8"
+                  name="religious-character"
+                  type="checkbox"
+                  value="islam"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-8"
+                >
+                  <p>Islam</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-9"
+                  name="religious-character"
+                  type="checkbox"
+                  value="jewish"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-9"
+                >
+                  <p>Jewish</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-10"
+                  name="religious-character"
+                  type="checkbox"
+                  value="methodist"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-10"
+                >
+                  <p>Methodist</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-11"
+                  name="religious-character"
+                  type="checkbox"
+                  value="muslim"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-11"
+                >
+                  <p>Muslim</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-12"
+                  name="religious-character"
+                  type="checkbox"
+                  value="no-religious-character"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-12"
+                >
+                  <p>No religious character</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-13"
+                  name="religious-character"
+                  type="checkbox"
+                  value="orthodox-jewish"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-13"
+                >
+                  <p>Orthodox Jewish</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-14"
+                  name="religious-character"
+                  type="checkbox"
+                  value="other"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-14"
+                >
+                  <p>Other</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-15"
+                  name="religious-character"
+                  type="checkbox"
+                  value="other-christian"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-15"
+                >
+                  <p>Other Christian</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-16"
+                  name="religious-character"
+                  type="checkbox"
+                  value="plymouth-brethren-christian-church"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-16"
+                >
+                  <p>Plymouth Brethren Christian Church</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-17"
+                  name="religious-character"
+                  type="checkbox"
+                  value="quaker"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-17"
+                >
+                  <p>Quaker</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-18"
+                  name="religious-character"
+                  type="checkbox"
+                  value="roman-catholic"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-18"
+                >
+                  <p>Roman Catholic</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-19"
+                  name="religious-character"
+                  type="checkbox"
+                  value="roman-catholic-church-of-england"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-19"
+                >
+                  <p>Roman Catholic / Church of England</p>
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item last-input">
+                <input
+                  class="govuk-checkboxes__input"
+                  id="religious-character-20"
+                  name="religious-character"
+                  type="checkbox"
+                  value="sikh"
+                />
+                <label
+                  class="govuk-label govuk-checkboxes__label"
+                  for="religious-character-20"
+                >
+                  <p>Sikh</p>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <p>Showing 1 - 50 of <strong>134</strong> schools or colleges</p>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="">Royal School</a>
+          <div class="school-classification">Independent school</div>
+          <p>
+            Walker Terrace, Newcastle-upon-Tyne, NE1 1AB <br />
+            Primary, Secondary and 16 to 18<br />
+            Distance: 0.21 miles
+          </p>
+        </li>
+        <li>
+          <a href="">Christian Grammar Primary School</a>
+
+          <p>
+            Street Green, Newcastle-upon-Tyne, NE2 2AB <br />
+            Primary<br />
+            Ofsted rating: 2 Good (Inspected: 10 November 2021)<br />
+            Distance: 0.41 miles
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

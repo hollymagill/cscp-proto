@@ -1,0 +1,220 @@
+{% extends "layout-no-cookies.html" %} {% block pageTitle %} Find school and
+college performance data {% endblock %} {% block content %}
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body search">
+        <img src="/public/images/search.svg" id="search-icon" />
+        <a href="">Search</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div
+        class="govuk-error-summary"
+        aria-labelledby="error-summary-title"
+        role="alert"
+        data-module="govuk-error-summary"
+      >
+        <div class="error-info-icon">
+          <img id="info-error" src="/public/images/information-error.svg" />
+        </div>
+        <div class="error-info">
+          <h2
+            class="govuk-error-summary__title school-info-heading"
+            id="error-summary-title"
+          >
+            Uneven impact of the pandemic on 2021/22 school and college
+            performance data
+          </h2>
+          <div class="govuk-error-summary__body school-info-heading">
+            We recommend:
+            <ul class="govuk-list--bullet">
+              <li>
+                <strong>Not making direct comparisons</strong> with data from
+                previous years or between schools or colleges
+              </li>
+              <li>
+                <strong>Discussing with the school</strong> factors that may
+                have influenced these results and consider a range of
+                information when forming a view on how well a school is doing.
+              </li>
+            </ul>
+            <a href="">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <span class="govuk-caption-m"
+        >Multi-academy trust
+        <img id="multi-info" src="/public/images/information.svg"
+      /></span>
+
+      <h1 class="govuk-heading-l">Acme Academy Trust</h1>
+
+      <button class="govuk-button view-trusts" data-module="govuk-button">
+        View all schools in this trust
+      </button>
+      <table class="govuk-table school-info-table" id="school-info">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">UID</th>
+            <td class="govuk-table__cell"><a href="">09382048</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Group UID</th>
+            <td class="govuk-table__cell">TR20482</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Group type</th>
+            <td class="govuk-table__cell">Multi-academy trust</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Region</th>
+            <td class="govuk-table__cell">
+              North West London and South Central
+              <img id="region-info" src="/public/images/information.svg" />
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Further information</th>
+            <td class="govuk-table__cell">
+              <a href="">Get information about schools</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="govuk-form-group">
+        <details class="govuk-details details-overview-updated" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Financial information
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half share-this-page">
+      <h2 class="govuk-heading-s">Share this page</h2>
+      <div class="govuk-form-group share-page">
+        <p class="govuk-body">
+          <a href=""
+            ><img
+              src="/public/images/twitter.svg"
+              class="social-media"
+            />Twitter</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/facebook.svg"
+              class="social-media"
+            />Facebook</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/email.svg"
+              class="social-media"
+              id="email"
+            />Email</a
+          >
+          <a href=""
+            ><img src="/public/images/linkedin.svg" class="social-media" />
+            Linkedin</a
+          >
+        </p>
+        <p class="govuk-body">
+          <a href="">
+            <img
+              src="https://govuk-elements.herokuapp.com/public/images/icon-locator-2x.png"
+              id="view-map"
+            />
+            View map</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Contents</h2>
+    <ul class="govuk-tabs__list" id="school-finder">
+      <li
+        class="govuk-tabs__list-item govuk-tabs__list-item--selected overview-tab"
+      >
+        <a class="govuk-tabs__tab" href="#primary"> Primary performance </a>
+      </li>
+      <li class="govuk-tabs__list-item overview-tab">
+        <a class="govuk-tabs__tab" href="#secondary"> Secondary performance </a>
+      </li>
+      <li class="govuk-tabs__list-item overview-tab">
+        <a class="govuk-tabs__tab" href="#hello"> 16 to 18 performance </a>
+      </li>
+    </ul>
+    <div class="govuk-tabs__panel" id="primary">
+      <div class="govuk-form-group">
+        <div class="govuk-grid-column-full school-panel">
+          <h2 class="govuk-heading-m">Primary performance</h2>
+          <p class="govuk-body">
+            These results are based on all primary schools which are eligible
+            for inclusion in the multi-academy trust performance measures.
+            <button
+              class="govuk-button govuk-button--secondary"
+              data-module="govuk-button"
+            >
+              Download
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="secondary">
+      <div class="govuk-form-group">
+        <div class="govuk-grid-column-full school-panel">
+          <h2 class="govuk-heading-m">Secondary performance</h2>
+          <p class="govuk-body">
+            These results are based on all secondary schools which are eligible
+            for inclusion in the multi-academy trust performance measures.
+            <button
+              class="govuk-button govuk-button--secondary"
+              data-module="govuk-button"
+            >
+              View
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="hello">
+      <div class="govuk-form-group">
+        <div class="govuk-grid-column-full school-panel">
+          <h2 class="govuk-heading-m">16 to 18 performance</h2>
+          <p class="govuk-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <button
+              class="govuk-button govuk-button--secondary"
+              data-module="govuk-button"
+            >
+              View
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
