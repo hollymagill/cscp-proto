@@ -18,12 +18,51 @@ college performance data {% endblock %} {% block content %}
     </div>
   </div>
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div
+        class="govuk-error-summary"
+        aria-labelledby="error-summary-title"
+        role="alert"
+        data-module="govuk-error-summary"
+      >
+        <div class="error-info-icon">
+          <img id="info-error" src="/public/images/information-error.svg" />
+        </div>
+        <div class="error-info">
+          <h2
+            class="govuk-error-summary__title school-info-heading"
+            id="error-summary-title"
+          >
+            Uneven impact of the pandemic on 2021/22 school and college
+            performance data
+          </h2>
+          <div class="govuk-error-summary__body school-info-heading">
+            We recommend:
+            <ul class="govuk-list--bullet">
+              <li>
+                <strong>Not making direct comparisons</strong> with data from
+                previous years or between schools or colleges
+              </li>
+              <li>
+                <strong>Discussing with the school</strong> factors that may
+                have influenced these results and consider a range of
+                information when forming a view on how well a school is doing.
+              </li>
+            </ul>
+            <a href="">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
       <span class="govuk-caption-m"
-        >Multi-academy trust
+        >Academy converter
         <img id="multi-info" src="/public/images/information.svg"
       /></span>
-      <h1 class="govuk-heading-l">Acme Academy Trust</h1>
+      <h1 class="govuk-heading-l">Birch Academy</h1>
+      <p class="govuk-body">Ages 11 to 18 • Mixed gender</p>
     </div>
     <div class="govuk-grid-column-one-half share-this-page">
       <h2 class="govuk-heading-s">Share this page</h2>
@@ -56,22 +95,7 @@ college performance data {% endblock %} {% block content %}
       </div>
     </div>
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">Secondary</h1>
-      <p class="govuk-body">
-        This is the latest data for 2022. To view the full set of data for 2019,
-        <a href="">click here</a>.
-      </p>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text"> About these results </span>
-        </summary>
-        <div class="govuk-details__text">
-          This page shows <a href="">final</a> results for pupils who completed
-          <a href="">key stage 4</a> in the summer of 2019, except where stated
-          otherwise. We published the provisional results in October 2019, the
-          revised results in February 2020 and the final results in March 2020.
-        </div>
-      </details>
+      <h2 class="govuk-heading-m">Secondary</h2>
     </div>
     <div class="govuk-grid-column-one-half">
       <div class="secondary-header">
@@ -84,24 +108,37 @@ college performance data {% endblock %} {% block content %}
           to other similar pupils nationally between the end of key stage 2 and
           the end of key stage 4.
         </p>
-        <p class="govuk-body">The score for this school is -0.24.</p>
-        <p class="govuk-body">
-          The local authority (Newcastle upon Tyne) average score for
-          state-funded schools is -0.25.
-        </p>
-        <p class="govuk-body">
-          The average score for all state-funded schools in England is -0.03.
-        </p>
+
+        <div class="progress-8-callout">
+          <p class="govuk-body">
+            The score for this school is <strong>-0.24.</strong>
+          </p>
+
+          <p class="govuk-body">This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              more progress compared to the schools in the local authority.
+            </li>
+            <li>less progress compared to the state schools in England.</li>
+          </ul>
+        </div>
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Show progress 8 graph
+              Show progress 8 graph and information about the averages
             </span>
           </summary>
           <img id="progress-8" src="/public/images/progress-8.png" />
+          <p class="govuk-body">
+            The local authority (Newcastle upon Tyne) average score for
+            state-funded schools is -0.25.
+          </p>
+          <p class="govuk-body">
+            The average score for all state-funded schools in England is -0.03.
+          </p>
         </details>
       </div>
-      <div class="secondary-half-section">
+      <div class="secondary-half-section-three">
         <h3 class="govuk-heading-s">
           Staying in education or entering employment
           <img id="multi-info" src="/public/images/information.svg" />
@@ -111,7 +148,7 @@ college performance data {% endblock %} {% block content %}
           into employment after finishing key stage 4 (after year 11, usually
           aged 16).
         </p>
-        <div class="school-charts">
+        <div class="school-charts-secondary-three">
           <canvas id="educationEmployment"></canvas>
           <script>
             Chart.register(ChartDataLabels);
@@ -119,14 +156,17 @@ college performance data {% endblock %} {% block content %}
             const educationEmployment = new Chart(chart1, {
               type: "bar",
               data: {
-                labels: ["Trust", "England average"],
+                labels: [
+                  "School",
+                  "Local authority average",
+                  "England average",
+                ],
                 datasets: [
                   {
-                    data: [84, 94],
-                    backgroundColor: [
-                      "rgba(213, 231, 243, 1)",
-                      "rgba(191, 193, 195, 1)",
-                    ],
+                    data: [94, 92, 94],
+                    backgroundColor: ["#4c2c92", "#ffffff", "#f3f2f1"],
+                    borderColor: ["#0b0c0c"],
+                    borderWidth: 1,
                     barThickness: 25,
                   },
                 ],
@@ -175,7 +215,7 @@ college performance data {% endblock %} {% block content %}
         </div>
       </div>
 
-      <div class="secondary-half-section">
+      <div class="secondary-half-section-three">
         <h3 class="govuk-heading-s">
           Attainment 8 score
           <img id="multi-info" src="/public/images/information.svg" />
@@ -184,21 +224,24 @@ college performance data {% endblock %} {% block content %}
           Schools get a score based on how well pupils have performed in up to 8
           qualifications.
         </p>
-        <div class="school-charts">
+        <div class="school-charts-secondary">
           <canvas id="attainmentEight"></canvas>
           <script>
             const chart2 = document.getElementById("attainmentEight");
             const attainmentEight = new Chart(chart2, {
               type: "bar",
               data: {
-                labels: ["Trust", "England average"],
+                labels: [
+                  "School",
+                  "Local authority average",
+                  "England average",
+                ],
                 datasets: [
                   {
-                    data: [18.9, 46.7],
-                    backgroundColor: [
-                      "rgba(213, 231, 243, 1)",
-                      "rgba(191, 193, 195, 1)",
-                    ],
+                    data: [45.6, 46.7, 48.7],
+                    backgroundColor: ["#4c2c92", "#ffffff", "#f3f2f1"],
+                    borderColor: ["#0b0c0c"],
+                    borderWidth: 1,
                     barThickness: 25,
                   },
                 ],
@@ -255,7 +298,7 @@ college performance data {% endblock %} {% block content %}
           they entered for qualifications in English, maths, sciences, a
           language and either history or geography.
         </p>
-        <div class="school-charts">
+        <div class="school-charts-secondary">
           <canvas id="enteringEbacc"></canvas>
           <script>
             Chart.register(ChartDataLabels);
@@ -263,14 +306,17 @@ college performance data {% endblock %} {% block content %}
             const enteringEbacc = new Chart(chart3, {
               type: "bar",
               data: {
-                labels: ["Trust", "England average"],
+                labels: [
+                  "School",
+                  "Local authority average",
+                  "England average",
+                ],
                 datasets: [
                   {
-                    data: [18.1, 40],
-                    backgroundColor: [
-                      "rgba(213, 231, 243, 1)",
-                      "rgba(191, 193, 195, 1)",
-                    ],
+                    data: [58, 20, 39],
+                    backgroundColor: ["#4c2c92", "#ffffff", "#f3f2f1"],
+                    borderColor: ["#0b0c0c"],
+                    borderWidth: 1,
                     barThickness: 25,
                   },
                 ],
@@ -319,7 +365,7 @@ college performance data {% endblock %} {% block content %}
         </div>
       </div>
 
-      <div class="secondary-half-section">
+      <div class="secondary-half-section-three">
         <h3 class="govuk-heading-s">
           Grade 5 or above in English & maths GCSEs
           <img id="multi-info" src="/public/images/information.svg" />
@@ -328,21 +374,24 @@ college performance data {% endblock %} {% block content %}
           This tells you the percentage of pupils who achieved grade 5 or above
           in English and maths GCSEs.
         </p>
-        <div class="school-charts">
+        <div class="school-charts-secondary">
           <canvas id="englishMaths"></canvas>
           <script>
             const chart4 = document.getElementById("englishMaths");
             const englishMaths = new Chart(chart4, {
               type: "bar",
               data: {
-                labels: ["Trust", "England average"],
+                labels: [
+                  "School",
+                  "Local authority average",
+                  "England average",
+                ],
                 datasets: [
                   {
-                    data: [35, 43],
-                    backgroundColor: [
-                      "rgba(213, 231, 243, 1)",
-                      "rgba(191, 193, 195, 1)",
-                    ],
+                    data: [48, 45, 50],
+                    backgroundColor: ["#4c2c92", "#ffffff", "#f3f2f1"],
+                    borderColor: ["#0b0c0c"],
+                    borderWidth: 1,
                     barThickness: 25,
                   },
                 ],
@@ -390,7 +439,7 @@ college performance data {% endblock %} {% block content %}
           </script>
         </div>
       </div>
-      <div class="secondary-half-section">
+      <div class="secondary-half-section-three">
         <h3 class="govuk-heading-s">
           EBacc average point score
           <img id="multi-info" src="/public/images/information.svg" />
@@ -399,21 +448,24 @@ college performance data {% endblock %} {% block content %}
           The EBacc average points score calculates a pupil's average point
           scores across the 5 pillars of the English Baccalaureate.
         </p>
-        <div class="school-charts">
+        <div class="school-charts-secondary">
           <canvas id="averageEbacc"></canvas>
           <script>
             const chart5 = document.getElementById("averageEbacc");
             const averageEbacc = new Chart(chart5, {
               type: "bar",
               data: {
-                labels: ["Trust", "England average"],
+                labels: [
+                  "School",
+                  "Local authority average",
+                  "England average",
+                ],
                 datasets: [
                   {
-                    data: [3.35, 4.07],
-                    backgroundColor: [
-                      "rgba(213, 231, 243, 1)",
-                      "rgba(191, 193, 195, 1)",
-                    ],
+                    data: [4.1, 3.83, 4.27],
+                    backgroundColor: ["#4c2c92", "#ffffff", "#f3f2f1"],
+                    borderColor: ["#0b0c0c"],
+                    borderWidth: 1,
                     barThickness: 25,
                   },
                 ],
@@ -462,18 +514,30 @@ college performance data {% endblock %} {% block content %}
 
     <div class="govuk-grid-column-full">
       <div class="full-width-link" id="disadvantaged-pupils">
-        <a href="" class="govuk-link">Disadvantaged pupils</a
+        <a href="" class="govuk-link"
+          >Subjects entered at key stage 4 in 2021/22</a
         ><img class="arrow-right" src="/public/images/arrow-right.svg" />
       </div>
       <div class="full-width-link">
-        <a href="school-secondary-characteristics" class="govuk-link"
-          >MAT secondary characteristics </a
+        <a href="" class="govuk-link">Results by pupil characteristics </a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link">EBacc additional measures</a
         ><img class="arrow-right" src="/public/images/arrow-right.svg" />
       </div>
       <div class="full-width-link">
         <a href="" class="govuk-link"
-          >Schools covering key stage 4 included in this MAT’s performance
-          data</a
+          >Progress 8 and Attainment score by subject areas</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link"
+          >Additional entry and achievement measures</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link">Pupil destinations (leavers 2020)</a
         ><img class="arrow-right" src="/public/images/arrow-right.svg" />
       </div>
 

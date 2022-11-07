@@ -394,7 +394,23 @@ p,
 }
 
 .secondary-header {
-  min-height: 480px;
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px govuk-colour("light-grey") solid;
+  min-height: 370px;
+}
+.secondary-header-expanded {
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px govuk-colour("light-grey") solid;
+  min-height: 550px;
+}
+
+.secondary-half-section-three{
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px govuk-colour("light-grey") solid;
+  min-height: 320px;
 }
 
 //full pane links at the bottom
@@ -439,4 +455,11 @@ p,
   margin-top: 30px;
   display: flex;
   align-items: center;
+}
+.progress-8-callout{
+  border: $govuk-border-colour 0.5px solid;
+  margin-bottom:10px;
+  margin-top:10px;
+
+  padding:15px;
 }

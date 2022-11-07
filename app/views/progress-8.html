@@ -20,6 +20,60 @@ performance data {% endblock %} {% block content %}
       </div>
 
       <div class="govuk-form-group">
+        <canvas id="progressEight"></canvas>
+        <script>
+          Chart.register(ChartDataLabels);
+          const chart2 = document.getElementById("progressEight");
+          const progressEight = new Chart(chart2, {
+            type: "bar",
+            data: {
+              labels: [
+                -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -0.75, -0.5,
+                -0.25, 0, 0.25, 0.5, 0.75, 1, 1.25,
+              ],
+              datasets: [
+                {
+                  label: "testin",
+                  data: [
+                    50, 25, 50, 75, 40, 10, 25, 50, 90, 180, 490, 770, 750, 450,
+                    250, 80, 25,
+                  ],
+                  backgroundColor: [
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#f3f2f1",
+                    "#d53880",
+                  ],
+                  borderColor: ["#0b0c0c"],
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              //maintainAspectRatio: false,
+
+              plugins: {
+                legend: {
+                  position: "top",
+                },
+                title: {
+                  text: "Chart.js Line Chart",
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+
+      <div class="govuk-form-group">
         <canvas id="educationEmployment"></canvas>
         <script>
           Chart.register(ChartDataLabels);
@@ -38,7 +92,15 @@ performance data {% endblock %} {% block content %}
                     50, 25, 50, 75, 40, 10, 25, 50, 90, 180, 490, 770, 750, 450,
                     250, 80, 25,
                   ],
-                  pointBackgroundColor: [],
+                  pointBackgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                    "rgba(255, 205, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(201, 203, 207, 0.2)",
+                  ],
                   pointBorderColor: [],
                 },
               ],
@@ -61,15 +123,54 @@ performance data {% endblock %} {% block content %}
               },
             },
           });
-
-          if (educationEmployment.datasets[0].points[10].value > 0) {
-    educationEmployment.datasets[0].points[4].fillColor =  "lightgreen";
-    educationEmployment.update();
- }
-
-
-      
         </script>
+      </div>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Progress 8 Score</h2>
+        <p class = "govuk-body"> This score shows how much progress pupils at this school made compared
+          to other similar pupils nationally between the end of key stage 2 (age 14) and
+          the end of key stage 4 (age 16).</p>
+        <div
+          class="govuk-error-summary"
+          aria-labelledby="error-summary-title"
+          role="alert"
+          data-module="govuk-error-summary"
+        >
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            This school has a score of -0.5
+          </h2>
+          <div class="govuk-error-summary__body">
+            <p class="govuk-body">This is less progress than the Newcastle average</p>
+            <p class="govuk-body">
+              This is more progress than the English average
+            </p>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div
+            class="govuk-error-summary"
+            aria-labelledby="error-summary-title"
+            role="alert"
+            data-module="govuk-error-summary"
+          >
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              The Newcastle average is 3
+            </h2>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div
+            class="govuk-error-summary"
+            aria-labelledby="error-summary-title"
+            role="alert"
+            data-module="govuk-error-summary"
+          >
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              The English average is 0.24
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
   </div>
