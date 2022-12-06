@@ -33,12 +33,15 @@ p,
 .govuk-list,
 .govuk-radios__label,
 .govuk-label,
-.govuk-details {
+.govuk-details,
+.govuk-summary-list {
   font-size: 16px;
 }
 
 .govuk-button,
-.govuk-table {
+.govuk-table,
+.govuk-body-info,
+#financial-info-details {
   font-size: 14px;
 }
 
@@ -55,6 +58,7 @@ p,
   display: flex;
   align-items: center;
   float: right;
+  margin-left: 30px;
 }
 
 #school-list-logo {
@@ -406,14 +410,14 @@ p,
   min-height: 550px;
 }
 
-.secondary-half-section-three{
+.secondary-half-section-three {
   padding-top: 20px;
   margin-top: 40px;
   border-top: 1px govuk-colour("light-grey") solid;
   min-height: 320px;
 }
 
-.secondary-half-section-three-mobile{
+.secondary-half-section-three-mobile {
   padding-top: 20px;
   margin-top: 40px;
   border-top: 1px govuk-colour("light-grey") solid;
@@ -425,15 +429,19 @@ p,
   border-bottom: 4px govuk-colour("blue") solid;
   padding-top: 20px;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 
-.full-width-link .govuk-link{
-  display:inline-block;
-  width:80%;
+.full-width-link .govuk-link {
+  display: inline-block;
+  width: 80%;
 }
 
 .arrow-right {
+  display:flex;
   float: right;
+  vertical-align: middle;
+  width:30px;
 }
 
 .full-width-link .govuk-link {
@@ -468,13 +476,13 @@ p,
   display: flex;
   align-items: center;
 }
-.progress-8-callout{
+.progress-8-callout {
   border: $govuk-border-colour 0.5px solid;
-  margin-bottom:10px;
-  margin-top:10px;
-  padding-top:15px;
-  padding-left:15px;
-  padding-right:15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media only screen and (max-device-width: 640px) {
@@ -493,4 +501,47 @@ p,
   .show-desktop {
     display: block;
   }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ffffff;
+  width: 60%; /* Could be more or less, depending on screen size */
+  margin: 15% auto; /* 15% from the top and centered */
+}
+
+.modal-body {
+  padding: 20px;
+  padding-top: 40px;
+  border: 1px solid #888;
+}
+
+/* The Close Button */
+.close {
+  float: right;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.icon-modal{
+  cursor: pointer;
+}
+
+#showDisadvantaged,
+#showSchoolsKey{
+  margin-top:30px;
 }
