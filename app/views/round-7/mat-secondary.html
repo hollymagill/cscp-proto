@@ -935,7 +935,7 @@ college performance data {% endblock %} {% block content %}
           src="/public/images/arrow-down.svg"
         />
 
-        <div id="showDisadvantaged" style="display: none">
+        <div id="showDisadvantaged" style="display: none; cursor: auto">
           <p class="govuk-body">
             Disadvantaged pupils are those who attract pupil premium funding,
             meaning pupils claiming free school meals at any point in the last
@@ -944,7 +944,7 @@ college performance data {% endblock %} {% block content %}
             achievement of disadvantaged pupils is normally lower than that of
             ‘other’ pupils.
           </p>
-          <dl class="govuk-summary-list">
+          <dl class="govuk-summary-list disadvantaged-table">
             <div class="govuk-summary-list__row">
               <dd class="govuk-summary-list__value" style="width: 60%"></dd>
               <dd class="govuk-summary-list__value">
@@ -1130,23 +1130,53 @@ college performance data {% endblock %} {% block content %}
           </dl>
         </div>
       </div>
-      <div class="full-width-link">
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="full-width-link" id="secondary-pupils">
         <a onclick="showSecondary()" class="govuk-link"
-          >MAT secondary characteristics </a
+          >MAT key stage 4 characteristics</a
         ><img
           onclick="showSecondary()"
           class="arrow-right"
           src="/public/images/arrow-down.svg"
         />
 
-        <div id="showSecondary" style="display: none">
+        <div id="showSecondary" style="display: none; cursor: auto">
           <div class="govuk-grid-column-one-half">
             <div class="secondary-half-section">
               <h3 class="govuk-heading-s">
                 % disadvantaged pupils
-                <img id="multi-info" src="/public/images/information.svg" />
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#percentage-disadvantaged"
+                  src="/public/images/information.svg"
+                />
               </h3>
-              <p class="govuk-body">Lorem ipsum</p>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="percentage-disadvantaged" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">% disadvantaged pupils</h2>
+                    <p class="govuk-body">
+                      Disadvantaged pupils are those who attract pupil premium
+                      funding, meaning pupils claiming free school meals at any
+                      point in the last six years and pupils in care, or who
+                      left care through adoption or another formal route.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">
+                Proportion of disadvantaged pupils in the trust
+              </p>
               <div class="school-charts">
                 <canvas id="disadvantagedPupils"></canvas>
                 <script>
@@ -1215,9 +1245,10 @@ college performance data {% endblock %} {% block content %}
             <div class="secondary-half-section">
               <h3 class="govuk-heading-s">
                 % English as an additional language pupils
-                <img id="multi-info" src="/public/images/information.svg" />
               </h3>
-              <p class="govuk-body">Lorem ipsum</p>
+              <p class="govuk-body">
+                Pupils whose first language is not English
+              </p>
 
               <div class="school-charts">
                 <canvas id="additionalLanguage"></canvas>
@@ -1285,9 +1316,50 @@ college performance data {% endblock %} {% block content %}
             <div class="secondary-half-section">
               <h3 class="govuk-heading-s">
                 Years in MAT
-                <img id="multi-info" src="/public/images/information.svg" />
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#years-in-mat"
+                  src="/public/images/information.svg"
+                />
               </h3>
-              <p class="govuk-body">Lorem ipsum</p>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="years-in-mat" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">Years in MAT</h2>
+                    <p class="govuk-body">
+                      In the 2022 results, schools are counted under the MAT
+                      they were part of as of 14 September 2021, as long as they
+                      had been with the MAT since before 14 September 2019.
+                    </p>
+                    <p class="govuk-body">
+                      Length of time the school has been with the MAT is used in
+                      the weighting of the MAT progress measures.
+                    </p>
+                    <p class="govuk-body">
+                      See
+                      <a href=""
+                        >Secondary accountability measures (including Progress 8
+                        and Attainment 8)</a
+                      >
+                      for full details of how we calculate MAT measures.s
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">
+                MATs are included in these measures if they have at least 3
+                schools covering this phase of education that have been with the
+                MAT for at least 3 academic years and for which we have
+                published performance data.
+              </p>
 
               <div class="school-charts-three">
                 <canvas id="yearsMAT"></canvas>
@@ -1354,9 +1426,40 @@ college performance data {% endblock %} {% block content %}
             <div class="secondary-half-section">
               <h3 class="govuk-heading-s">
                 % SEN pupils
-                <img id="multi-info" src="/public/images/information.svg" />
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#sen-pupils"
+                  src="/public/images/information.svg"
+                />
               </h3>
-              <p class="govuk-body">Lorem ipsum</p>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="sen-pupils" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">% SEN pupils</h2>
+                    <p class="govuk-body">
+                      There's a formal assessment to decide if a pupil needs an
+                      education, health and care (EHC) plan. It also includes
+                      pupils where the school provides extra or different help
+                      from its usual curriculum (SEN support). Outside
+                      specialists may advise or support the class teacher and
+                      SEN coordinator.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">
+                This refers to pupils with special educational needs (SEN) who
+                have learning difficulties or disabilities that make it harder
+                for them to learn than most children of the same age.
+              </p>
 
               <div class="school-charts">
                 <canvas id="senPupils"></canvas>
@@ -1424,9 +1527,108 @@ college performance data {% endblock %} {% block content %}
             <div class="secondary-half-section">
               <h3 class="govuk-heading-s">
                 Type of schools
-                <img id="multi-info" src="/public/images/information.svg" />
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#sen-pupils"
+                  src="/public/images/information.svg"
+                />
               </h3>
-              <p class="govuk-body">Lorem ipsum</p>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="sen-pupils" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">Type of schools</h2>
+                    <p class="govuk-body">
+                      In the 2022 results, schools are counted under the MAT
+                      they were part of as of 14 September 2021, as long as they
+                      had been with the MAT since before 14 September 2019.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Converter academy</strong> - A school which has
+                      chosen to convert to academy status. It inherits the
+                      performance history of its predecessor school, unlike a
+                      sponsor led academy, which does not.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Sponsored academy</strong> - These academies
+                      differ from other academies in that they are established
+                      by a sponsor. Also, although any academy can have a
+                      sponsor, those which are 'sponsor led' were deemed by the
+                      Department for Education to be underperforming and in need
+                      of help from a sponsor to improve performance. Sponsor led
+                      means that a sponsor such as a charity or a business has
+                      been appointed to help improve the school's performance.
+                      The sponsor also sets up a trust to run the academy. While
+                      academy converters inherit the performance history of the
+                      predecessor school, sponsor led academies do not.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Other</strong> - Used here to mean free schools,
+                      which for key stage 4 includes university technical
+                      colleges and studio schools.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Free schools</strong> - These are schools funded
+                      by the government and not run by a local authority. They
+                      can be established by a charity, a community group,
+                      parents or a business. They have more control over how
+                      they do things, for example whether to follow the national
+                      curriculum, setting staff pay and conditions and the
+                      length of school terms and the school day. Like other
+                      state schools, there are no fees for parents to pay,
+                      'free' is intended in the sense of 'free to make their own
+                      decisions'.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>University technical colleges (UTCs)</strong> -
+                      These are a type of academy for 14- to 19-year-olds, and
+                      provide an education that meets the needs of employers.
+                      They offer technical courses and work-related learning,
+                      combined with academic studies. UTCs have between 500 and
+                      800 students and are sponsored by a local university and
+                      employers. It is also usual for further education colleges
+                      and other educational institutions – like established
+                      academy trusts – to work in partnership with them. Support
+                      is in the form of these organisations sharing their
+                      expertise with the college and helping to develop the
+                      curriculum.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Studio school</strong> - Studio schools are small
+                      schools (usually with around 300 pupils) for 14- to
+                      19-year-olds of all abilities (a small number are 13-19).
+                      Students work with local employers and a personal coach,
+                      and follow a curriculum designed to give them the skills
+                      and qualifications they need in work, or to take up
+                      further education. Studio schools offer academic and
+                      vocational qualifications and teach them in a practical
+                      and project-based way. They combine study and work
+                      placements with local and national employers. They are set
+                      up with the backing of local businesses and employers.
+                      Studio schools give students a strong base in English,
+                      maths and science. They also encourage students to develop
+                      skills like punctuality, good communication, reliability
+                      and team working.
+                    </p>
+                    <p class="govuk-body">
+                      See
+                      <a href=""
+                        >Secondary accountability measures (including Progress 8
+                        and Attainment 8)</a
+                      >
+                      for full details of how we calculate MAT measures
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">Total schools: 13$Û›</p>
 
               <div class="school-charts-three">
                 <canvas id="typeSchool"></canvas>
@@ -1495,8 +1697,10 @@ college performance data {% endblock %} {% block content %}
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="full-width-link">
+    <div class="govuk-grid-column-full">
+      <div class="full-width-link school-key-stage-4-full">
         <a onclick="showSchoolsKey()" class="govuk-link"
           >Schools covering key stage 4 included in this MAT’s performance
           data</a
@@ -1505,14 +1709,69 @@ college performance data {% endblock %} {% block content %}
           class="arrow-right"
           src="/public/images/arrow-down.svg"
         />
-        <div id="showSchoolsKey" style="display: none">
+        <div id="showSchoolsKey" style="display: none; cursor: auto">
           <h3 class="govuk-heading-s">
             Schools covering key stage 4 included in this MAT’s performance data
           </h3>
           <p class="govuk-body">
             Number of schools covering key stage 4 included in 2022 MAT
             performance measures: 13
+            <img
+              id="multi-info"
+              class="modal-button icon-modal"
+              href="#number-key-stage-4"
+              src="/public/images/information.svg"
+            />
+
+            <!-- Trigger/Open The Modal -->
+
+            <!-- The Modal -->
           </p>
+
+          <div id="number-key-stage-4" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close"><a href="#" class="close">Close</a></span>
+
+              <div class="modal-body">
+                <h2 class="govuk-heading-s">
+                  Schools included in MAT (multi-academy trust) measures
+                </h2>
+                <p class="govuk-body">
+                  MATs are included in these measures if they have at least 3
+                  schools covering this phase of education that have been with
+                  the MAT for at least 3 academic years and for which we have
+                  published performance data.
+                </p>
+                <p class="govuk-body">
+                  Special schools, pupil referral units, alternative provision
+                  academies and alternative provision free schools within the
+                  MAT are not included.
+                </p>
+                <p class="govuk-body">
+                  In the 2022 results, schools are counted under the MAT they
+                  were part of as of 14 September 2021, as long as they had been
+                  with the MAT since before 14 September 2019. To view all
+                  schools currently under the MAT / sponsor visit the Acme
+                  Academy Trust schools table.
+                </p>
+                <p class="govuk-body">
+                  Where an academy sponsor oversees a more than a single
+                  multi-academy trust, results are presented under the name of
+                  the sponsor rather than the individual MATs.
+                </p>
+                <p class="govuk-body">
+                  See
+                  <a href=""
+                    >Secondary accountability measures (including Progress 8 and
+                    Attainment 8)</a
+                  >
+                  for full details of how we calculate MAT measures
+                </p>
+              </div>
+            </div>
+          </div>
+
           <p class="govuk-body">
             Number of key stage 4 pupils included in 2022 MAT performance
             measures: 592
@@ -1522,15 +1781,17 @@ college performance data {% endblock %} {% block content %}
             Schools covering key stage 4 in this MAT's performance data
           </h3>
 
-          <a href="#">DSLV Acme Academy </a> <br />
-          <a href="#">Acme Academy </a><br />
-          <a href="#">Heartlands Academy </a><br />
-          <a href="#">North Birmingham Academy </a><br />
-          <a href="#">Example Academy </a><br />
-          <a href="#">Parker Academy </a><br />
-          <a href="#">West Wallsend Academy </a><br />
-          <a href="#">City Heights Academy </a><br />
-          <a href="#">DSLV Acme Academy </a><br />
+          <div class="school-links">
+            <a href="#">DSLV Acme Academy </a> <br />
+            <a href="#">Acme Academy </a><br />
+            <a href="#">Heartlands Academy </a><br />
+            <a href="#">North Birmingham Academy </a><br />
+            <a href="#">Example Academy </a><br />
+            <a href="#">Parker Academy </a><br />
+            <a href="#">West Wallsend Academy </a><br />
+            <a href="#">City Heights Academy </a><br />
+            <a href="#">DSLV Acme Academy </a><br />
+          </div>
         </div>
       </div>
 

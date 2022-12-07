@@ -394,7 +394,7 @@ p,
   padding-top: 20px;
   margin-top: 40px;
   border-top: 1px govuk-colour("light-grey") solid;
-  min-height: 230px;
+  min-height: 250px;
 }
 
 .secondary-header {
@@ -407,7 +407,7 @@ p,
   padding-top: 20px;
   margin-top: 40px;
   border-top: 1px govuk-colour("light-grey") solid;
-  min-height: 550px;
+  min-height: 565px;
 }
 
 .secondary-half-section-three {
@@ -426,10 +426,14 @@ p,
 
 //full pane links at the bottom
 .full-width-link {
-  border-bottom: 4px govuk-colour("blue") solid;
+  border-top: 4px govuk-colour("blue") solid;
   padding-top: 20px;
   padding-bottom: 20px;
   cursor: pointer;
+}
+
+.school-key-stage-4-full{
+  border-bottom: 4px govuk-colour("blue") solid;
 }
 
 .full-width-link .govuk-link {
@@ -542,6 +546,12 @@ p,
 }
 
 #showDisadvantaged,
-#showSchoolsKey{
+#showSchoolsKey,
+#showSecondary{
   margin-top:30px;
+}
+
+.disadvantaged-table,
+.school-links{
+  line-height: 180%;
 }
