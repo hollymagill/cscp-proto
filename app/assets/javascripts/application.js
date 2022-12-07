@@ -109,3 +109,19 @@ function showSchoolsKey() {
     x.style.display = "none";
   }
 }
+function showAcademicQualifications() {
+  var x = document.getElementById("showAcademicQualifications");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function showApplied() {
+  var x = document.getElementById("showApplied");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

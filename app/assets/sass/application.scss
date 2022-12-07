@@ -34,14 +34,16 @@ p,
 .govuk-radios__label,
 .govuk-label,
 .govuk-details,
-.govuk-summary-list {
+.govuk-summary-list,
+.govuk-caption-m {
   font-size: 16px;
 }
 
 .govuk-button,
 .govuk-table,
 .govuk-body-info,
-#financial-info-details {
+#financial-info-details,
+.average-result-table {
   font-size: 14px;
 }
 
@@ -547,7 +549,9 @@ p,
 
 #showDisadvantaged,
 #showSchoolsKey,
-#showSecondary{
+#showSecondary,
+#showAcademicQualifications,
+#showApplied{
   margin-top:30px;
 }
 
