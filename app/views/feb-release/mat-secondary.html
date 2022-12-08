@@ -1,0 +1,1811 @@
+{% extends "layout-no-cookies.html" %} {% block pageTitle %} Find school and
+college performance data {% endblock %} {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group back-search">
+        <a href="school-overview" class="govuk-back-link"
+          >Back to MAT overview</a
+        >
+        <div class="search">
+          <img src="/public/images/search.svg" id="search-icon" />
+          <a href="">Search</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trigger/Open The Modal -->
+
+  <!-- The Modal -->
+  <div id="errorModalSecondary" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="closeErrorSecondary"
+        ><a href="#" class="close">Close</a></span
+      >
+
+      <div class="modal-body">
+        <h2 class="govuk-heading-s">
+          Uneven impact of the pandemic on 2021/22 school, college and
+          multi-academy trust performance data
+        </h2>
+        <p class="govuk-body">
+          Students included in the 2021/22 school and college performance measures
+          will have had an <strong>uneven disruption to their learning.</strong>
+        </p>
+        <p class="govuk-body">
+          We, therefore, recommend not making direct comparisons between
+          schools, or with data from previous years. Comparisons with local and
+          national averages can be made cautiously to put an individual school
+          or college’s results into context.
+        </p>
+        <p class="govuk-body">
+          There are other factors that will also make direct comparisons
+          difficult:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Several changes were made to exams and grading. These include
+            advanced notice of exam topics and GCSE, AS and A level grading
+            being based around a midpoint between 2021 and pre-pandemic
+            outcomes.
+          </li>
+          <li>
+            Changes were also made to the way school and college performance
+            measures were calculated. Results achieved between January 2020 and
+            August 2021 by students included in this year’s measures are not
+            included in the calculations.
+          </li>
+        </ul>
+        <p class="govuk-body">
+          For a full explanation of all the factors affecting these results
+          please see the KS4 and 16-18 2021/22 technical guides.
+        </p>
+        <p class="govuk-body">
+          The individual school and college data should be used with caution. It
+          reflects a school or college’s results in 2021/22 but cannot provide
+          information about the factors which may have influenced these results.
+        </p>
+        <p class="govuk-body">
+          When forming a view of how well the school or college is doing, you
+          should consider a range of different information sources, for example,
+          discussing with the school or college directly, the school or college
+          website, Ofsted reports, friends, and family.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div
+        class="govuk-error-summary"
+        aria-labelledby="error-summary-title"
+        role="alert"
+        data-module="govuk-error-summary"
+      >
+        <div class="error-info-icon">
+          <img id="info-error" src="/public/images/information-error.svg" />
+        </div>
+        <div class="error-info">
+          <h2
+            class="govuk-error-summary__title school-info-heading"
+            id="error-summary-title"
+          >
+            Uneven impact of the pandemic on 2021/22 school, college and
+            multi-academy trust performance data
+          </h2>
+          <div class="govuk-error-summary__body school-info-heading">
+            We recommend:
+            <ul class="govuk-list--bullet">
+              <li>
+                <strong>Not making direct comparisons</strong> with data from
+                previous years or between schools/colleges or trusts.
+              </li>
+              <li>
+                <strong>Discussing with the schools/colleges or trusts</strong>
+                factors that may have influenced these results and consider a
+                range of information when forming a view on how well a school or
+                college is doing, including pupil/student population
+                information.
+              </li>
+            </ul>
+            <a class="modal-button" href="#errorModalSecondary">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <span class="govuk-caption-m"
+        >Multi-academy trust
+        <img id="multi-info" src="/public/images/information.svg"
+      /></span>
+      <h1 class="govuk-heading-l">Acme Academy Trust</h1>
+    </div>
+    <div class="govuk-grid-column-one-half share-this-page">
+      <h2 class="govuk-heading-s">Share this page</h2>
+      <div class="govuk-form-group share-page">
+        <p class="govuk-body">
+          <a href=""
+            ><img
+              src="/public/images/twitter.svg"
+              class="social-media"
+            />Twitter</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/facebook.svg"
+              class="social-media"
+            />Facebook</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/email.svg"
+              class="social-media"
+              id="email"
+            />Email</a
+          >
+          <a href=""
+            ><img src="/public/images/linkedin.svg" class="social-media" />
+            Linkedin</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Secondary performance</h1>
+      <p class="govuk-body">
+        This is 2021/2022 data. MATs are included in these measures if they have
+        at least 3 schools or colleges covering this phase of education that
+        have been with the MAT for at least 3 academic years and for which we
+        have published performance data.  
+      </p>
+      <p class="govuk-body">
+        In the 2022 measures, schools are counted under the MAT they were part
+        of as of 14 September 2021, as long as they had been with the MAT since
+        before 14 September 2019.
+      </p>
+      <p class="govuk-body">
+        No MAT performance measures were published for 2019/2020 or 2020/2021.
+      </p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text"> About these results </span>
+        </summary>
+        <div class="govuk-details__text">
+          MAT (multi-academy trust) performance measures are intended to give an
+          indication of how well MATs are currently performing. This page shows
+          <a href="">revised</a> results data for students who completed
+          <a href="">key stage 4</a> in the summer of 2022. These figures were
+          published in February 2023.
+        </div>
+      </details>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="secondary-header-expanded">
+        <h3 class="govuk-heading-s">
+          MAT Progress 8 score
+
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#progress-8-modal"
+            src="/public/images/information.svg"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="progress-8-modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-s">Progress 8 score (MAT score)</h2>
+              <p class="govuk-body">
+                This score shows how much progress students at this MAT
+                (multi-academy trust) made between the end of key stage 2 and
+                the end of key stage 4, compared to students across England who
+                got similar results at the end of key stage 2. This is based on
+                results in up to 8 qualifications, which include English, maths,
+                3 English Baccalaureate qualifications including sciences,
+                computer science, history, geography and languages, and 3 other
+                additional approved qualifications.
+              </p>
+              <p class="govuk-body">
+                The progress score for each MAT is calculated from the progress
+                scores of its schools, weighted by length of time the school has
+                been with the MAT and the number of students who were in year 11
+                in the school.
+              </p>
+              <p class="govuk-body">
+                A score above zero means students made more progress, on average,
+                than students across England who got similar results at the end of
+                key stage 2.
+              </p>
+              <p class="govuk-body">
+                A score below zero means students made less progress, on average,
+                than students across England who got similar results at the end of
+                key stage 2.
+              </p>
+              <p class="govuk-body">
+                A negative progress score does not mean students made no progress,
+                or the MAT has failed, rather it means students in the MAT made
+                less progress than other students across England with similar
+                results at the end of key stage 2.
+              </p>
+              <p class="govuk-body">
+                In a small number of cases, students can have extremely negative
+                progress scores that disproportionately affect a MAT's overall
+                progress score. To reduce the impact of these extreme scores, we
+                set a limit on how negative a pupil's progress score can be when
+                calculating the MAT average. This will normally apply to 1 or 2
+                students per school, if any. Where a pupil's score is more
+                negative than this minimum value, an adjusted score will replace
+                the pupil's original progress score for the purpose of
+                calculating a MAT’s overall progress average.
+              </p>
+              <p class="govuk-body">
+                Progress 8 cannot be compared directly year on year. For
+                example, knowing a MAT had a Progress 8 score of -0.2 in 2019
+                and a score of -0.2 in 2022 tells you how the MAT compared to
+                the national average in those years but not whether its
+                performance improved across years. When considering the 2022
+                data, it is also important to take account of the uneven impact
+                of the pandemic, and other factors such as changes to grading
+                and methodology for calculating KS4 performance measures. See
+                <a href="">here</a>.
+              </p>
+              <p class="govuk-body">
+                <a href="">Detailed guide to Progress 8 </a> - for more
+                information about how the Progress 8 score is calculated.
+              </p>
+
+              <h2 class="govuk-heading-s">
+                Schools and colleges not covering full Progress 8 period
+              </h2>
+              <p class="govuk-body">
+                Some schools and colleges, including university technical
+                colleges, studio schools and further education colleges which
+                cover key stage 4, start educating students from the beginning of
+                key stage 4, partway through the 5 year period covered by
+                Progress 8. This should be taken into account when comparing
+                their results with those for schools which start educating their
+                students from the beginning of key stage 3.
+              </p>
+              <p class="govuk-body">
+                See
+                <a href=""
+                  >Secondary accountability measures (including Progress 8 and
+                  Attainment 8)</a
+                >
+                for full details of how we calculate KS4 MAT measures.
+              </p>
+
+              <p class="govuk-body">
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Financial information
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      It is difficult to say with certainty how much of the
+                      progress scores are down to the school (which may have
+                      scored higher with a different group of students) and how
+                      much is down to the students (for example some may have
+                      performed well at any school). The confidence intervals
+                      reflect this uncertainty. If the confidence intervals for
+                      2 schools overlap, then we can't say for certain that the
+                      2 progress scores for these schools are significantly
+                      different.
+                    </p>
+                    <p class="govuk-body">
+                      Generally speaking, the greater the number of students, the
+                      smaller the range of the confidence interval. For smaller
+                      schools, the confidence interval tends to be larger, since
+                      fewer students are included, and therefore the score will be
+                      more greatly impacted by performance of individual students.
+                    </p>
+                    <p class="govuk-body">
+                      A school is above average if its Progress 8 score is above
+                      0 and the whole confidence interval is above 0. Similarly,
+                      a school is below average if its Progress 8 score is below
+                      0 and the whole confidence interval is below 0.
+                    </p>
+                    <p class="govuk-body">
+                      <a href="">More information on statistical confidence</a>
+                    </p>
+                  </div>
+                </details>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          This score shows how much progress students at this school made across 8
+          qualifications between the end of key stage 2 and the end of key stage
+          4, compared to other similar students nationally.
+        </p>
+        <p class="govuk-body">
+          The score for this school is <strong>-0.24.</strong>
+        </p>
+        <p class="govuk-body">
+          The local authority (Newcastle upon Tyne) average score for
+          state-funded schools is -0.25.
+        </p>
+        <p class="govuk-body">
+          The average score for all state-funded schools in England is -0.03.
+        </p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Show Progress 8 graph
+            </span>
+          </summary>
+          <img id="progress-8" src="/public/images/progress-8-portrait.png" />
+        </details>
+      </div>
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          EBacc average point score
+
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-average"
+            src="/public/images/information.svg"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-average" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-s">EBacc average point score</h2>
+              <p class="govuk-body">
+                The EBacc APS calculates a pupil's average point scores across
+                the 5 pillars of the English Baccalaureate, allocating points to
+                a pupil's best grades and dividing by 6 (the science grades
+                count in 2 pillars, meaning a total of 6 pillars) to create an
+                average point score per pupil. This measure is an average across
+                the subjects (i.e. we divide the total by 6) and so is on a
+                different scale to Attainment 8 which we calculated by simply
+                awarding points score across 8 qualifications (without dividing
+                the total).
+              </p>
+              <p class="govuk-body">
+                This measure is based on the better result of either English
+                language or English literature when both subjects are taken,
+                maths, the best 2 results from the single sciences (3 out of 4
+                must be taken), or results from the combined science, the better
+                result from either geography or history and the best result in
+                languages.
+              </p>
+              <p class="govuk-body">
+                For more information about how the EBacc average point score is
+                calculated view the <a href="">detailed guide to EBacc APS</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          The EBacc average points score calculates a pupil's average point
+          scores across the 5 pillars of the English Baccalaureate.
+        </p>
+        <div class="school-charts">
+          <canvas id="educationEmployment"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart1 = document.getElementById("educationEmployment");
+            const educationEmployment = new Chart(chart1, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [3.35, 4.07],
+                    backgroundColor: ["#003078", "rgba(191, 193, 195, 1)"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 0.5)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 6,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          Achieving EBacc at grade 4 or above
+
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-grade-4"
+            src="/public/images/information.svg"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-grade-4" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-s">
+                Achieving EBacc at grade 4 or above
+              </h2>
+              <p class="govuk-body">
+                The English Baccalaureate is not a test or qualification; it is
+                a measure used to provide information about a particular range
+                of qualifications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          This is the percentage of students who achieved the
+          <a href="">English Baccalaureate</a> (EBacc) at a grade 4 or above in
+          English, maths, science, a language, and either history or geography.
+        </p>
+        <div class="school-charts">
+          <canvas id="attainmentEight"></canvas>
+          <script>
+            const chart2 = document.getElementById("attainmentEight");
+            const attainmentEight = new Chart(chart2, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [8.7, 25],
+                    backgroundColor: ["#003078", "rgba(191, 193, 195, 1)"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart3) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 50,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          Attainment 8 Score
+
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-grade-4"
+            src="/public/images/information.svg"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-grade-4" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-s">Attainment 8 score</h2>
+              <p class="govuk-body">
+                Schools get a score based on how well students have performed in
+                up to 8 qualifications, which include English, maths, 3
+                <a href="">English Baccalaureate</a> qualifications including
+                sciences, computer science, history, geography and languages,
+                and 3 other additional <a href="">approved qualifications</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          Schools get a score based on how well students have performed in up to 8
+          qualifications.
+        </p>
+        <div class="school-charts">
+          <canvas id="attainment8"></canvas>
+          <script>
+            const chart10 = document.getElementById("attainment8");
+            const attainment8 = new Chart(chart10, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [18.9, 46.7],
+                    backgroundColor: ["#003078", "rgba(191, 193, 195, 1)"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 70,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="secondary-header-expanded">
+        <h3 class="govuk-heading-s">
+          Entering EBacc
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#entering-ebacc"
+            src="/public/images/information.svg"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="entering-ebacc" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-s">Entering EBacc</h2>
+              <p class="govuk-body">
+                A pupil is considered to have entered for the English
+                Baccalaureate if they entered for qualifications in English,
+                maths, sciences, a language and either history or geography. The
+                <a href="">English Baccalaureate</a> (EBacc) is not a test or
+                qualification; it is a measure used to provide information about
+                a particular range of qualifications.
+              </p>
+              <p class="govuk-body">
+                University technical colleges, studio schools and some further
+                education colleges with key stage 4 provision provide a
+                specialist technical and professional education. It is not
+                appropriate to expect the same rates of EBacc entry from these
+                types of schools and colleges. They should decide on a
+                case-by-case basis whether their specialist curriculum is
+                compatible with the full EBacc.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="govuk-body">
+          A pupil is considered to have entered for the English Baccalaureate if
+          they entered for qualifications in English, maths, sciences, a
+          language and either history or geography.
+        </p>
+        <div class="school-charts">
+          <canvas id="enteringEbacc"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart3 = document.getElementById("enteringEbacc");
+            const enteringEbacc = new Chart(chart3, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [18.1, 40],
+                    backgroundColor: ["#003078", "rgba(191, 193, 195, 1)"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart3) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          Achieving EBacc at grade 5 or above
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-grade-5"
+            src="/public/images/information.svg"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-grade-5" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-s">
+                Achieving EBacc at grade 5 or above
+              </h2>
+              <p class="govuk-body">
+                The English Baccalaureate is not a test or qualification; it is
+                a measure used to provide information about a particular range
+                of qualifications.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="govuk-body">
+          This is the percentage of students who achieved the
+          <a href="">English Baccalaureate</a> (EBacc) at a grade 5 or above in
+          English, maths, science, a language, and either history or geography.
+        </p>
+        <div class="school-charts">
+          <canvas id="englishMaths"></canvas>
+          <script>
+            const chart4 = document.getElementById("englishMaths");
+            const englishMaths = new Chart(chart4, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [5.6, 17],
+                    backgroundColor: ["#003078", "rgba(191, 193, 195, 1)"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart4) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 50,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+      <div class="secondary-half-section">
+        <h3 class="govuk-heading-s">
+          Grade 5 or above in English & maths GCSEs
+        </h3>
+        <p class="govuk-body">
+          This tells you the percentage of students who achieved grade 5 or above
+          in English and maths GCSEs.
+        </p>
+        <div class="school-charts">
+          <canvas id="averageEbacc"></canvas>
+          <script>
+            const chart5 = document.getElementById("averageEbacc");
+            const averageEbacc = new Chart(chart5, {
+              type: "bar",
+              data: {
+                labels: ["Trust", "England average"],
+                datasets: [
+                  {
+                    data: [35, 45],
+                    backgroundColor: ["#003078", "rgba(191, 193, 195, 1)"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart4) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                      borderColor: "rgba(0, 0, 0, 1)",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 70,
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="full-width-link" id="disadvantaged-pupils">
+        <a onclick="showDisadvantaged()" class="govuk-link"
+          >Disadvantaged students</a
+        ><img
+          onclick="showDisadvantaged()"
+          class="arrow-right"
+          src="/public/images/arrow-down.svg"
+        />
+
+        <div id="showDisadvantaged" style="display: none; cursor: auto">
+          <p class="govuk-body">
+            Disadvantaged students are those who attract pupil premium funding,
+            meaning students claiming free school meals at any point in the last
+            six years and students in care, or who left care through adoption or
+            another formal route. Evidence shows that the progress and
+            achievement of disadvantaged students is normally lower than that of
+            ‘other’ students.
+          </p>
+          <dl class="govuk-summary-list disadvantaged-table">
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value" style="width: 60%"></dd>
+              <dd class="govuk-summary-list__value">
+                MAT disadvantaged students
+              </dd>
+              <dd class="govuk-summary-list__value">
+                England state-funded schools other (non-disadvantaged) students
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Progress 8 score and confidence intervals
+              </dt>
+              <dd class="govuk-summary-list__value">
+                -0.15 <br />
+
+                (-0.23 to -0.06)
+              </dd>
+              <dd class="govuk-summary-list__value">
+                0.15
+                <br />
+                (0.15 to 0.16)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Entering EBacc
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text"> more info </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      more info A pupil is considered to have entered for the
+                      <a href="">English Baccalaureate</a> if they entered for
+                      qualifications in English, maths, sciences, a language and
+                      either history or geography. The English Baccalaureate
+                      (EBacc) is not a test or qualification; it is a measure
+                      used to provide information about a particular range of
+                      qualifications.
+                    </p>
+                    <p class="govuk-body">
+                      University technical colleges, studio schools and some
+                      further education colleges with key stage 4 provision
+                      provide a specialist technical and professional education.
+                      It is not appropriate to expect the same rates of EBacc
+                      entry from these types of schools and colleges. They
+                      should decide on a case-by-case basis whether their
+                      specialist curriculum is compatible with the full EBacc.
+                    </p>
+                  </div>
+                </details>
+              </dt>
+              <dd class="govuk-summary-list__value">14.3%</dd>
+              <dd class="govuk-summary-list__actions">53%</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                EBacc average point score
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text"> more info </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      The EBacc APS calculates a pupil's average point scores
+                      across the 5 pillars of the English Baccalaureate,
+                      allocating points to a pupil's best grades and dividing by
+                      6 (the science grades count in 2 pillars, meaning a total
+                      of 6 pillars) to create an average point score per pupil.
+                      This measure is an average across the subjects (i.e. we
+                      divide the total by 6) and so is on a different scale to
+                      Attainment 8 which we calculated by simply awarding points
+                      score across 8 qualifications (without dividing the
+                      total).
+                    </p>
+                    <p class="govuk-body">
+                      This measure is based on the better result of either
+                      English language or English literature when both subjects
+                      are taken, maths, the best 2 results from the single
+                      sciences (3 out of 4 must be taken), or results from the
+                      combined science, the better result from either geography
+                      or history and the best result in languages.
+                    </p>
+                    <p class="govuk-body">
+                      For more information about how the EBacc average point
+                      score is calculated view the
+                      <a href="">detailed guide to EBacc APS</a>.
+                    </p>
+                  </div>
+                </details>
+              </dt>
+              <dd class="govuk-summary-list__value">3.1</dd>
+              <dd class="govuk-summary-list__actions">4.65</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Achieving EBacc at grade 5 or above
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text"> more info </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      This is the percentage of students who achieved the
+                      <a href="">English Baccalaureate</a> (EBacc) at a grade 5
+                      or above in English, maths, science, a language, and
+                      either history or geography. The English Baccalaureate is
+                      not a test or qualification; it is a measure used to
+                      provide information about a particular range of
+                      qualifications.
+                    </p>
+                  </div>
+                </details>
+              </dt>
+              <dd class="govuk-summary-list__value">4.1%</dd>
+              <dd class="govuk-summary-list__actions">24%</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Achieving EBacc at grade 4 or above
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text"> more info </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      This is the percentage of students who achieved the
+                      <a href="">English Baccalaureate</a> (EBacc) at a grade 4
+                      or above in English, maths, science, a language, and
+                      either history or geography. The English Baccalaureate is
+                      not a test or qualification; it is a measure used to
+                      provide information about a particular range of
+                      qualifications.
+                    </p>
+                  </div>
+                </details>
+              </dt>
+              <dd class="govuk-summary-list__value">6.8%</dd>
+              <dd class="govuk-summary-list__actions">31%</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Grade 5 or above in English & maths GCSEs
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text"> more info </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      This tells you the percentage of students who achieved grade
+                      5 or above in English and maths GCSEs
+                    </p>
+                  </div>
+                </details>
+              </dt>
+              <dd class="govuk-summary-list__value">0.0%</dd>
+              <dd class="govuk-summary-list__actions">0.0%</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Attainment 8 score
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text"> more info </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">
+                      Schools get a score based on how well students have
+                      performed in up to 8 qualifications, which include
+                      English, maths, 3
+                      <a href="">English Baccalaureate</a> qualifications
+                      including sciences, computer science, history, geography
+                      and languages, and 3 other additional
+                      <a href="">approved qualifications</a>.
+                    </p>
+                  </div>
+                </details>
+              </dt>
+              <dd class="govuk-summary-list__value">4.1%</dd>
+              <dd class="govuk-summary-list__actions">24%</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="full-width-link" id="secondary-pupils">
+        <a onclick="showSecondary()" class="govuk-link"
+          >MAT key stage 4 characteristics</a
+        ><img
+          onclick="showSecondary()"
+          class="arrow-right"
+          src="/public/images/arrow-down.svg"
+        />
+
+        <div id="showSecondary" style="display: none; cursor: auto">
+          <div class="govuk-grid-column-one-half">
+            <div class="secondary-half-section">
+              <h3 class="govuk-heading-s">
+                % disadvantaged students
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#percentage-disadvantaged"
+                  src="/public/images/information.svg"
+                />
+              </h3>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="percentage-disadvantaged" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">% disadvantaged students</h2>
+                    <p class="govuk-body">
+                      Disadvantaged students are those who attract pupil premium
+                      funding, meaning students claiming free school meals at any
+                      point in the last six years and students in care, or who
+                      left care through adoption or another formal route.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">
+                Proportion of disadvantaged students in the trust
+              </p>
+              <div class="school-charts">
+                <canvas id="disadvantagedPupils"></canvas>
+                <script>
+                  Chart.register(ChartDataLabels);
+                  const chart11 = document.getElementById(
+                    "disadvantagedPupils"
+                  );
+                  const disadvantagedPupils = new Chart(chart11, {
+                    type: "bar",
+                    data: {
+                      labels: ["Trust", "England average"],
+                      datasets: [
+                        {
+                          data: [51.9, 27],
+                          backgroundColor: [
+                            "#003078",
+                            "rgba(191, 193, 195, 1)",
+                          ],
+                          barThickness: 25,
+                        },
+                      ],
+                    },
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        tooltip: {
+                          enabled: false,
+                        },
+                        datalabels: {
+                          anchor: "end",
+                          align: "end",
+                          formatter: function (value, chart1) {
+                            return value + "%";
+                          },
+                        },
+                        legend: {
+                          display: false,
+                        },
+                      },
+                      indexAxis: "y",
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          grid: {
+                            display: false,
+                            borderColor: "rgba(0, 0, 0, 1)",
+                          },
+                        },
+                        x: {
+                          ticks: {
+                            display: false,
+                          },
+                          suggestedMax: 100,
+                          grid: {
+                            drawBorder: false,
+                            display: false,
+                          },
+                        },
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+            <div class="secondary-half-section">
+              <h3 class="govuk-heading-s">
+                % English as an additional language students
+              </h3>
+              <p class="govuk-body">
+                Students whose first language is not English
+              </p>
+
+              <div class="school-charts">
+                <canvas id="additionalLanguage"></canvas>
+                <script>
+                  const chart12 = document.getElementById("additionalLanguage");
+                  const additionalLanguage = new Chart(chart12, {
+                    type: "bar",
+                    data: {
+                      labels: ["Trust", "England average"],
+                      datasets: [
+                        {
+                          data: [40.2, 17],
+                          backgroundColor: [
+                            "#003078",
+                            "rgba(191, 193, 195, 1)",
+                          ],
+                          barThickness: 25,
+                        },
+                      ],
+                    },
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        tooltip: {
+                          enabled: false,
+                        },
+                        datalabels: {
+                          anchor: "end",
+                          align: "end",
+                          formatter: function (value, chart2) {
+                            return value + "%";
+                          },
+                        },
+                        legend: {
+                          display: false,
+                        },
+                      },
+                      indexAxis: "y",
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          grid: {
+                            display: false,
+                            borderColor: "rgba(0, 0, 0, 1)",
+                          },
+                        },
+                        x: {
+                          ticks: {
+                            display: false,
+                          },
+                          suggestedMax: 100,
+                          grid: {
+                            drawBorder: false,
+                            display: false,
+                          },
+                        },
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+
+            <div class="secondary-half-section">
+              <h3 class="govuk-heading-s">
+                Years in MAT
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#years-in-mat"
+                  src="/public/images/information.svg"
+                />
+              </h3>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="years-in-mat" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">Years in MAT</h2>
+                    <p class="govuk-body">
+                      In the 2022 measures, schools are counted under the MAT
+                      they were part of as of 14 September 2021, as long as they
+                      had been with the MAT since before 14 September 2019.
+                    </p>
+                    <p class="govuk-body">
+                      Length of time the school has been with the MAT is used in
+                      the weighting of the MAT progress measures.
+                    </p>
+                    <p class="govuk-body">
+                      See
+                      <a href=""
+                        >Secondary accountability measures (including Progress 8
+                        and Attainment 8)</a
+                      >
+                      for full details of how we calculate MAT measures.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">
+                MATs are included in these measures if they have at least 3
+                schools covering this phase of education that have been with the
+                MAT for at least 3 academic years and for which we have
+                published performance data.
+              </p>
+
+              <div class="school-charts-three">
+                <canvas id="yearsMAT"></canvas>
+                <script>
+                  const chart13 = document.getElementById("yearsMAT");
+                  const yearsMAT = new Chart(chart13, {
+                    type: "bar",
+                    data: {
+                      labels: ["3 years", "4 years", "5+ years"],
+                      datasets: [
+                        {
+                          data: [0, 0, 12],
+                          backgroundColor: [
+                            "rgba(191, 193, 195, 1)",
+                            "rgba(191, 193, 195, 1)",
+                            "#003078",
+                          ],
+                          barThickness: 25,
+                        },
+                      ],
+                    },
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        tooltip: {
+                          enabled: false,
+                        },
+                        datalabels: {
+                          anchor: "end",
+                          align: "end",
+                        },
+                        legend: {
+                          display: false,
+                        },
+                      },
+                      indexAxis: "y",
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          grid: {
+                            display: false,
+                            borderColor: "rgba(0, 0, 0, 1)",
+                          },
+                        },
+                        x: {
+                          ticks: {
+                            display: false,
+                          },
+                          suggestedMax: 20,
+                          grid: {
+                            drawBorder: false,
+                            display: false,
+                          },
+                        },
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <div class="secondary-half-section">
+              <h3 class="govuk-heading-s">
+                % SEN students
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#sen-pupils"
+                  src="/public/images/information.svg"
+                />
+              </h3>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="sen-pupils" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">% SEN students</h2>
+                    <p class="govuk-body">
+                      There's a formal assessment to decide if a pupil needs an
+                      education, health and care (EHC) plan. It also includes
+                      students where the school provides extra or different help
+                      from its usual curriculum (SEN support). Outside
+                      specialists may advise or support the class teacher and
+                      SEN coordinator.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">
+                This refers to students with special educational needs (SEN) who
+                have learning difficulties or disabilities that make it harder
+                for them to learn than most children of the same age.
+              </p>
+
+              <div class="school-charts">
+                <canvas id="senPupils"></canvas>
+                <script>
+                  const chart14 = document.getElementById("senPupils");
+                  const senPupils = new Chart(chart14, {
+                    type: "bar",
+                    data: {
+                      labels: ["Trust", "England average"],
+                      datasets: [
+                        {
+                          data: [14.6, 14],
+                          backgroundColor: [
+                            "#003078",
+                            "rgba(191, 193, 195, 1)",
+                          ],
+                          barThickness: 25,
+                        },
+                      ],
+                    },
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        tooltip: {
+                          enabled: false,
+                        },
+                        datalabels: {
+                          anchor: "end",
+                          align: "end",
+                          formatter: function (value, chart4) {
+                            return value + "%";
+                          },
+                        },
+                        legend: {
+                          display: false,
+                        },
+                      },
+                      indexAxis: "y",
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          grid: {
+                            display: false,
+                            borderColor: "rgba(0, 0, 0, 1)",
+                          },
+                        },
+                        x: {
+                          ticks: {
+                            display: false,
+                          },
+                          suggestedMax: 100,
+                          grid: {
+                            drawBorder: false,
+                            display: false,
+                          },
+                        },
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+
+            <div class="secondary-half-section">
+              <h3 class="govuk-heading-s">
+                Type of schools
+                <img
+                  id="multi-info"
+                  class="modal-button icon-modal"
+                  href="#sen-pupils"
+                  src="/public/images/information.svg"
+                />
+              </h3>
+
+              <!-- Trigger/Open The Modal -->
+
+              <!-- The Modal -->
+              <div id="sen-pupils" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-s">Type of schools</h2>
+                    <p class="govuk-body">
+                      In the 2022 results, schools are counted under the MAT
+                      they were part of as of 14 September 2021, as long as they
+                      had been with the MAT since before 14 September 2019.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Converter academy</strong> - A school which has
+                      chosen to convert to academy status. It inherits the
+                      performance history of its predecessor school, unlike a
+                      sponsor led academy, which does not.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Sponsored academy</strong> - These academies
+                      differ from other academies in that they are established
+                      by a sponsor. Also, although any academy can have a
+                      sponsor, those which are 'sponsor led' were deemed by the
+                      Department for Education to be underperforming and in need
+                      of help from a sponsor to improve performance. Sponsor led
+                      means that a sponsor such as a charity or a business has
+                      been appointed to help improve the school's performance.
+                      The sponsor also sets up a trust to run the academy. While
+                      academy converters inherit the performance history of the
+                      predecessor school, sponsor led academies do not.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Other</strong> - Used here to mean free schools,
+                      which for key stage 4 includes university technical
+                      colleges and studio schools.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Free schools</strong> - These are schools funded
+                      by the government and not run by a local authority. They
+                      can be established by a charity, a community group,
+                      parents or a business. They have more control over how
+                      they do things, for example whether to follow the national
+                      curriculum, setting staff pay and conditions and the
+                      length of school terms and the school day. Like other
+                      state schools, there are no fees for parents to pay,
+                      'free' is intended in the sense of 'free to make their own
+                      decisions'.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>University technical colleges (UTCs)</strong> -
+                      These are a type of academy for 14- to 19-year-olds, and
+                      provide an education that meets the needs of employers.
+                      They offer technical courses and work-related learning,
+                      combined with academic studies. UTCs have between 500 and
+                      800 students and are sponsored by a local university and
+                      employers. It is also usual for further education colleges
+                      and other educational institutions – like established
+                      academy trusts – to work in partnership with them. Support
+                      is in the form of these organisations sharing their
+                      expertise with the college and helping to develop the
+                      curriculum.
+                    </p>
+                    <p class="govuk-body">
+                      <strong>Studio school</strong> - Studio schools are small
+                      schools (usually with around 300 students) for 14- to
+                      19-year-olds of all abilities (a small number are 13-19).
+                      Students work with local employers and a personal coach,
+                      and follow a curriculum designed to give them the skills
+                      and qualifications they need in work, or to take up
+                      further education. Studio schools offer academic and
+                      vocational qualifications and teach them in a practical
+                      and project-based way. They combine study and work
+                      placements with local and national employers. They are set
+                      up with the backing of local businesses and employers.
+                      Studio schools give students a strong base in English,
+                      maths and science. They also encourage students to develop
+                      skills like punctuality, good communication, reliability
+                      and team working.
+                    </p>
+                    <p class="govuk-body">
+                      See
+                      <a href=""
+                        >Secondary accountability measures (including Progress 8
+                        and Attainment 8)</a
+                      >
+                      for full details of how we calculate MAT measures
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="govuk-body">Total schools: 13</p>
+
+              <div class="school-charts-three">
+                <canvas id="typeSchool"></canvas>
+                <script>
+                  const chart15 = document.getElementById("typeSchool");
+                  const typeSchool = new Chart(chart15, {
+                    type: "bar",
+                    data: {
+                      labels: [
+                        "Converter academies",
+                        "Sponsored academies",
+                        "Other",
+                      ],
+                      datasets: [
+                        {
+                          data: [0, 12, 0],
+                          backgroundColor: [
+                            "rgba(191, 193, 195, 1)",
+                            "#003078",
+                            "rgba(191, 193, 195, 1)",
+                          ],
+                          barThickness: 25,
+                        },
+                      ],
+                    },
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        tooltip: {
+                          enabled: false,
+                        },
+                        datalabels: {
+                          anchor: "end",
+                          align: "end",
+                        },
+                        legend: {
+                          display: false,
+                        },
+                      },
+                      indexAxis: "y",
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          grid: {
+                            display: false,
+                            borderColor: "rgba(0, 0, 0, 1)",
+                          },
+                        },
+                        x: {
+                          ticks: {
+                            display: false,
+                          },
+                          suggestedMax: 20,
+                          grid: {
+                            drawBorder: false,
+                            display: false,
+                          },
+                        },
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="full-width-link school-key-stage-4-full">
+        <a onclick="showSchoolsKey()" class="govuk-link"
+          >Schools covering key stage 4 included in this MAT’s performance
+          data</a
+        ><img
+          onclick="showSchoolsKey()"
+          class="arrow-right"
+          src="/public/images/arrow-down.svg"
+        />
+        <div id="showSchoolsKey" style="display: none; cursor: auto">
+          <h3 class="govuk-heading-s">
+            Schools covering key stage 4 included in this MAT’s performance data
+          </h3>
+          <p class="govuk-body">
+            Number of schools covering key stage 4 included in 2022 MAT
+            performance measures: 13
+            <img
+              id="multi-info"
+              class="modal-button icon-modal"
+              href="#number-key-stage-4"
+              src="/public/images/information.svg"
+            />
+
+            <!-- Trigger/Open The Modal -->
+
+            <!-- The Modal -->
+          </p>
+
+          <div id="number-key-stage-4" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close"><a href="#" class="close">Close</a></span>
+
+              <div class="modal-body">
+                <h2 class="govuk-heading-m">
+                  Schools included in MAT (multi-academy trust) measures
+                </h2>
+                <p class="govuk-body">
+                  MATs are included in these measures if they have at least 3
+                  schools covering this phase of education that have been with
+                  the MAT for at least 3 academic years and for which we have
+                  published performance data.
+                </p>
+                <p class="govuk-body">
+                  Special schools, pupil refÛerral units, alternative provision
+                  academies and alternative provision free schools within the
+                  MAT are not included.
+                </p>
+                <p class="govuk-body">
+                  In the 2022 results, schools are counted under the MAT they
+                  were part of as of 14 September 2021, as long as they had been
+                  with the MAT since before 14 September 2019. To view all
+                  schools currently under the MAT / sponsor visit the Acme
+                  Academy Trust schools table.
+                </p>
+                <p class="govuk-body">
+                  Where an academy sponsor oversees a more than a single
+                  multi-academy trust, results are presented under the name of
+                  the sponsor rather than the individual MATs.
+                </p>
+                <p class="govuk-body">
+                  See
+                  <a href=""
+                    >Secondary accountability measures (including Progress 8 and
+                    Attainment 8)</a
+                  >
+                  for full details of how we calculate MAT measures
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="govuk-body">
+            Number of key stage 4 students included in 2022 MAT performance
+            measures: 592
+          </p>
+
+          <h3 class="govuk-heading-s">
+            Schools covering key stage 4 in this MAT's performance data
+          </h3>
+
+          <div class="school-links">
+            <a href="#">DSLV Acme Academy </a> <br />
+            <a href="#">Acme Academy </a><br />
+            <a href="#">Heartlands Academy </a><br />
+            <a href="#">North Birmingham Academy </a><br />
+            <a href="#">Example Academy </a><br />
+            <a href="#">Parker Academy </a><br />
+            <a href="#">West Wallsend Academy </a><br />
+            <a href="#">City Heights Academy </a><br />
+            <a href="#">DSLV Acme Academy </a><br />
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-form-group print-information">
+        <img src="/public/images/printer.svg" id="printer-icon" />
+        <a href="">Print full information about this school/college</a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
