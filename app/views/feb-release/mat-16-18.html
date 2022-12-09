@@ -34,8 +34,9 @@ college performance data {% endblock %} {% block content %}
           multi-academy trust performance data
         </h2>
         <p class="govuk-body">
-          Students included in the 2021/22 school and college performance measures
-          will have had an <strong>uneven disruption to their learning.</strong>
+          Students included in the 2021/22 school and college performance
+          measures will have had an
+          <strong>uneven disruption to their learning.</strong>
         </p>
         <p class="govuk-body">
           We, therefore, recommend not making direct comparisons between
@@ -161,8 +162,18 @@ college performance data {% endblock %} {% block content %}
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">16 to 18 performance</h1>
       <p class="govuk-body">
-        This is 2021/2022 data. No MAT performance measures have been published
-        for 2019/2020 or 2020/2021.
+        This is 2021/2022 data. MATs are included in these measures if they have
+        at least 3 schools or colleges covering this phase of education that
+        have been with the MAT for at least 3 academic years and for which we
+        have published performance data.  
+      </p>
+      <p class="govuk-body">
+        In the 2022 measures, schools are counted under the MAT they were part
+        of as of 14 September 2021, as long as they had been with the MAT since
+        before 14 September 2019.
+      </p>
+      <p class="govuk-body">
+        No MAT performance measures were published for 2019/2020 or 2020/2021.
       </p>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -324,7 +335,7 @@ college performance data {% endblock %} {% block content %}
                       datasets: [
                         {
                           data: [1, 0, 12],
-                          backgroundColor: ["rgba(213, 231, 243, 1)"],
+                          backgroundColor: ["#003078"],
                           barThickness: 25,
                         },
                       ],
@@ -493,7 +504,7 @@ college performance data {% endblock %} {% block content %}
                       datasets: [
                         {
                           data: [2, 12, 2],
-                          backgroundColor: ["rgba(213, 231, 243, 1)"],
+                          backgroundColor: ["#003078"],
                           barThickness: 25,
                         },
                       ],
@@ -576,8 +587,8 @@ college performance data {% endblock %} {% block content %}
               </div>
               <p class="govuk-body">
                 Evidence shows that, overall, performance of disadvantaged
-                students is lower than that of other students. This data indicates
-                how well a school does at tackling this difference.
+                students is lower than that of other students. This data
+                indicates how well a school does at tackling this difference.
               </p>
 
               <div class="school-charts">
@@ -595,7 +606,7 @@ college performance data {% endblock %} {% block content %}
                         {
                           data: [38.3, 27],
                           backgroundColor: [
-                            "rgba(213, 231, 243, 1)",
+                            "#003078",
                             "rgba(191, 193, 195, 1)",
                           ],
                           barThickness: 25,
@@ -666,15 +677,12 @@ college performance data {% endblock %} {% block content %}
                   <div class="govuk-summary-list__row">
                     <dd
                       class="govuk-summary-list__value"
-                      style="width: 55%"
+                      style="width: 40%"
                     ></dd>
                     <dd class="govuk-summary-list__value" colspan="2">
                       MAT disadvantaged students
                     </dd>
-                    <dd
-                      class="govuk-summary-list__value"
-                      style="width: 0px"
-                    ></dd>
+                    <dd class="govuk-summary-list__value"></dd>
                     <dd class="govuk-summary-list__value">
                       England state-funded schools other (non-disadvantaged)
                       students
@@ -766,7 +774,7 @@ college performance data {% endblock %} {% block content %}
 
               <dl class="govuk-summary-list average-result-table">
                 <div class="govuk-summary-list__row">
-                  <dd class="govuk-summary-list__value" style="width: 55%"></dd>
+                  <dd class="govuk-summary-list__value" style="width: 40%"></dd>
                   <dd class="govuk-summary-list__value">Average result</dd>
                   <dd class="govuk-summary-list__value">Points</dd>
                 </div>
@@ -846,7 +854,7 @@ college performance data {% endblock %} {% block content %}
                       datasets: [
                         {
                           data: [1, 0, 12],
-                          backgroundColor: ["rgba(213, 231, 243, 1)"],
+                          backgroundColor: ["#003078"],
                           barThickness: 25,
                         },
                       ],
@@ -1015,7 +1023,7 @@ college performance data {% endblock %} {% block content %}
                       datasets: [
                         {
                           data: [2, 12, 2],
-                          backgroundColor: ["rgba(213, 231, 243, 1)"],
+                          backgroundColor: ["#003078"],
                           barThickness: 25,
                         },
                       ],
@@ -1098,8 +1106,8 @@ college performance data {% endblock %} {% block content %}
               </div>
               <p class="govuk-body">
                 Evidence shows that, overall, performance of disadvantaged
-                students is lower than that of other students. This data indicates
-                how well a school does at tackling this difference.
+                students is lower than that of other students. This data
+                indicates how well a school does at tackling this difference.
               </p>
 
               <div class="school-charts">
@@ -1117,7 +1125,7 @@ college performance data {% endblock %} {% block content %}
                         {
                           data: [38.3, 27],
                           backgroundColor: [
-                            "rgba(213, 231, 243, 1)",
+                            "#003078",
                             "rgba(191, 193, 195, 1)",
                           ],
                           barThickness: 25,
@@ -1188,9 +1196,9 @@ college performance data {% endblock %} {% block content %}
                   <div class="govuk-summary-list__row">
                     <dd
                       class="govuk-summary-list__value"
-                      style="width: 55%"
+                      style="width: 40%"
                     ></dd>
-                    <dd class="govuk-summary-list__value" colspan="2">
+                    <dd class="govuk-summary-list__value">
                       MAT disadvantaged students
                     </dd>
                     <dd class="govuk-summary-list__value"></dd>
