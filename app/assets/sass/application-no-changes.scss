@@ -20,11 +20,48 @@ $govuk-assets-path: "/govuk/assets/";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-//changing tables to have same width
-td {
-  width: 33%;
+#progress-8 {
+  width: 80%;
 }
 
-#progress-8{
-  width:80%;
+/* RESULTS OVER TIME! */
+
+#reading-progress-table td,
+#reading-score-3-table td,
+#writing-progress-table td,
+#maths-progress-table td,
+#maths-score-3-table td,
+#standard-results-3-table td {
+  width: 20%;
+}
+
+.js-enabled
+  .govuk-accordion__section-toggle
+  .govuk-accordion__section-toggle-focus,
+.js-enabled .govuk-accordion__show-all {
+  float: right;
+}
+
+.js-enabled .govuk-accordion__section-toggle,
+.js-enabled .govuk-accordion__section-heading-text {
+  display: inline;
+}
+
+.js-enabled .govuk-accordion {
+  border-bottom: 2px solid $govuk-brand-colour;
+}
+
+.js-enabled .govuk-accordion__section-button {
+  border-top: 2px solid $govuk-brand-colour;
+}
+
+.js-enabled .govuk-accordion__section-button {
+  padding-bottom: 0px;
+}
+
+/* footer */
+
+#ns-logo {
+  max-width: 80px;
+  float: right;
 }

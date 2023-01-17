@@ -1,0 +1,606 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<a href="#" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-m">Ark King Solomon Academy</span>Results
+        over time
+      </h1>
+    </div>
+    <div class="govuk-grid-column-one-half"></div>
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body">These measures were first recorded in 2016.</p>
+
+      <p class="govuk-body">
+        If you want more information about reading, maths or writing progress
+        scores, including how they compare with the rest of the country in more
+        detail, you can find that <a href="">here (opens in a new tab).</a>
+      </p>
+      <div
+        class="govuk-accordion"
+        data-module="govuk-accordion"
+        id="accordion-default"
+      >
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-1"
+              >
+                Reading
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-1"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1"
+          >
+            <p class="govuk-body">
+              2018 and 2019 scores are not directly comparable with 2017 scores.
+              Find out why <a href="">here (opens in a new tab).</a>
+            </p>
+
+            <h2 class="govuk-heading-m">Reading progress score</h2>
+            <p class="govuk-body">
+              The England state funded schools average is 0.
+            </p>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What is a confidence interval?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                A confidence interval is a range of values that describes the
+                uncertainty around an estimate. The higher the lower bound
+                starts the better the score is.
+              </div>
+            </details>
+            <table class="govuk-table" id="reading-progress-table">
+              <caption
+                class="govuk-table__caption govuk-table__caption--s"
+              ></caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">School score</th>
+                  <td class="govuk-table__cell">-2.8<br />Below average</td>
+                  <td class="govuk-table__cell">-2.7<br />Below average</td>
+                  <td class="govuk-table__cell">-0.8<br />Below average</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Confidence interval
+                  </th>
+                  <td class="govuk-table__cell">-4.4 to -1.2</td>
+                  <td class="govuk-table__cell">-4.2 to -1.2</td>
+                  <td class="govuk-table__cell">-2.3 to 0.8</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">0.9</td>
+                  <td class="govuk-table__cell">1</td>
+                  <td class="govuk-table__cell">1.1</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 class="govuk-heading-m">Key stage 2 reading score average</h2>
+            <p body="govuk-body">
+              The expected standard is a score of 100 or more. The higher
+              standard is 110 or more.
+            </p>
+            <table class="govuk-table" id="reading-score-3-table">
+              <caption
+                class="govuk-table__caption govuk-table__caption--s"
+              ></caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">School score</th>
+                  <td class="govuk-table__cell">104<br />Expected standard</td>
+                  <td class="govuk-table__cell">104<br />Expected standard</td>
+                  <td class="govuk-table__cell">105<br />Expected standard</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">105</td>
+                  <td class="govuk-table__cell">106</td>
+                  <td class="govuk-table__cell">104</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    England state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">104</td>
+                  <td class="govuk-table__cell">105</td>
+                  <td class="govuk-table__cell">104</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-2"
+              >
+                Writing
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-2"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-2"
+          >
+            <p class="govuk-body">
+              2018 and 2019 scores are not directly comparable with 2017 scores.
+              Find out why <a href="">here (opens in a new tab).</a>
+            </p>
+            <h2 class="govuk-heading-m">Writing progress score</h2>
+            <p class="govuk-body">
+              The England state funded schools average is 0.
+            </p>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What is a confidence interval?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                A confidence interval is a range of values that describes the
+                uncertainty around an estimate. The higher the lower bound
+                starts the better the score is.
+              </div>
+            </details>
+            <table class="govuk-table" id="writing-progress-table">
+              <caption
+                class="govuk-table__caption govuk-table__caption--s"
+              ></caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    School progress score
+                  </th>
+                  <td class="govuk-table__cell">-2.6<br />Below average</td>
+                  <td class="govuk-table__cell">-2.3<br />Below average</td>
+                  <td class="govuk-table__cell">-1.1<br />Average</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Confidence interval
+                  </th>
+                  <td class="govuk-table__cell">-4.1 to -1.1</td>
+                  <td class="govuk-table__cell">-3.7 to -0.9</td>
+                  <td class="govuk-table__cell">-2.5 to 0.3</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">0.8</td>
+                  <td class="govuk-table__cell">1.1</td>
+                  <td class="govuk-table__cell">0.6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-3"
+              >
+                Maths
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-3"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-3"
+          >
+            <p class="govuk-body">
+              2018 and 2019 scores are not directly comparable with 2017 scores.
+              Find out why <a href="">here (opens in a new tab).</a>
+            </p>
+
+            <h2 class="govuk-heading-m">Maths progress score</h2>
+            <p class="govuk-body">
+              The England state funded schools average is 0.
+            </p>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What is a confidence interval?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                A confidence interval is a range of values that describes the
+                uncertainty around an estimate. The higher the lower bound
+                starts the better the score is.
+              </div>
+            </details>
+            <table class="govuk-table" id="maths-progress-table">
+              <caption
+                class="govuk-table__caption govuk-table__caption--s"
+              ></caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    School progress score
+                  </th>
+                  <td class="govuk-table__cell">-0.4<br />Average</td>
+                  <td class="govuk-table__cell">-2.8<br />Below average</td>
+                  <td class="govuk-table__cell">-0.6<br />Average</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">2</td>
+                  <td class="govuk-table__cell">1.7</td>
+                  <td class="govuk-table__cell">1.4</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 class="govuk-heading-m">Key stage 2 maths score average</h2>
+            <p body="govuk-body">
+              The expected standard is a score of 100 or more. The higher
+              standard is 110 or more.
+            </p>
+            <table class="govuk-table" id="maths-score-3-table">
+              <caption class="govuk-table__caption govuk-table__caption--s">
+                Average score over 3 years
+              </caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">School score</th>
+                  <td class="govuk-table__cell">106<br />Expected standard</td>
+                  <td class="govuk-table__cell">104<br />Expected standard</td>
+                  <td class="govuk-table__cell">107<br />Expected standard</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">106</td>
+                  <td class="govuk-table__cell">106</td>
+                  <td class="govuk-table__cell">107</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    England state-funded school average
+                  </th>
+                  <td class="govuk-table__cell">104</td>
+                  <td class="govuk-table__cell">104</td>
+                  <td class="govuk-table__cell">105</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-4"
+              >
+                Meeting standards in reading, writing and maths
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-4"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-4"
+          >
+            <p class="govuk-body">
+              2018 and 2019 scores are not directly comparable with 2017 scores.
+            </p>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  How do pupils achieve the expected standard?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">
+                  Pupils are meeting the expected standard if:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                    they achieve a scaled score of 100 or more in their reading
+                    and maths tests
+                  </li>
+                  <li>
+                    and their teacher assesses them as 'working at the expected
+                    standard' or better in writing
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <h2 class="govuk-heading-m">Pupils achieving expected standards</h2>
+            <table class="govuk-table" id="standard-results-3-table">
+              <caption
+                class="govuk-table__caption govuk-table__caption--s"
+              ></caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                  <th scope="col" class="govuk-table__header">
+                    3 year average
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">School</th>
+                  <td class="govuk-table__cell">72%</td>
+                  <td class="govuk-table__cell">71%</td>
+                  <td class="govuk-table__cell">65%</td>
+                  <td class="govuk-table__cell">69%</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school
+                  </th>
+                  <td class="govuk-table__cell">68%</td>
+                  <td class="govuk-table__cell">72%</td>
+                  <td class="govuk-table__cell">70%</td>
+                  <td class="govuk-table__cell">70%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    England state-funded school
+                  </th>
+                  <td class="govuk-table__cell">61%</td>
+                  <td class="govuk-table__cell">64%</td>
+                  <td class="govuk-table__cell">65%</td>
+                  <td class="govuk-table__cell">65%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-4"
+              >
+                Achieving higher standards in reading, writing and maths
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-4"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-4"
+          >
+            <p class="govuk-body">
+              2018 and 2019 scores are not directly comparable with 2017 scores.
+            </p>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  How do pupils achieve the higher standard?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">
+                  Pupils are achieving the higher standard if:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                    they achieve a scaled score of 110 or more in their reading
+                    and maths tests
+                  </li>
+                  <li>
+                    and their teacher assesses them as ‘working at a greater
+                    depth within the expected standard’ in writing
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <h2 class="govuk-heading-m">Pupils achieving higher standards</h2>
+            <table class="govuk-table" id="standard-results-3-table">
+              <caption
+                class="govuk-table__caption govuk-table__caption--s"
+              ></caption>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 12px"
+                  >
+                    2017
+                  </th>
+                  <th scope="col" class="govuk-table__header">2018</th>
+                  <th scope="col" class="govuk-table__header">2019</th>
+                  <th scope="col" class="govuk-table__header">
+                    3 year average
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">School</th>
+                  <td class="govuk-table__cell">13%</td>
+                  <td class="govuk-table__cell">8%</td>
+                  <td class="govuk-table__cell">13%</td>
+                  <td class="govuk-table__cell">11%</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Local authority state-funded school
+                  </th>
+                  <td class="govuk-table__cell">10%</td>
+                  <td class="govuk-table__cell">14%</td>
+                  <td class="govuk-table__cell">13%</td>
+                  <td class="govuk-table__cell">13%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    England state-funded school
+                  </th>
+                  <td class="govuk-table__cell">9%</td>
+                  <td class="govuk-table__cell">10%</td>
+                  <td class="govuk-table__cell">11%</td>
+                  <td class="govuk-table__cell">10%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-form-group" id="footer">
+        <h2 class="govuk-heading-m">Explore this information more</h2>
+        <img
+          src="/public/images/ns_logo.png"
+          id="ns-logo"
+          alt="The figures on this page are National Statistics. 
+              Learn more about National Statistics on the Office for National Statistics 
+              website."
+        />
+        <ul class="govuk-list">
+          <li>
+            <a href="#" class="govuk-link"
+              >Print all information on this school</a
+            >
+          </li>
+          <li>
+            <a href="#" class="govuk-link"
+              >Information about the key stages and the national curriculum</a
+            >
+          </li>
+          <li>
+            <a href="#" class="govuk-link"
+              >Guidance about using the school performance tables</a
+            >
+          </li>
+          <li>
+            <a href="#" class="govuk-link">General guidance</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Publication timetable</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Download school data (1991-2022)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

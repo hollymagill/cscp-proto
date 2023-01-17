@@ -237,6 +237,43 @@ p,
   margin-left: 3px;
 }
 
+.school-classification {
+  background-color: govuk-colour("mid-grey");
+  font-size: 13px;
+  padding: 3px;
+}
+
+li .search-school-list {
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+ul .search-school-view {
+  border-top:1px solid govuk-colour("mid-grey");
+  padding-top:10px;
+}
+
+ul .search-school-view-last{
+  border-bottom:1px solid govuk-colour("mid-grey");
+}
+
+.search-school-title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+.ofsted-rating {
+  background-color: govuk-colour("blue");
+  font-size: 15px;
+  padding: 3px;
+  color: white;
+}
+
+.ofsted-inspected {
+  color: govuk-colour("mid-grey");
+}
+
 /* SCHOOL OVERVIEW */
 
 .back-search,
@@ -434,7 +471,7 @@ p,
   cursor: pointer;
 }
 
-.school-key-stage-4-full{
+.school-key-stage-4-full {
   border-bottom: 4px govuk-colour("blue") solid;
 }
 
@@ -444,10 +481,10 @@ p,
 }
 
 .arrow-right {
-  display:flex;
+  display: flex;
   float: right;
   vertical-align: middle;
-  width:30px;
+  width: 30px;
 }
 
 .full-width-link .govuk-link {
@@ -543,7 +580,7 @@ p,
   padding: 10px;
 }
 
-.icon-modal{
+.icon-modal {
   cursor: pointer;
 }
 
@@ -551,11 +588,11 @@ p,
 #showSchoolsKey,
 #showSecondary,
 #showAcademicQualifications,
-#showApplied{
-  margin-top:30px;
+#showApplied {
+  margin-top: 30px;
 }
 
 .disadvantaged-table,
-.school-links{
+.school-links {
   line-height: 180%;
 }
