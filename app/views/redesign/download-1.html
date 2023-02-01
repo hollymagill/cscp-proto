@@ -1,0 +1,106 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<a href="download-data" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Question 1 of 3</span>
+              <h1 class="govuk-fieldset__heading">
+                Where do you want to download data for?
+              </h1>
+            </legend>
+
+            <div class="govuk-form-group">
+              <div id="contact-hint" class="govuk-hint">Select one option.</div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="contact"
+                    name="contact"
+                    type="radio"
+                    value="email"
+                    data-aria-controls="conditional-contact"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    All of England
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="contact-2"
+                    name="contact"
+                    type="radio"
+                    value="phone"
+                    data-aria-controls="conditional-contact-2"
+                  />
+                  <label
+                    class="govuk-label govuk-radios__label"
+                    for="contact-2"
+                  >
+                    Local authority
+                  </label>
+                </div>
+                <div
+                  class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-contact-2"
+                >
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-phone">
+                      Select a local authority
+                    </label>
+
+                    <select
+                      class="govuk-select govuk-!-width-one-third"
+                      id="contact-by-phone"
+                      name="contact-by-phone"
+                    >
+                      <option value="published">Newcastle upon Tyne</option>
+                      <option value="updated" selected>Gateshead</option>
+                      <option value="views">Islington</option>
+                      <option value="comments">Greenwich</option>
+                      <option value="comments">Croydon</option>
+                      <option value="comments">Bromley</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <a href="download-2" role="button" class="govuk-button"> Continue </a>
+      </form>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group" id="footer">
+        <h2 class="govuk-heading-m">Explore more information</h2>
+        <img
+          src="/public/images/ns_logo.png"
+          id="ns-logo"
+          alt="The figures on this page are National Statistics. 
+                  Learn more about National Statistics on the Office for National Statistics 
+                  website."
+        />
+        <ul class="govuk-list">
+          <li>
+            <a href="#" class="govuk-link">General guidance</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Publication timetable</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Download school data (1991-2022)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

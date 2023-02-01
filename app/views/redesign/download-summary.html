@@ -1,0 +1,86 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form action="/form-handler" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">Check your answers</h1>
+            </legend>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Where do you want to download data for?
+                </dt>
+                <dd class="govuk-summary-list__value">All of England</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="download-1">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What academic year do you want to download data from?
+                </dt>
+                <dd class="govuk-summary-list__value">2021-2022</dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="download-2">
+                    Change<span class="govuk-visually-hidden">
+                      date of birth</span
+                    >
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What data do you want to download?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Final 16 to 18 study<br />Pupil absence<br />Workforce
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="download-3">
+                    Change<span class="govuk-visually-hidden"> address</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </fieldset>
+        </div>
+        <a href="download-summary" role="button" class="govuk-button">
+          Continue
+        </a>
+      </form>
+    </div>
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group" id="footer">
+        <h2 class="govuk-heading-m">Explore more information</h2>
+        <img
+          src="/public/images/ns_logo.png"
+          id="ns-logo"
+          alt="The figures on this page are National Statistics. 
+                      Learn more about National Statistics on the Office for National Statistics 
+                      website."
+        />
+        <ul class="govuk-list">
+          <li>
+            <a href="#" class="govuk-link">General guidance</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Publication timetable</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Download school data (1991-2022)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

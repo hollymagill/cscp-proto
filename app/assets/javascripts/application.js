@@ -125,3 +125,4 @@ function showApplied() {
     x.style.display = "none";
   }
 }
+
