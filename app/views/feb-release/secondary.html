@@ -1,0 +1,1004 @@
+{% extends "layout-no-cookies.html" %} {% block pageTitle %} Find school and
+college performance data {% endblock %} {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group back-search">
+        <a href="school-overview" class="govuk-back-link"
+          >Back to school overview</a
+        >
+        <div class="search">
+          <img src="/public/images/search.svg" id="search-icon" />
+          <a href="">Search</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trigger/Open The Modal -->
+
+  <!-- The Modal -->
+  <div id="errorModalSecondary" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="closeErrorSecondary"
+        ><a href="#" class="close">Close</a></span
+      >
+
+      <div class="modal-body">
+        <h2 class="govuk-heading-s">
+          Uneven impact of the pandemic on 2021/22 school and college
+          performance data
+        </h2>
+        <p class="govuk-body">
+          Pupils included in the 2021/22 school and college performance measures
+          will have had an <strong>uneven disruption to their learning</strong>.
+        </p>
+        <p class="govuk-body">
+          We, therefore, recommend not making direct comparisons between
+          schools/colleges or MATs, or with data from previous years.
+          Comparisons with local and national averages can be made cautiously to
+          put an individual school/college or MAT’s results into context.
+        </p>
+        <p class="govuk-body">
+          There are other factors that will also make direct comparisons
+          difficult:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Several changes were made to exams and grading. These include
+            advanced notice of exam topics and GCSE, AS and A level grading
+            being based around a midpoint between 2021 and pre-pandemic
+            outcomes.
+          </li>
+          <li>
+            Changes were also made to the way school and college performance
+            measures were calculated. Results achieved between January 2020 and
+            August 2021 by pupils included in this year’s measures are not
+            included in the calculations.
+          </li>
+        </ul>
+        <p class="govuk-body">
+          For a full explanation of all the factors affecting these results
+          please see the <a href="">KS4</a> and <a href="">16-18</a> 2021/22
+          technical guides.
+        </p>
+        <p class="govuk-body">
+          The individual school and college data should be used with caution. It
+          reflects a school or college’s results in 2021/22 but cannot provide
+          information about the factors which may have influenced these results.
+        </p>
+        <p class="govuk-body">
+          When forming a view of how well the school or college is doing, you
+          should consider a range of different information sources, for example,
+          discussing with the school or college directly, the school or college
+          website, Ofsted reports, friends, and family.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div
+        class="govuk-error-summary"
+        aria-labelledby="error-summary-title"
+        role="alert"
+        data-module="govuk-error-summary"
+      >
+        <div class="error-info-icon">
+          <img id="info-error" src="/public/images/information-error.svg" />
+        </div>
+        <div class="error-info">
+          <h2
+            class="govuk-error-summary__title school-info-heading"
+            id="error-summary-title"
+          >
+            Uneven impact of the pandemic on 2021/22 school and college
+            performance data
+          </h2>
+          <div class="govuk-error-summary__body school-info-heading">
+            We recommend:
+            <ul class="govuk-list--bullet">
+              <li>
+                <strong>Not making direct comparisons</strong> with data from
+                previous years or between schools or colleges.
+              </li>
+              <li>
+                <strong>Discussing with the schools/colleges</strong>
+                factors that may have influenced these results and consider a
+                range of information when forming a view on how well a school or
+                college is doing, including pupil/student population
+                information.
+              </li>
+            </ul>
+            <a class="modal-button" href="#errorModalSecondary">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <span class="govuk-caption-m"
+        >Community school
+        <img id="multi-info" src="/public/images/information-question.png"
+      /></span>
+      <h1 class="govuk-heading-l">Acme Academy Trust</h1>
+    </div>
+    <div class="govuk-grid-column-one-half share-this-page">
+      <h2 class="govuk-heading-s">Share this page</h2>
+      <div class="govuk-form-group share-page">
+        <p class="govuk-body">
+          <a href=""
+            ><img
+              src="/public/images/twitter.svg"
+              class="social-media"
+            />Twitter</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/facebook.svg"
+              class="social-media"
+            />Facebook</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/email.svg"
+              class="social-media"
+              id="email"
+            />Email</a
+          >
+          <a href=""
+            ><img
+              src="/public/images/linkedin.svg"
+              class="social-media"
+            />Linkedin</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">Secondary</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div id="progress8">
+        <h3 class="govuk-heading-s">
+          Progress 8 score
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#progress-8-modal"
+            src="/public/images/information-question.png"
+          />
+        </h3>
+        <!-- Trigger/Open The Modal -->
+        <!-- The Modal -->
+        <div id="progress-8-modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+            <div class="modal-body">
+              <h2 class="govuk-heading-m">Progress 8 score</h2>
+              <p class="govuk-body">
+                This score shows how much progress pupils at this school made
+                between the end of key stage 2 and the end of key stage 4,
+                compared to pupils across England who got similar results at the
+                end of key stage 2. This is based on results in up to 8
+                qualifications, which include English, maths, 3
+                <a href="">English Baccalaureate</a> qualifications including
+                sciences, computer science, history, geography and languages,
+                and 3 other additional <a href="">approved qualifications</a>.
+              </p>
+              <p class="govuk-body">
+                From 2021/22 Progress 8 scores are calculated using KS2 outcomes
+                reported as scaled scores instead of national curriculum levels.
+                See the secondary accountability measures guidance for more
+                information.
+              </p>
+              <p class="govuk-body">
+                In a small number of cases, pupils can have extremely negative
+                progress scores that disproportionately affect a school’s
+                overall progress score. To reduce the impact of these extreme
+                scores, we set a limit on how negative a pupil’s progress score
+                can be when calculating the school average. This will normally
+                apply to 1 or 2 pupils per school, if any. Where a pupil’s score
+                is more negative than this minimum value, an adjusted score will
+                replace the pupil’s original progress score for the purpose of
+                calculating a school’s overall progress average.
+              </p>
+              <iframe
+                src="https://www.youtube.com/embed/4IAEgFMSGDY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+              <p class="govuk-body">
+                A score above zero means pupils made more progress, on average,
+                than pupils across England who got similar results at the end of
+                key stage 2.
+              </p>
+              <p class="govuk-body">
+                A score below zero means pupils made less progress, on average,
+                than pupils across England who got similar results at the end of
+                key stage 2.
+              </p>
+              <p class="govuk-body">
+                A negative progress score does not mean pupils made no progress,
+                or the school has failed, rather it means pupils in the school
+                made less progress than other pupils across England with similar
+                results at the end of key stage 2.
+              </p>
+              <p class="govuk-body">
+                Detailed guide to Progress 8 opens in a new window- for more
+                information about how the Progress 8 score is calculated.
+              </p>
+              <h3 class="govuk-heading-m">
+                Pupils included in a school's Progress 8 score
+              </h3>
+              <p class="govuk-body">
+                Pupils who have no key stage 2 results (for example, those
+                arriving at secondary school from an independent school or
+                abroad) are not included in the Progress 8 measure. See the
+                <a href="">Secondary Accountability Measures</a> guidance for
+                more information.
+              </p>
+              <h3 class="govuk-heading-m">
+                Schools and colleges not covering full Progress 8 period
+              </h3>
+              <p class="govuk-body">
+                Some schools start educating pupils partway through the 5-year
+                period covered by Progress 8, which should be taken into account
+                when comparing their results with schools that start at Key
+                Stage 3. Progress 8 is not the most appropriate performance
+                measure for university technical colleges, studio schools and
+                some further education colleges. These establishments typically
+                start educating pupils at age 14, with a focus on preparing
+                pupils for their future careers by providing an integrated
+                academic and professional education. Other headline measures,
+                particularly pupil destinations, are more important for these
+                establishments.
+              </p>
+              <h3 class="govuk-heading-m">What are confidence intervals?</h3>
+              <p class="govuk-body">
+                It is difficult to say with certainty how much of the progress
+                scores are down to the school (which may have scored higher with
+                a different group of pupils) and how much is down to the pupils
+                (for example some may have performed well at any school). The
+                confidence intervals reflect this uncertainty. If the confidence
+                intervals for 2 schools overlap, then we can't say for certain
+                that the 2 progress scores for these schools are significantly
+                different.
+              </p>
+              <p class="govuk-body">
+                Generally speaking, the greater the number of pupils, the
+                smaller the range of the confidence interval. For smaller
+                schools, the confidence interval tends to be larger, since fewer
+                pupils are included, and therefore the score will be more
+                greatly impacted by performance of individual pupils.
+              </p>
+              <p class="govuk-body">
+                A school is above average if its Progress 8 score is above 0 and
+                the whole confidence interval is above 0. Similarly, a school is
+                below average if its Progress 8 score is below 0 and the whole
+                confidence interval is below 0.
+              </p>
+
+              <p class="govuk-body">
+                <a href="">More information on statistical confidence.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="govuk-body">
+          This score shows how much progress pupils at this school made across 8
+          qualifications between the end of key stage 2 and the end of key stage
+          4, compared to other similar pupils nationally.
+        </p>
+        <p class="govuk-body">
+          The score for this school is <strong>-0.24.</strong>
+        </p>
+        <p class="govuk-body">
+          The local authority (Newcastle upon Tyne) average score for
+          state-funded schools is -0.25.
+        </p>
+        <p class="govuk-body">
+          The average score for all state-funded schools in England is -0.03.
+        </p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Show Progress 8 graph
+            </span>
+          </summary>
+          <nav class="show-mobile">
+            <img id="progress-8" src="/public/images/progress-8-portrait.png" />
+          </nav>
+          <nav class="show-desktop">
+            <img
+              id="progress-8"
+              src="/public/images/progress-8-landscape.png"
+            />
+          </nav>
+        </details>
+      </div>
+      <div class="secondary-half-section-three">
+        <h3 class="govuk-heading-s">
+          Staying in education or entering employment
+
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-average"
+            src="/public/images/information-question.png"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-average" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h3 class="govuk-heading-m">
+                Staying in education or entering employment for at least 2 terms
+                after key stage 4
+              </h3>
+              <p class="govuk-body">
+                This shows the number of pupils who either stayed in education
+                or went into employment after finishing key stage 4 (after year
+                11, usually aged 16). This is for pupils who finished year 11
+                two years before the year of publication. For example, the 2022
+                table shows pupils who finished year 11 in 2020, which is the
+                most recent data currently available. This figure covers any
+                sustained education or employment destination.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="govuk-body">
+          This shows the number of pupils who either stayed in education or went
+          into employment after finishing key stage 4 (after year 11, usually
+          aged 16).
+        </p>
+        <div class="secondary-charts">
+          <canvas id="educationEmployment"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart1 = document.getElementById("educationEmployment");
+            const educationEmployment = new Chart(chart1, {
+              type: "bar",
+              data: {
+                labels: [
+                  "School",
+                  ["Local authority", "average"],
+                  "England average",
+                ],
+                datasets: [
+                  {
+                    data: [93, 94, 94],
+                    backgroundColor: ["#d53880", "#505a5f", "#b1b4b6"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart3) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      color: "#0b0c0c",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 110,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="secondary-half-section-three">
+        <h3 class="govuk-heading-s">
+          Attainment 8 score
+
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-grade-4"
+            src="/public/images/information-question.png"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-grade-4" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h3 class="govuk-heading-m">Attainment 8 score</h3>
+              <p class="govuk-body">
+                Schools get a score based on how well pupils have performed in
+                up to 8 qualifications, which include English, maths, 3
+                <a href="">English Baccalaureate</a> qualifications including
+                sciences, computer science, history, geography and languages,
+                and 3 other additional <a href="">approved qualifications</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          Schools get a score based on how well pupils have performed in up to 8
+          qualifications.
+        </p>
+        <div class="secondary-charts">
+          <canvas id="attainmentEight"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart2 = document.getElementById("attainmentEight");
+            const attainmentEight = new Chart(chart2, {
+              type: "bar",
+              data: {
+                labels: [
+                  "School",
+                  ["Local authority", "average"],
+                  "England average",
+                ],
+                datasets: [
+                  {
+                    data: [44.6, 46.3, 48.8],
+                    backgroundColor: ["#d53880", "#505a5f", "#b1b4b6"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      color: "#0b0c0c",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div id="enteringEbacc">
+        <h3 class="govuk-heading-s">
+          Entering EBacc
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#entering-ebacc"
+            src="/public/images/information-question.png"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="entering-ebacc" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h3 class="govuk-heading-m">Entering EBacc</h3>
+              <p class="govuk-body">
+                A pupil is considered to have entered for the English
+                Baccalaureate if they entered for qualifications in English,
+                maths, sciences, a language and either history or geography. The
+                <a href="">English Baccalaureate</a> (EBacc) is not a test or
+                qualification; it is a measure used to provide information about
+                a particular range of qualifications.
+              </p>
+              <p class="govuk-body">
+                University technical colleges, studio schools and some further
+                education colleges with key stage 4 provision provide a
+                specialist technical and professional education. It is not
+                appropriate to expect the same rates of EBacc entry from these
+                types of schools and colleges. They should decide on a
+                case-by-case basis whether their specialist curriculum is
+                compatible with the full EBacc.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="govuk-body">
+          A pupil is considered to have entered for the English Baccalaureate if
+          they entered for qualifications in English, maths, sciences, a
+          language and either history or geography.
+        </p>
+        <div class="secondary-charts">
+          <canvas id="enteringEbacc"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart3 = document.getElementById("enteringEbacc");
+            const enteringEbacc = new Chart(chart3, {
+              type: "bar",
+              data: {
+                labels: [
+                  "School",
+                  ["Local authority", "average"],
+                  "England average",
+                ],
+                datasets: [
+                  {
+                    data: [48, 37, 39],
+                    backgroundColor: ["#d53880", "#505a5f", "#b1b4b6"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart3) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      color: "#0b0c0c",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="secondary-half-section-three">
+        <h3 class="govuk-heading-s">
+          Grade 5 or above in English & maths GCSEs
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#ebacc-grade-5"
+            src="/public/images/information-question.png"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="ebacc-grade-5" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h3 class="govuk-heading-m">
+                Grade 5 or above in English & maths GCSEs
+              </h3>
+              <p class="govuk-body">
+                This tells you the percentage of pupils who achieved grade 5 or
+                above in the
+                <a href="">2017 reformed English and maths GCSEs</a>. Reformed
+                GCSEs are graded 1 (low) to 9 (high). Grade 5 in the new grading
+                is a similar level of achievement to a high grade C or low grade
+                B in the old grading.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="govuk-body">
+          This tells you the percentage of pupils who achieved grade 5 or above
+          in English and maths GCSEs.
+        </p>
+        <div class="secondary-charts">
+          <canvas id="englishMaths"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart4 = document.getElementById("englishMaths");
+            const englishMaths = new Chart(chart4, {
+              type: "bar",
+              data: {
+                labels: [
+                  "School",
+                  ["Local authority", "average"],
+                  "England average",
+                ],
+                datasets: [
+                  {
+                    data: [41, 45, 50],
+                    backgroundColor: ["#d53880", "#505a5f", "#b1b4b6"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                    formatter: function (value, chart3) {
+                      return value + "%";
+                    },
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      color: "#0b0c0c",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 100,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+      <div class="secondary-half-section-three">
+        <h3 class="govuk-heading-s">
+          Ebacc average point score
+          <img
+            id="multi-info"
+            class="modal-button icon-modal"
+            href="#average-point-score"
+            src="/public/images/information-question.png"
+          />
+        </h3>
+
+        <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="average-point-score" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h3 class="govuk-heading-m">EBacc average point score</h3>
+              <p class="govuk-body">
+                The EBacc APS calculates a pupil's average point scores across
+                the 5 pillars of the English Baccalaureate, allocating points to
+                a pupil's best grades and dividing by 6 (the science grades
+                count in 2 pillars, meaning a total of 6 pillars) to create an
+                average point score per pupil. This measure is an average across
+                the subjects (i.e. we divide the total by 6) and so is on a
+                different scale to Attainment 8 which we calculated by simply
+                awarding points score across 8 qualifications (without dividing
+                the total).
+              </p>
+              <p class="govuk-body">
+                This measure is based on the better result of either English
+                language or English literature when both subjects are taken,
+                maths, the best 2 results from the single sciences (3 out of 4
+                must be taken), or results from the combined science, the better
+                result from either geography or history and the best result in
+                languages.
+              </p>
+              <p class="govuk-body">
+                For more information about how the EBacc average point score is
+                calculated view the <a href="">detailed guide to EBacc APS</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="govuk-body">
+          The EBacc average points score calculates a pupil's average point
+          scores across the 5 pillars of the English Baccalaureate.
+        </p>
+        <div class="secondary-charts">
+          <canvas id="averageEbacc"></canvas>
+          <script>
+            Chart.register(ChartDataLabels);
+            const chart5 = document.getElementById("averageEbacc");
+            const averageEbacc = new Chart(chart5, {
+              type: "bar",
+              data: {
+                labels: [
+                  "School",
+                  ["Local authority", "average"],
+                  "England average",
+                ],
+                datasets: [
+                  {
+                    data: [4, 4.05, 4.27],
+                    backgroundColor: ["#d53880", "#505a5f", "#b1b4b6"],
+                    barThickness: 25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  tooltip: {
+                    enabled: false,
+                  },
+                  datalabels: {
+                    anchor: "end",
+                    align: "end",
+                  },
+                  legend: {
+                    display: false,
+                  },
+                },
+                indexAxis: "y",
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      color: "#0b0c0c",
+                    },
+                  },
+                  x: {
+                    ticks: {
+                      display: false,
+                    },
+                    suggestedMax: 10,
+                    grid: {
+                      display: false,
+                    },
+                    border: {
+                      display: false,
+                    },
+                  },
+                },
+              },
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <div class="full-width-link">
+        <a href="" class="govuk-link"
+          >Subjects entered at key stage 4 in 2021/22</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link">Results by pupil characteristics</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link">EBacc additional measures</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link"
+          >Progress 8 and Attainment score by subject areas</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link">
+        <a href="" class="govuk-link"
+          >Additional entry and achievement measures</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+      <div class="full-width-link full-length-bottom">
+        <a href="" class="govuk-link">Pupil destinations (leavers 2020)</a
+        ><img class="arrow-right" src="/public/images/arrow-right.svg" />
+      </div>
+
+      <div class="govuk-form-group about-data">
+        <h3 class="govuk-heading-s"><br />About this data</h3>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"> Abbreviations </span>
+          </summary>
+          <div class="govuk-details__text">
+            LOWCOV = Low coverage: shown for the ‘value added’ measure and
+            coverage indicator where schools have less than 50% of pupils
+            included in calculation of the measure<br />
+
+            NA = Not applicable: figures are either not available for the year
+            in question, or the data field is not applicable to the school or
+            college<br />
+
+            NE = No entries: the school or college did not enter any pupils or
+            students for the qualifications covered by the measure<br />
+
+            NEW = New school or college<br />
+
+            NP = Not published: for example, we do not publish Progress 8 data
+            for independent schools and independent special schools, or
+            breakdowns by disadvantaged and other pupils for independent
+            schools, independent special schools and non-maintained special
+            schools<br />
+
+            SP = Small percentage: the number is between 0% and 0.5%<br />
+
+            SUPP = Suppressed: In certain circumstances we will suppress an
+            establishment's data. This is usually when there are 5 or fewer
+            pupils or students covered by the measure (10 in the case of
+            destination measures). We avoid making these figures public to
+            protect individual privacy. We may also suppress data on a
+            case-by-case basis.
+          </div>
+        </details>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text"> Further guidance </span>
+          </summary>
+          <div class="govuk-details__text about-data">
+            Figures in the performance tables will only include those
+            qualifications documented on the list of approved qualifications for
+            the performance tables. <br />
+
+            Guidance and supporting documentation on school performance tables:
+            <br />
+
+            <a href=""
+              >Understanding school and college performance measures (opens in a
+              new window)</a
+            ><br />
+
+            <a href=""
+              >Methodology and technical documents (opens in a new window)</a
+            ><br />
+
+            <a href=""
+              >Guidance on approved qualifications (opens in a new window)<br
+            /></a>
+
+            State-funded schools (local authority maintained schools and
+            academies) are held to account for their performance against these
+            measures. We publish results for independent schools, but they are
+            not accountable against these measures.
+          </div>
+        </details>
+
+        <div class="govuk-form-group print-information">
+          <img src="/public/images/printer.svg" id="printer-icon" />
+          <a href="">Print full information about this school/college</a>
+        </div>
+        <div class="govuk-form-group" id="footer-links">
+          <ul class="govuk-list">
+            <li><a href="">Guidance</a></li>
+            <li><a href="">Download data (1991-2021)</a></li>
+            <li><a href="">Publication timetable</a></li>
+          </ul>
+          <img
+            src="/public/images/ns_logo.png"
+            id="ns-logo"
+            alt="The figures on this page are National Statistics. 
+                Learn more about National Statistics on the Office for National Statistics 
+                website."
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

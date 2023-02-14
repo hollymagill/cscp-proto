@@ -9,81 +9,81 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll();
 });
 
-
-
 // Get the button that opens the modal
 var btn = document.querySelectorAll("a.modal-button");
 
 // All page modals
-var modals = document.querySelectorAll('.modal');
+var modals = document.querySelectorAll(".modal");
 
 // Get the <span> element that closes the modal
 var spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
 for (var i = 0; i < btn.length; i++) {
- btn[i].onclick = function(e) {
+  btn[i].onclick = function (e) {
     e.preventDefault();
     modal = document.querySelector(e.target.getAttribute("href"));
     modal.style.display = "block";
- }
+  };
 }
 
 // When the user clicks on <span> (x), close the modal
 for (var i = 0; i < spans.length; i++) {
- spans[i].onclick = function() {
+  spans[i].onclick = function () {
     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== "undefined")
+        modals[index].style.display = "none";
     }
- }
+  };
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-     }
+window.onclick = function (event) {
+  if (event.target.classList.contains("modal")) {
+    for (var index in modals) {
+      if (typeof modals[index].style !== "undefined")
+        modals[index].style.display = "none";
     }
-}
+  }
+};
 
 // Get the button that opens the modal
 var btn = document.querySelectorAll("img.modal-button");
 
 // All page modals
-var modals = document.querySelectorAll('.modal');
+var modals = document.querySelectorAll(".modal");
 
 // Get the <span> element that closes the modal
 var spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
 for (var i = 0; i < btn.length; i++) {
- btn[i].onclick = function(e) {
+  btn[i].onclick = function (e) {
     e.preventDefault();
     modal = document.querySelector(e.target.getAttribute("href"));
     modal.style.display = "block";
- }
+  };
 }
 
 // When the user clicks on <span> (x), close the modal
 for (var i = 0; i < spans.length; i++) {
- spans[i].onclick = function() {
+  spans[i].onclick = function () {
     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== "undefined")
+        modals[index].style.display = "none";
     }
- }
+  };
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-     }
+window.onclick = function (event) {
+  if (event.target.classList.contains("modal")) {
+    for (var index in modals) {
+      if (typeof modals[index].style !== "undefined")
+        modals[index].style.display = "none";
     }
-}
-
-
+  }
+};
 
 function showDisadvantaged() {
   var x = document.getElementById("showDisadvantaged");
@@ -93,6 +93,7 @@ function showDisadvantaged() {
     x.style.display = "none";
   }
 }
+
 function showSecondary() {
   var x = document.getElementById("showSecondary");
   if (x.style.display === "none") {
@@ -126,3 +127,38 @@ function showApplied() {
   }
 }
 
+$("#enteringEbacc").height($("#progress8").height());
+
+function changeImageDisadvantaged() {
+  if (
+    document.getElementById("imgDisadvantaged").getAttribute("src") ==
+    "/public/images/plus.svg"
+  ) {
+    document.getElementById("imgDisadvantaged").src =
+      "/public/images/minus.svg";
+  } else {
+    document.getElementById("imgDisadvantaged").src = "/public/images/plus.svg";
+  }
+}
+
+function changeImageAcademic() {
+  if (
+    document.getElementById("imgAcademic").getAttribute("src") ==
+    "/public/images/plus.svg"
+  ) {
+    document.getElementById("imgAcademic").src = "/public/images/minus.svg";
+  } else {
+    document.getElementById("imgAcademic").src = "/public/images/plus.svg";
+  }
+}
+
+function changeImageGeneral() {
+  if (
+    document.getElementById("imgGeneral").getAttribute("src") ==
+    "/public/images/plus.svg"
+  ) {
+    document.getElementById("imgGeneral").src = "/public/images/minus.svg";
+  } else {
+    document.getElementById("imgGeneral").src = "/public/images/plus.svg";
+  }
+}

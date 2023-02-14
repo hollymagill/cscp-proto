@@ -35,15 +35,16 @@ p,
 .govuk-label,
 .govuk-details,
 .govuk-summary-list,
-.govuk-caption-m {
+.govuk-caption-m,
+.govuk-hint,
+.average-result-table {
   font-size: 16px;
 }
 
 .govuk-button,
 .govuk-table,
 .govuk-body-info,
-#financial-info-details,
-.average-result-table {
+#financial-info-details {
   font-size: 14px;
 }
 
@@ -144,32 +145,15 @@ p,
 }
 
 #footer-links li {
-  font-size: 0.85em;
   padding: 20px 50px 0px 0px;
 }
 
 //national statistics logo
 #ns-logo {
-  max-width: 4em;
+  max-width: 5em;
   height: auto;
   float: right;
   padding: 20px 0 0 0;
-}
-
-#footer .govuk-details__summary-text,
-#footer p {
-  font-size: 0.85em;
-}
-
-//size of text area labels
-#footer label {
-  font-size: 0.9em;
-}
-
-//over-riding toolkit in details
-#footer .govuk-details__text {
-  border-left: 0px;
-  padding-left: 0px;
 }
 
 /* other */
@@ -249,12 +233,12 @@ li .search-school-list {
 }
 
 ul .search-school-view {
-  border-top:1px solid govuk-colour("mid-grey");
-  padding-top:10px;
+  border-top: 1px solid govuk-colour("mid-grey");
+  padding-top: 10px;
 }
 
-ul .search-school-view-last{
-  border-bottom:1px solid govuk-colour("mid-grey");
+ul .search-school-view-last {
+  border-bottom: 1px solid govuk-colour("mid-grey");
 }
 
 .search-school-title {
@@ -313,21 +297,18 @@ ul .search-school-view-last{
 
 //styling the panels - including vertically centering the content with hard coding padding
 .school-panel {
-  border: 1px solid $govuk-border-colour;
+  border: 1px solid $govuk-input-border-colour;
   margin-top: 20px;
   padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.school-panel .govuk-body {
-  display: flex;
+.school-panel button {
+  float: right;
 }
 
 //view buttons aligning right
 .school-panel .govuk-button {
-  margin-left: auto;
+  font-size: 18px;
 }
 
 // SCHOOL OVERVIEW UPDATE!
@@ -481,9 +462,8 @@ ul .search-school-view-last{
 }
 
 .arrow-right {
-  display: flex;
   float: right;
-  vertical-align: middle;
+  margin-top: -5px;
   width: 30px;
 }
 
@@ -587,6 +567,8 @@ ul .search-school-view-last{
 #showDisadvantaged,
 #showSchoolsKey,
 #showSecondary,
+#full-width-link,
+#showApplied,
 #showAcademicQualifications,
 #showApplied {
   margin-top: 30px;
@@ -595,4 +577,47 @@ ul .search-school-view-last{
 .disadvantaged-table,
 .school-links {
   line-height: 180%;
+}
+
+//secondary and 16-18 pages recreate
+
+.secondary-charts {
+  max-height: 140px;
+}
+
+.full-length-bottom {
+  border-bottom: 4px govuk-colour("blue") solid;
+  color: govuk-colour("blue");
+}
+
+.secondary-header-top {
+  min-height: 350px;
+  border-top: 1px govuk-colour("light-grey") solid;
+  padding-top: 20px;
+}
+
+.full-width-link-solo {
+  border-top: 4px govuk-colour("blue") solid;
+  border-bottom: 4px govuk-colour("blue") solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.full-width-link-solo .govuk-link {
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  color: govuk-colour("blue");
+}
+
+#open-all {
+  float: right;
+  cursor: pointer;
+}
+
+.plus-minus {
+  float: right;
+  margin-top: -5px;
+  width: 30px;
 }
