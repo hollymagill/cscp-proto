@@ -126,6 +126,14 @@ function showApplied() {
     x.style.display = "none";
   }
 }
+function showMATCharacteristics() {
+  var x = document.getElementById("showMATCharacteristics");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 $("#enteringEbacc").height($("#progress8").height());
 
@@ -160,5 +168,16 @@ function changeImageGeneral() {
     document.getElementById("imgGeneral").src = "/public/images/minus.svg";
   } else {
     document.getElementById("imgGeneral").src = "/public/images/plus.svg";
+  }
+}
+
+function changeImageMATCharacteristics() {
+  if (
+    document.getElementById("imgMATCharacteristics").getAttribute("src") ==
+    "/public/images/plus.svg"
+  ) {
+    document.getElementById("imgMATCharacteristics").src = "/public/images/minus.svg";
+  } else {
+    document.getElementById("imgMATCharacteristics").src = "/public/images/plus.svg";
   }
 }

@@ -455,8 +455,7 @@ ul .search-school-view-last {
 .school-key-stage-4-full {
   border-bottom: 4px govuk-colour("blue") solid;
 
-    border-width: 90%;
-
+  border-width: 90%;
 }
 
 .full-width-link .govuk-link {
@@ -474,11 +473,6 @@ ul .search-school-view-last {
   font-size: 17px;
   font-weight: bold;
   text-decoration: none;
-  color: govuk-colour("blue");
-}
-
-#disadvantaged-pupils {
-  border-top: 4px govuk-colour("blue") solid;
   color: govuk-colour("blue");
 }
 
@@ -568,6 +562,7 @@ ul .search-school-view-last {
 }
 
 #showDisadvantaged,
+#showMATCharacteristics,
 #showSchoolsKey,
 #showSecondary,
 #full-width-link,
@@ -599,7 +594,7 @@ ul .search-school-view-last {
   padding-top: 20px;
 }
 
-.full-width-link-solo {
+.full-width-link-top {
   border-top: 4px govuk-colour("blue") solid;
   border-bottom: 4px govuk-colour("blue") solid;
   padding-top: 20px;
@@ -607,7 +602,15 @@ ul .search-school-view-last {
   cursor: pointer;
 }
 
-.full-width-link-solo .govuk-link {
+.full-width-link-bottom {
+  border-bottom: 4px govuk-colour("blue") solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.full-width-link-top .govuk-link,
+.full-width-link-bottom .govuk-link {
   font-size: 17px;
   font-weight: bold;
   text-decoration: none;
@@ -623,4 +626,65 @@ ul .search-school-view-last {
   float: right;
   margin-top: -5px;
   width: 30px;
+}
+
+//COMPARISON TABLES
+.sorting-table-header {
+  background-color: govuk-colour("light-grey");
+}
+
+.progress-score-good {
+  display: inline-block;
+  width: min-content;
+  min-width: 60%;
+  text-align: center;
+  background-color: govuk-colour("green");
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.progress-score-average {
+  display: inline-block;
+  width: min-content;
+  min-width: 60%;
+  text-align: center;
+  background-color: govuk-colour("yellow");
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.progress-score-bad {
+  display: inline-block;
+  width: min-content;
+  min-width: 60%;
+  text-align: center;
+  background-color: govuk-colour("red");
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.progress-score-number {
+  font-size: 16px;
+}
+
+.progress-score-cell {
+  text-align: center;
+}
+
+.up-down-arrow {
+  width: 0.8rem;
+  margin-left: 2px;
+  float: right;
+  filter: invert(33%) sepia(99%) saturate(858%) hue-rotate(179deg)
+    brightness(88%) contrast(88%);
+}
+.table-page {
+  float: right;
+}
+.govuk-select {
+  font-size: 15px;
+  padding: 5px;
+  height: 100%;
 }

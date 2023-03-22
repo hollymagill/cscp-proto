@@ -65,21 +65,21 @@ college performance data {% endblock %} {% block content %}
         <table class="govuk-table school-info-table" id="school-info">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">UID</th>
-              <td class="govuk-table__cell"><a href="">09382048</a></td>
+              <th scope="row" class="govuk-table__header">UID:</th>
+              <td class="govuk-table__cell">2974</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Group UID</th>
+              <th scope="row" class="govuk-table__header">Group UID:</th>
               <td class="govuk-table__cell">TR20482</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Group type</th>
+              <th scope="row" class="govuk-table__header">Group type:</th>
               <td class="govuk-table__cell">Multi-academy trust</td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Region</th>
+              <th scope="row" class="govuk-table__header">Lead region:</th>
               <td class="govuk-table__cell">
-                North West London and South Central
+                North West London and South Central:
                 <img
                   id="region-info"
                   src="/public/images/information-question.png"
@@ -88,10 +88,11 @@ college performance data {% endblock %} {% block content %}
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">
-                Further information
+                Further information:
               </th>
               <td class="govuk-table__cell">
-                <a href="">Get information about schools</a>
+                <a href="">Get information about schools</a><br />
+                <a href="">Financial information</a>
               </td>
             </tr>
           </tbody>
@@ -173,10 +174,10 @@ college performance data {% endblock %} {% block content %}
         <div class="govuk-form-group">
           <div class="govuk-grid-column-full">
             <p class="govuk-body">
-              This is 2021/2022 data. MATs are included in these measures if
+              This is 2021/2022 data. MATs are included in these measures if
               they have at least 3 schools or colleges covering this phase of
               education that have been with the MAT for at least 3 academic
-              years and for which we have published performance data.  
+              years and for which we have published performance data.
             </p>
             <p class="govuk-body">
               In the 2022 measures, schools are counted under the MAT they were
@@ -692,288 +693,8 @@ college performance data {% endblock %} {% block content %}
                 </script>
               </div>
             </div>
-
-            <div class="secondary-half-section-three">
-              <h3 class="govuk-heading-s">
-                Years in MAT
-                <img
-                  id="multi-info"
-                  class="modal-button icon-modal"
-                  href="#years-in-mat-secondary"
-                  src="/public/images/information-question.png"
-                />
-              </h3>
-
-              <!-- Trigger/Open The Modal -->
-
-              <!-- The Modal -->
-              <div id="years-in-mat-secondary" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span class="close"><a href="#" class="close">Close</a></span>
-
-                  <div class="modal-body">
-                    <h3 class="govuk-heading-m">Years in MAT</h3>
-                    <p class="govuk-body">
-                      In the 2022 results, schools are counted under the MAT
-                      they were part of as of 14 September 2021, as long as they
-                      had been with the MAT since before 14 September 2019.
-                    </p>
-                    <p class="govuk-body">
-                      Length of time the school has been with the MAT is used in
-                      the weighting of the MAT progress measures.
-                    </p>
-                    <p class="govuk-body">
-                      See
-                      <a href=""
-                        >Secondary accountability measures (including Progress 8
-                        and Attainment 8)</a
-                      >
-                      for full details of how we calculate MAT measures.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <p class="govuk-body">
-                MATs are included in these measures if they have at least 3
-                schools covering this phase of education that have been with the
-                MAT for at least 3 academic years and for which we have
-                published performance data.
-              </p>
-              <div class="secondary-charts">
-                <canvas id="yearsMatSecondary"></canvas>
-                <script>
-                  Chart.register(ChartDataLabels);
-                  const chart13 = document.getElementById("yearsMatSecondary");
-                  const yearsMatSecondary = new Chart(chart13, {
-                    type: "bar",
-                    data: {
-                      labels: ["3 years", "4 years", "5+ years"],
-                      datasets: [
-                        {
-                          data: [8, 5, 2],
-                          backgroundColor: ["#d5e8f3"],
-                          barThickness: 25,
-                        },
-                      ],
-                    },
-                    options: {
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                        tooltip: {
-                          enabled: false,
-                        },
-                        datalabels: {
-                          anchor: "end",
-                          align: "end",
-                        },
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      indexAxis: "y",
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          grid: {
-                            display: false,
-                          },
-                          border: {
-                            color: "#0b0c0c",
-                          },
-                        },
-                        x: {
-                          ticks: {
-                            display: false,
-                          },
-                          suggestedMax: 15,
-                          grid: {
-                            display: false,
-                          },
-                          border: {
-                            display: false,
-                          },
-                        },
-                      },
-                    },
-                  });
-                </script>
-              </div>
-            </div>
-
-            <div class="secondary-half-section-three">
-              <h3 class="govuk-heading-s">
-                % disadvantaged pupils
-                <img
-                  id="multi-info"
-                  class="modal-button icon-modal"
-                  href="#years-in-mat-secondary"
-                  src="/public/images/information-question.png"
-                />
-              </h3>
-
-              <!-- Trigger/Open The Modal -->
-
-              <!-- The Modal -->
-              <div id="years-in-mat-secondary" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span class="close"><a href="#" class="close">Close</a></span>
-
-                  <div class="modal-body">
-                    <h3 class="govuk-heading-m">% disadvantaged pupils</h3>
-                    <p class="govuk-body">
-                      Disadvantaged pupils are those who attract pupil premium
-                      funding, meaning pupils claiming free school meals at any
-                      point in the last six years and pupils in care, or who
-                      left care through adoption or another formal route.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <p class="govuk-body">
-                Proportion of disadvantaged pupils in the trust.
-              </p>
-              <div class="school-charts">
-                <canvas id="disadvantagedSecondary"></canvas>
-                <script>
-                  Chart.register(ChartDataLabels);
-                  const chart14 = document.getElementById(
-                    "disadvantagedSecondary"
-                  );
-                  const disadvantagedSecondary = new Chart(chart14, {
-                    type: "bar",
-                    data: {
-                      labels: ["Trust", "England average"],
-                      datasets: [
-                        {
-                          data: [8, 5, 2],
-                          backgroundColor: ["#d5e8f3", "#bfc1c3"],
-                          barThickness: 25,
-                        },
-                      ],
-                    },
-                    options: {
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                        tooltip: {
-                          enabled: false,
-                        },
-                        datalabels: {
-                          anchor: "end",
-                          align: "end",
-                        },
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      indexAxis: "y",
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          grid: {
-                            display: false,
-                          },
-                          border: {
-                            color: "#0b0c0c",
-                          },
-                        },
-                        x: {
-                          ticks: {
-                            display: false,
-                          },
-                          suggestedMax: 15,
-                          grid: {
-                            display: false,
-                          },
-                          border: {
-                            display: false,
-                          },
-                        },
-                      },
-                    },
-                  });
-                </script>
-              </div>
-            </div>
-
-            <div class="secondary-half-section-three">
-              <h3 class="govuk-heading-s">
-                % English as an additional language pupils
-              </h3>
-
-              <p class="govuk-body">
-                Pupils whose first language is not English.
-              </p>
-              <div class="school-charts">
-                <canvas id="englandSecond"></canvas>
-                <script>
-                  Chart.register(ChartDataLabels);
-                  const chart15 = document.getElementById("englandSecond");
-                  const englandSecond = new Chart(chart15, {
-                    type: "bar",
-                    data: {
-                      labels: ["Trust", "England average"],
-                      datasets: [
-                        {
-                          data: [37, 17],
-                          backgroundColor: ["#d5e8f3", "#bfc1c3"],
-                          barThickness: 25,
-                        },
-                      ],
-                    },
-                    options: {
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                        tooltip: {
-                          enabled: false,
-                        },
-                        datalabels: {
-                          anchor: "end",
-                          align: "end",
-                          formatter: function (value, chart9) {
-                            return value + "%";
-                          },
-                        },
-                        legend: {
-                          display: false,
-                        },
-                      },
-                      indexAxis: "y",
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          grid: {
-                            display: false,
-                          },
-                          border: {
-                            color: "#0b0c0c",
-                          },
-                        },
-                        x: {
-                          ticks: {
-                            display: false,
-                          },
-                          suggestedMax: 100,
-                          grid: {
-                            display: false,
-                          },
-                          border: {
-                            display: false,
-                          },
-                        },
-                      },
-                    },
-                  });
-                </script>
-              </div>
-            </div>
           </div>
+
           <div class="govuk-grid-column-one-half">
             <div class="secondary-header-top">
               <h3 class="govuk-heading-s">
@@ -1261,401 +982,6 @@ college performance data {% endblock %} {% block content %}
                   </script>
                 </div>
               </div>
-              <div class="secondary-half-section">
-                <h3 class="govuk-heading-s">
-                  Types of school
-                  <img
-                    id="multi-info"
-                    class="modal-button icon-modal"
-                    href="#types-of-school-secondary"
-                    src="/public/images/information-question.png"
-                  />
-                </h3>
-
-                <!-- Trigger/Open The Modal -->
-
-                <!-- The Modal -->
-                <div id="types-of-school-secondary" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close"
-                      ><a href="#" class="close">Close</a></span
-                    >
-
-                    <div class="modal-body">
-                      <h3 class="govuk-heading-m">Types of school</h3>
-                      <p class="govuk-body">
-                        In the 2022 results, schools are counted under the MAT
-                        they were part of as of 14 September 2021, as long as
-                        they had been with the MAT since before 14 September
-                        2019.
-                      </p>
-                      <p class="govuk-body">
-                        <strong>Converter academy</strong> - A school which has
-                        chosen to convert to academy status. It inherits the
-                        performance history of its predecessor school, unlike a
-                        sponsor led academy, which does not.
-                      </p>
-                      <p class="govuk-body">
-                        <strong>Sponsored academy</strong> - These academies
-                        differ from other academies in that they are established
-                        by a sponsor. Also, although any academy can have a
-                        sponsor, those which are 'sponsor led' were deemed by
-                        the Department for Education to be underperforming and
-                        in need of help from a sponsor to improve performance.
-                        Sponsor led means that a sponsor such as a charity or a
-                        business has been appointed to help improve the school's
-                        performance. The sponsor also sets up a trust to run the
-                        academy. While academy converters inherit the
-                        performance history of the predecessor school, sponsor
-                        led academies do not.
-                      </p>
-                      <p class="govuk-body">
-                        <strong>Other</strong> - Used here to mean free schools,
-                        which for key stage 4 includes university technical
-                        colleges and studio schools.
-                      </p>
-                      <p class="govuk-body">
-                        <strong>Free schools</strong> - These are schools funded
-                        by the government and not run by a local authority. They
-                        can be established by a charity, a community group,
-                        parents or a business. They have more control over how
-                        they do things, for example whether to follow the
-                        national curriculum, setting staff pay and conditions
-                        and the length of school terms and the school day. Like
-                        other state schools, there are no fees for parents to
-                        pay, 'free' is intended in the sense of 'free to make
-                        their own decisions'.
-                      </p>
-                      <p class="govuk-body">
-                        <strong>University technical colleges (UTCs)</strong> -
-                        These are a type of academy for 14- to 19-year-olds, and
-                        provide an education that meets the needs of employers.
-                        They offer technical courses and work-related learning,
-                        combined with academic studies. UTCs have between 500
-                        and 800 students and are sponsored by a local university
-                        and employers. It is also usual for further education
-                        colleges and other educational institutions – like
-                        established academy trusts – to work in partnership with
-                        them. Support is in the form of these organisations
-                        sharing their expertise with the college and helping to
-                        develop the curriculum.
-                      </p>
-                      <p class="govuk-body">
-                        <strong>Studio school</strong> - Studio schools are
-                        small schools (usually with around 300 pupils) for 14-
-                        to 19-year-olds of all abilities (a small number are
-                        13-19). Students work with local employers and a
-                        personal coach, and follow a curriculum designed to give
-                        them the skills and qualifications they need in work, or
-                        to take up further education. Studio schools offer
-                        academic and vocational qualifications and teach them in
-                        a practical and project-based way. They combine study
-                        and work placements with local and national employers.
-                        They are set up with the backing of local businesses and
-                        employers. Studio schools give students a strong base in
-                        English, maths and science. They also encourage students
-                        to develop skills like punctuality, good communication,
-                        reliability and team working.
-                      </p>
-                      <p class="govuk-body">
-                        See
-                        <a href=""
-                          >Secondary accountability measures (including Progress
-                          8 and Attainment 8)</a
-                        >
-                        for full details of how we calculate MAT measures
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <p class="govuk-body">Total schools: 13</p>
-                <div class="secondary-charts">
-                  <canvas id="typesOfSchool3"></canvas>
-                  <script>
-                    Chart.register(ChartDataLabels);
-                    const chart16 = document.getElementById("typesOfSchool3");
-                    const typesOfSchool3 = new Chart(chart16, {
-                      type: "bar",
-                      data: {
-                        labels: [
-                          "Converter academies",
-                          "Sponsored academies",
-                          "Other",
-                        ],
-                        datasets: [
-                          {
-                            data: [12, 1, 8],
-                            backgroundColor: ["#d5e8f3"],
-                            barThickness: 25,
-                          },
-                        ],
-                      },
-                      options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                          tooltip: {
-                            enabled: false,
-                          },
-                          datalabels: {
-                            anchor: "end",
-                            align: "end",
-                          },
-                          legend: {
-                            display: false,
-                          },
-                        },
-                        indexAxis: "y",
-                        scales: {
-                          y: {
-                            beginAtZero: true,
-                            grid: {
-                              display: false,
-                            },
-                            border: {
-                              color: "#0b0c0c",
-                            },
-                          },
-                          x: {
-                            ticks: {
-                              display: false,
-                            },
-                            suggestedMax: 20,
-                            grid: {
-                              display: false,
-                            },
-                            border: {
-                              display: false,
-                            },
-                          },
-                        },
-                      },
-                    });
-                  </script>
-                </div>
-              </div>
-              <div class="secondary-half-section-three">
-                <h3 class="govuk-heading-s">
-                  Key stage 2 average point score on entry
-                  <img
-                    id="multi-info"
-                    class="modal-button icon-modal"
-                    href="#key-stage-2"
-                    src="/public/images/information-question.png"
-                  />
-                </h3>
-
-                <!-- Trigger/Open The Modal -->
-
-                <!-- The Modal -->
-                <div id="key-stage-2" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close"
-                      ><a href="#" class="close">Close</a></span
-                    >
-
-                    <div class="modal-body">
-                      <h3 class="govuk-heading-m">
-                        Key stage 2 average point score on entry
-                      </h3>
-                      <p class="govuk-body">
-                        This figure provides context to the Progress 8 measure,
-                        which measures the progress made by pupils between the
-                        end of key stage 2 and the end of key stage 4. This
-                        figure indicates the average attainment that the year 11
-                        pupils who were measured by the Progress 8 measure had
-                        been assessed at in reading, writing and maths 5 years
-                        previously at the end of key stage 2. In 2016 changes
-                        were introduced to KS2 national curriculum tests, with
-                        pupil outcomes expressed as points on a scaled score
-                        range instead of national curriculum levels.
-                      </p>
-                      <p class="govuk-body">
-                        <a href=""
-                          >Understanding scaled scores at Key Stage 2</a
-                        >
-                        provides a more detailed explanation of scaled scores.
-                        <a href=""
-                          >The Secondary Accountability Measures guidance</a
-                        >
-                        provides more information about how scaled scores are
-                        used to calculate Progress 8.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <p class="govuk-body">
-                  The average attainment that the year 11 pupils, who were
-                  measured by the Progress 8 measure, achieved 5 years
-                  previously at the end of key stage 2.
-                </p>
-                <div class="school-charts">
-                  <canvas id="keyStageTwo"></canvas>
-                  <script>
-                    Chart.register(ChartDataLabels);
-                    const chart17 = document.getElementById("keyStageTwo");
-                    const keyStageTwo = new Chart(chart17, {
-                      type: "bar",
-                      data: {
-                        labels: ["Trust", "England average"],
-                        datasets: [
-                          {
-                            data: [101.5, 100],
-                            backgroundColor: ["#d5e8f3", "#bfc1c3"],
-                            barThickness: 25,
-                          },
-                        ],
-                      },
-                      options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                          tooltip: {
-                            enabled: false,
-                          },
-                          datalabels: {
-                            anchor: "end",
-                            align: "end",
-                          },
-                          legend: {
-                            display: false,
-                          },
-                        },
-                        indexAxis: "y",
-                        scales: {
-                          y: {
-                            beginAtZero: true,
-                            grid: {
-                              display: false,
-                            },
-                            border: {
-                              color: "#0b0c0c",
-                            },
-                          },
-                          x: {
-                            ticks: {
-                              display: false,
-                            },
-                            suggestedMax: 110,
-                            grid: {
-                              display: false,
-                            },
-                            border: {
-                              display: false,
-                            },
-                          },
-                        },
-                      },
-                    });
-                  </script>
-                </div>
-              </div>
-
-              <div class="secondary-half-section">
-                <h3 class="govuk-heading-s">
-                  % SEN pupils
-                  <img
-                    id="multi-info"
-                    class="modal-button icon-modal"
-                    href="#sen-pupils"
-                    src="/public/images/information-question.png"
-                  />
-                </h3>
-
-                <!-- Trigger/Open The Modal -->
-
-                <!-- The Modal -->
-                <div id="sen-pupils" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close"
-                      ><a href="#" class="close">Close</a></span
-                    >
-
-                    <div class="modal-body">
-                      <h3 class="govuk-heading-m">% SEN pupils</h3>
-                      <p class="govuk-body">
-                        There's a formal assessment to decide if a pupil needs
-                        an education, health and care (EHC) plan. It also
-                        includes pupils where the school provides extra or
-                        different help from its usual curriculum (SEN support).
-                        Outside specialists may advise or support the class
-                        teacher and SEN coordinator.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <p class="govuk-body">
-                  This refers to pupils with special educational needs (SEN) who
-                  have learning difficulties or disabilities that make it harder
-                  for them to learn than most children of the same age.
-                </p>
-                <div class="school-charts">
-                  <canvas id="senPupils"></canvas>
-                  <script>
-                    Chart.register(ChartDataLabels);
-                    const chart18 = document.getElementById("senPupils");
-                    const senPupils = new Chart(chart18, {
-                      type: "bar",
-                      data: {
-                        labels: ["Trust", "England average"],
-                        datasets: [
-                          {
-                            data: [14, 4],
-                            backgroundColor: ["#d5e8f3", "#bfc1c3"],
-                            barThickness: 25,
-                          },
-                        ],
-                      },
-                      options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                          tooltip: {
-                            enabled: false,
-                          },
-                          datalabels: {
-                            anchor: "end",
-                            align: "end",
-                            formatter: function (value, chart3) {
-                              return value + "%";
-                            },
-                          },
-                          legend: {
-                            display: false,
-                          },
-                        },
-                        indexAxis: "y",
-                        scales: {
-                          y: {
-                            beginAtZero: true,
-                            grid: {
-                              display: false,
-                            },
-                            border: {
-                              color: "#0b0c0c",
-                            },
-                          },
-                          x: {
-                            ticks: {
-                              display: false,
-                            },
-                            suggestedMax: 100,
-                            grid: {
-                              display: false,
-                            },
-                            border: {
-                              display: false,
-                            },
-                          },
-                        },
-                      },
-                    });
-                  </script>
-                </div>
-              </div>
             </div>
           </div>
           <div class="govuk-grid-column-full">
@@ -1668,7 +994,7 @@ college performance data {% endblock %} {% block content %}
                 >Open all</a
               >
             </div>
-            <div class="full-width-link-solo" id="disadvantaged-pupils">
+            <div class="full-width-link-top" id="disadvantaged-pupils">
               <a
                 onclick="changeImageDisadvantaged(); showDisadvantaged()"
                 class="govuk-link"
@@ -1907,19 +1233,740 @@ college performance data {% endblock %} {% block content %}
                 </dl>
               </div>
             </div>
-            <div class="govuk-body">
-              <br />
-              <a href="" class="govuk-link" id="back-top">Back to top</a>
+            <div class="full-width-link-bottom" id="mat-characteristics">
               <a
-                onclick="changeImageDisadvantaged(); showDisadvantaged()"
+                onclick="changeImageMATCharacteristics(); showMATCharacteristics()"
                 class="govuk-link"
-                id="open-all"
-                >Open all</a
-              >
-            </div>
-          </div>
+                >MAT key stage 4 characteristics</a
+              ><img
+                onclick="changeImageMATCharacteristics(); showMATCharacteristics()"
+                id="imgMATCharacteristics"
+                class="plus-minus"
+                src="/public/images/plus.svg"
+              />
 
-          <div class="govuk-grid-column-full">
+              <div
+                id="showMATCharacteristics"
+                style="display: none; cursor: auto"
+              >
+                <div class="govuk-grid-column-one-half">
+                  <div class="secondary-half-section-three">
+                    <h3 class="govuk-heading-s">
+                      Years in MAT
+                      <img
+                        id="multi-info"
+                        class="modal-button icon-modal"
+                        href="#years-in-mat-secondary"
+                        src="/public/images/information-question.png"
+                      />
+                    </h3>
+
+                    <!-- Trigger/Open The Modal -->
+
+                    <!-- The Modal -->
+                    <div id="years-in-mat-secondary" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close"
+                          ><a href="#" class="close">Close</a></span
+                        >
+
+                        <div class="modal-body">
+                          <h3 class="govuk-heading-m">Years in MAT</h3>
+                          <p class="govuk-body">
+                            In the 2022 results, schools are counted under the
+                            MAT they were part of as of 14 September 2021, as
+                            long as they had been with the MAT since before 14
+                            September 2019.
+                          </p>
+                          <p class="govuk-body">
+                            Length of time the school has been with the MAT is
+                            used in the weighting of the MAT progress measures.
+                          </p>
+                          <p class="govuk-body">
+                            See
+                            <a href=""
+                              >Secondary accountability measures (including
+                              Progress 8 and Attainment 8)</a
+                            >
+                            for full details of how we calculate MAT measures.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="govuk-body">
+                      MATs are included in these measures if they have at least
+                      3 schools covering this phase of education that have been
+                      with the MAT for at least 3 academic years and for which
+                      we have published performance data.
+                    </p>
+                    <div class="secondary-charts">
+                      <canvas id="yearsMatSecondary"></canvas>
+                      <script>
+                        Chart.register(ChartDataLabels);
+                        const chart13 =
+                          document.getElementById("yearsMatSecondary");
+                        const yearsMatSecondary = new Chart(chart13, {
+                          type: "bar",
+                          data: {
+                            labels: ["3 years", "4 years", "5+ years"],
+                            datasets: [
+                              {
+                                data: [8, 5, 2],
+                                backgroundColor: ["#d5e8f3"],
+                                barThickness: 25,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                              tooltip: {
+                                enabled: false,
+                              },
+                              datalabels: {
+                                anchor: "end",
+                                align: "end",
+                              },
+                              legend: {
+                                display: false,
+                              },
+                            },
+                            indexAxis: "y",
+                            scales: {
+                              y: {
+                                beginAtZero: true,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  color: "#0b0c0c",
+                                },
+                              },
+                              x: {
+                                ticks: {
+                                  display: false,
+                                },
+                                suggestedMax: 15,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  display: false,
+                                },
+                              },
+                            },
+                          },
+                        });
+                      </script>
+                    </div>
+                  </div>
+
+                  <div class="secondary-half-section-three">
+                    <h3 class="govuk-heading-s">
+                      % disadvantaged pupils
+                      <img
+                        id="multi-info"
+                        class="modal-button icon-modal"
+                        href="#years-in-mat-secondary"
+                        src="/public/images/information-question.png"
+                      />
+                    </h3>
+
+                    <!-- Trigger/Open The Modal -->
+
+                    <!-- The Modal -->
+                    <div id="years-in-mat-secondary" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close"
+                          ><a href="#" class="close">Close</a></span
+                        >
+
+                        <div class="modal-body">
+                          <h3 class="govuk-heading-m">
+                            % disadvantaged pupils
+                          </h3>
+                          <p class="govuk-body">
+                            Disadvantaged pupils are those who attract pupil
+                            premium funding, meaning pupils claiming free school
+                            meals at any point in the last six years and pupils
+                            in care, or who left care through adoption or
+                            another formal route.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="govuk-body">
+                      Proportion of disadvantaged pupils in the trust.
+                    </p>
+                    <div class="school-charts">
+                      <canvas id="disadvantagedSecondary"></canvas>
+                      <script>
+                        Chart.register(ChartDataLabels);
+                        const chart14 = document.getElementById(
+                          "disadvantagedSecondary"
+                        );
+                        const disadvantagedSecondary = new Chart(chart14, {
+                          type: "bar",
+                          data: {
+                            labels: ["Trust", "England average"],
+                            datasets: [
+                              {
+                                data: [8, 5, 2],
+                                backgroundColor: ["#d5e8f3", "#bfc1c3"],
+                                barThickness: 25,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                              tooltip: {
+                                enabled: false,
+                              },
+                              datalabels: {
+                                anchor: "end",
+                                align: "end",
+                              },
+                              legend: {
+                                display: false,
+                              },
+                            },
+                            indexAxis: "y",
+                            scales: {
+                              y: {
+                                beginAtZero: true,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  color: "#0b0c0c",
+                                },
+                              },
+                              x: {
+                                ticks: {
+                                  display: false,
+                                },
+                                suggestedMax: 15,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  display: false,
+                                },
+                              },
+                            },
+                          },
+                        });
+                      </script>
+                    </div>
+                  </div>
+
+                  <div class="secondary-half-section-three">
+                    <h3 class="govuk-heading-s">
+                      % English as an additional language pupils
+                    </h3>
+
+                    <p class="govuk-body">
+                      Pupils whose first language is not English.
+                    </p>
+                    <div class="school-charts">
+                      <canvas id="englandSecond"></canvas>
+                      <script>
+                        Chart.register(ChartDataLabels);
+                        const chart15 =
+                          document.getElementById("englandSecond");
+                        const englandSecond = new Chart(chart15, {
+                          type: "bar",
+                          data: {
+                            labels: ["Trust", "England average"],
+                            datasets: [
+                              {
+                                data: [37, 17],
+                                backgroundColor: ["#d5e8f3", "#bfc1c3"],
+                                barThickness: 25,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                              tooltip: {
+                                enabled: false,
+                              },
+                              datalabels: {
+                                anchor: "end",
+                                align: "end",
+                                formatter: function (value, chart9) {
+                                  return value + "%";
+                                },
+                              },
+                              legend: {
+                                display: false,
+                              },
+                            },
+                            indexAxis: "y",
+                            scales: {
+                              y: {
+                                beginAtZero: true,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  color: "#0b0c0c",
+                                },
+                              },
+                              x: {
+                                ticks: {
+                                  display: false,
+                                },
+                                suggestedMax: 100,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  display: false,
+                                },
+                              },
+                            },
+                          },
+                        });
+                      </script>
+                    </div>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                  <div class="secondary-half-section-three">
+                    <h3 class="govuk-heading-s">
+                      Types of school
+                      <img
+                        id="multi-info"
+                        class="modal-button icon-modal"
+                        href="#types-of-school-secondary"
+                        src="/public/images/information-question.png"
+                      />
+                    </h3>
+
+                    <!-- Trigger/Open The Modal -->
+
+                    <!-- The Modal -->
+                    <div id="types-of-school-secondary" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close"
+                          ><a href="#" class="close">Close</a></span
+                        >
+
+                        <div class="modal-body">
+                          <h3 class="govuk-heading-m">Types of school</h3>
+                          <p class="govuk-body">
+                            In the 2022 results, schools are counted under the
+                            MAT they were part of as of 14 September 2021, as
+                            long as they had been with the MAT since before 14
+                            September 2019.
+                          </p>
+                          <p class="govuk-body">
+                            <strong>Converter academy</strong> - A school which
+                            has chosen to convert to academy status. It inherits
+                            the performance history of its predecessor school,
+                            unlike a sponsor led academy, which does not.
+                          </p>
+                          <p class="govuk-body">
+                            <strong>Sponsored academy</strong> - These academies
+                            differ from other academies in that they are
+                            established by a sponsor. Also, although any academy
+                            can have a sponsor, those which are 'sponsor led'
+                            were deemed by the Department for Education to be
+                            underperforming and in need of help from a sponsor
+                            to improve performance. Sponsor led means that a
+                            sponsor such as a charity or a business has been
+                            appointed to help improve the school's performance.
+                            The sponsor also sets up a trust to run the academy.
+                            While academy converters inherit the performance
+                            history of the predecessor school, sponsor led
+                            academies do not.
+                          </p>
+                          <p class="govuk-body">
+                            <strong>Other</strong> - Used here to mean free
+                            schools, which for key stage 4 includes university
+                            technical colleges and studio schools.
+                          </p>
+                          <p class="govuk-body">
+                            <strong>Free schools</strong> - These are schools
+                            funded by the government and not run by a local
+                            authority. They can be established by a charity, a
+                            community group, parents or a business. They have
+                            more control over how they do things, for example
+                            whether to follow the national curriculum, setting
+                            staff pay and conditions and the length of school
+                            terms and the school day. Like other state schools,
+                            there are no fees for parents to pay, 'free' is
+                            intended in the sense of 'free to make their own
+                            decisions'.
+                          </p>
+                          <p class="govuk-body">
+                            <strong
+                              >University technical colleges (UTCs)</strong
+                            >
+                            - These are a type of academy for 14- to
+                            19-year-olds, and provide an education that meets
+                            the needs of employers. They offer technical courses
+                            and work-related learning, combined with academic
+                            studies. UTCs have between 500 and 800 students and
+                            are sponsored by a local university and employers.
+                            It is also usual for further education colleges and
+                            other educational institutions – like established
+                            academy trusts – to work in partnership with them.
+                            Support is in the form of these organisations
+                            sharing their expertise with the college and helping
+                            to develop the curriculum.
+                          </p>
+                          <p class="govuk-body">
+                            <strong>Studio school</strong> - Studio schools are
+                            small schools (usually with around 300 pupils) for
+                            14- to 19-year-olds of all abilities (a small number
+                            are 13-19). Students work with local employers and a
+                            personal coach, and follow a curriculum designed to
+                            give them the skills and qualifications they need in
+                            work, or to take up further education. Studio
+                            schools offer academic and vocational qualifications
+                            and teach them in a practical and project-based way.
+                            They combine study and work placements with local
+                            and national employers. They are set up with the
+                            backing of local businesses and employers. Studio
+                            schools give students a strong base in English,
+                            maths and science. They also encourage students to
+                            develop skills like punctuality, good communication,
+                            reliability and team working.
+                          </p>
+                          <p class="govuk-body">
+                            See
+                            <a href=""
+                              >Secondary accountability measures (including
+                              Progress 8 and Attainment 8)</a
+                            >
+                            for full details of how we calculate MAT measures
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="govuk-body">Total schools: 13</p>
+                    <div class="secondary-charts">
+                      <canvas id="typesOfSchool3"></canvas>
+                      <script>
+                        Chart.register(ChartDataLabels);
+                        const chart16 =
+                          document.getElementById("typesOfSchool3");
+                        const typesOfSchool3 = new Chart(chart16, {
+                          type: "bar",
+                          data: {
+                            labels: [
+                              "Converter academies",
+                              "Sponsored academies",
+                              "Other",
+                            ],
+                            datasets: [
+                              {
+                                data: [12, 1, 8],
+                                backgroundColor: ["#d5e8f3"],
+                                barThickness: 25,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                              tooltip: {
+                                enabled: false,
+                              },
+                              datalabels: {
+                                anchor: "end",
+                                align: "end",
+                              },
+                              legend: {
+                                display: false,
+                              },
+                            },
+                            indexAxis: "y",
+                            scales: {
+                              y: {
+                                beginAtZero: true,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  color: "#0b0c0c",
+                                },
+                              },
+                              x: {
+                                ticks: {
+                                  display: false,
+                                },
+                                suggestedMax: 20,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  display: false,
+                                },
+                              },
+                            },
+                          },
+                        });
+                      </script>
+                    </div>
+                  </div>
+                  <div class="secondary-half-section-three">
+                    <h3 class="govuk-heading-s">
+                      Key stage 2 average point score on entry
+                      <img
+                        id="multi-info"
+                        class="modal-button icon-modal"
+                        href="#key-stage-2"
+                        src="/public/images/information-question.png"
+                      />
+                    </h3>
+
+                    <!-- Trigger/Open The Modal -->
+
+                    <!-- The Modal -->
+                    <div id="key-stage-2" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close"
+                          ><a href="#" class="close">Close</a></span
+                        >
+
+                        <div class="modal-body">
+                          <h3 class="govuk-heading-m">
+                            Key stage 2 average point score on entry
+                          </h3>
+                          <p class="govuk-body">
+                            This figure provides context to the Progress 8
+                            measure, which measures the progress made by pupils
+                            between the end of key stage 2 and the end of key
+                            stage 4. This figure indicates the average
+                            attainment that the year 11 pupils who were measured
+                            by the Progress 8 measure had been assessed at in
+                            reading, writing and maths 5 years previously at the
+                            end of key stage 2. In 2016 changes were introduced
+                            to KS2 national curriculum tests, with pupil
+                            outcomes expressed as points on a scaled score range
+                            instead of national curriculum levels.
+                          </p>
+                          <p class="govuk-body">
+                            <a href=""
+                              >Understanding scaled scores at Key Stage 2</a
+                            >
+                            provides a more detailed explanation of scaled
+                            scores.
+                            <a href=""
+                              >The Secondary Accountability Measures guidance</a
+                            >
+                            provides more information about how scaled scores
+                            are used to calculate Progress 8.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="govuk-body">
+                      The average attainment that the year 11 pupils, who were
+                      measured by the Progress 8 measure, achieved 5 years
+                      previously at the end of key stage 2.
+                    </p>
+                    <div class="school-charts">
+                      <canvas id="keyStageTwo"></canvas>
+                      <script>
+                        Chart.register(ChartDataLabels);
+                        const chart17 = document.getElementById("keyStageTwo");
+                        const keyStageTwo = new Chart(chart17, {
+                          type: "bar",
+                          data: {
+                            labels: ["Trust", "England average"],
+                            datasets: [
+                              {
+                                data: [101.5, 100],
+                                backgroundColor: ["#d5e8f3", "#bfc1c3"],
+                                barThickness: 25,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                              tooltip: {
+                                enabled: false,
+                              },
+                              datalabels: {
+                                anchor: "end",
+                                align: "end",
+                              },
+                              legend: {
+                                display: false,
+                              },
+                            },
+                            indexAxis: "y",
+                            scales: {
+                              y: {
+                                beginAtZero: true,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  color: "#0b0c0c",
+                                },
+                              },
+                              x: {
+                                ticks: {
+                                  display: false,
+                                },
+                                suggestedMax: 110,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  display: false,
+                                },
+                              },
+                            },
+                          },
+                        });
+                      </script>
+                    </div>
+                  </div>
+
+                  <div class="secondary-half-section">
+                    <h3 class="govuk-heading-s">
+                      % SEN pupils
+                      <img
+                        id="multi-info"
+                        class="modal-button icon-modal"
+                        href="#sen-pupils"
+                        src="/public/images/information-question.png"
+                      />
+                    </h3>
+
+                    <!-- Trigger/Open The Modal -->
+
+                    <!-- The Modal -->
+                    <div id="sen-pupils" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close"
+                          ><a href="#" class="close">Close</a></span
+                        >
+
+                        <div class="modal-body">
+                          <h3 class="govuk-heading-m">% SEN pupils</h3>
+                          <p class="govuk-body">
+                            There's a formal assessment to decide if a pupil
+                            needs an education, health and care (EHC) plan. It
+                            also includes pupils where the school provides extra
+                            or different help from its usual curriculum (SEN
+                            support). Outside specialists may advise or support
+                            the class teacher and SEN coordinator.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="govuk-body">
+                      This refers to pupils with special educational needs (SEN)
+                      who have learning difficulties or disabilities that make
+                      it harder for them to learn than most children of the same
+                      age.
+                    </p>
+                    <div class="school-charts">
+                      <canvas id="senPupils"></canvas>
+                      <script>
+                        Chart.register(ChartDataLabels);
+                        const chart18 = document.getElementById("senPupils");
+                        const senPupils = new Chart(chart18, {
+                          type: "bar",
+                          data: {
+                            labels: ["Trust", "England average"],
+                            datasets: [
+                              {
+                                data: [14, 4],
+                                backgroundColor: ["#d5e8f3", "#bfc1c3"],
+                                barThickness: 25,
+                              },
+                            ],
+                          },
+                          options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                              tooltip: {
+                                enabled: false,
+                              },
+                              datalabels: {
+                                anchor: "end",
+                                align: "end",
+                                formatter: function (value, chart3) {
+                                  return value + "%";
+                                },
+                              },
+                              legend: {
+                                display: false,
+                              },
+                            },
+                            indexAxis: "y",
+                            scales: {
+                              y: {
+                                beginAtZero: true,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  color: "#0b0c0c",
+                                },
+                              },
+                              x: {
+                                ticks: {
+                                  display: false,
+                                },
+                                suggestedMax: 100,
+                                grid: {
+                                  display: false,
+                                },
+                                border: {
+                                  display: false,
+                                },
+                              },
+                            },
+                          },
+                        });
+                      </script>
+                    </div>
+                  </div>
+                  
+                </div>
+                <p class="govuk-body">mx </p>
+              </div>
+              
+            </div>
+            </div>
+            <div class="govuk-grid-column-full">
+              <div class="govuk-body">
+                <br />
+                <a href="" class="govuk-link" id="back-top">Back to top</a>
+                <a
+                  onclick="changeImageDisadvantaged(); showDisadvantaged(); changeImageMATCharacteristics(); showMATCharacteristics()"
+                  class="govuk-link"
+                  id="open-all"
+                  >Open all</a
+                >
+              </div>
+            
+
             <h3 class="govuk-heading-m">
               Schools covering key stage 4 included in this MAT’s performance
               data
@@ -2611,13 +2658,11 @@ college performance data {% endblock %} {% block content %}
             </div>
           </div>
 
-
           <div class="govuk-grid-column-full">
             <div
-              class=" full-width-link school-key-stage-4-full"
+              class="full-width-link school-key-stage-4-full"
               id="secondary-pupils"
             >
-            
               <a
                 onclick="showApplied(); changeImageGeneral()"
                 class="govuk-link"
@@ -2628,10 +2673,8 @@ college performance data {% endblock %} {% block content %}
                 id="imgGeneral"
                 src="/public/images/plus.svg"
               />
-              
 
               <div id="showApplied" style="display: none; cursor: auto">
-                
                 <p class="govuk-body">
                   Applied general are qualifications that provide broad study of
                   a vocational area. They are designed to lead to higher
@@ -2643,7 +2686,7 @@ college performance data {% endblock %} {% block content %}
                   further details, see the
                   <a href="">16 to 18 Accountability Technical Guide</a>.
                 </p>
-                
+
                 <div class="govuk-grid-column-one-half">
                   <div class="secondary-half-section">
                     <h3 class="govuk-heading-s">
