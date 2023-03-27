@@ -94,12 +94,12 @@ college performance data {% endblock %} {% block content %}
                 </th>
                 <th
                   scope="col"
-                  class="govuk-table__header sorting-table-header"
+                  class="govuk-table__header sorting-table-header sorted-column"
                   style="width: 11%"
                 >
                   <img
-                    class="up-down-arrow"
-                    src="/public/images/up-down-arrow.png"
+                    class="up-down-arrow-down"
+                    src="/public/images/up-down-arrow-down.png"
                   />
                   <a href="">Reading progress score</a>
                 </th>
@@ -179,90 +179,6 @@ college performance data {% endblock %} {% block content %}
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  <a href="">CENTRAL CHARTER SCHOOL</a>
-                </td>
-                <td class="govuk-table__cell">20%</td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-average">
-                    Average <br />
-                    <span class="progress-score-number">0.03</span>
-                  </div>
-                </td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-good">
-                    Well above average <br />
-                    <span class="progress-score-number">2.1</span>
-                  </div>
-                </td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-good">
-                    Well above average <br />
-                    <span class="progress-score-number">2.2</span>
-                  </div>
-                </td>
-
-                <td class="govuk-table__cell">3</td>
-                <td class="govuk-table__cell">116</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <a href="">OAKWOOD PRIMARY FOR GIRLS</a>
-                </td>
-                <td class="govuk-table__cell">82%</td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-good">
-                    Above average <br />
-                    <span class="progress-score-number">0.5</span>
-                  </div>
-                </td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-good">
-                    Well above average <br />
-                    <span class="progress-score-number">3.9</span>
-                  </div>
-                </td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-average">
-                    Average <br />
-                    <span class="progress-score-number">0.1</span>
-                  </div>
-                </td>
-
-                <td class="govuk-table__cell">5</td>
-                <td class="govuk-table__cell">430</td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <a href="">MARIE CURIE MIDDLE SCHOOL</a>
-                </td>
-                <td class="govuk-table__cell">67%</td>
-
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-bad">
-                    Below average <br />
-                    <span class="progress-score-number">-0.12</span>
-                  </div>
-                </td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-bad">
-                    Well below average <br />
-                    <span class="progress-score-number">-2</span>
-                  </div>
-                </td>
-                <td class="govuk-table__cell progress-score-cell">
-                  <div class="progress-score-bad">
-                    Below average <br />
-                    <span class="progress-score-number">-0.19</span>
-                  </div>
-                </td>
-
-                <td class="govuk-table__cell">2</td>
-                <td class="govuk-table__cell">75</td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
                   <a href="">REDWOOD PRIMARY</a>
                 </td>
                 <td class="govuk-table__cell">80%</td>
@@ -314,6 +230,89 @@ college performance data {% endblock %} {% block content %}
 
                 <td class="govuk-table__cell">4</td>
                 <td class="govuk-table__cell">190</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <a href="">OAKWOOD PRIMARY FOR GIRLS</a>
+                </td>
+                <td class="govuk-table__cell">82%</td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-good">
+                    Above average <br />
+                    <span class="progress-score-number">0.5</span>
+                  </div>
+                </td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-good">
+                    Well above average <br />
+                    <span class="progress-score-number">3.9</span>
+                  </div>
+                </td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-average">
+                    Average <br />
+                    <span class="progress-score-number">0.1</span>
+                  </div>
+                </td>
+
+                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">430</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <a href="">CENTRAL CHARTER SCHOOL</a>
+                </td>
+                <td class="govuk-table__cell">20%</td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-average">
+                    Average <br />
+                    <span class="progress-score-number">0.03</span>
+                  </div>
+                </td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-good">
+                    Well above average <br />
+                    <span class="progress-score-number">2.1</span>
+                  </div>
+                </td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-good">
+                    Well above average <br />
+                    <span class="progress-score-number">2.2</span>
+                  </div>
+                </td>
+
+                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">116</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <a href="">MARIE CURIE MIDDLE SCHOOL</a>
+                </td>
+                <td class="govuk-table__cell">67%</td>
+
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-bad">
+                    Below average <br />
+                    <span class="progress-score-number">-0.12</span>
+                  </div>
+                </td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-bad">
+                    Well below average <br />
+                    <span class="progress-score-number">-2</span>
+                  </div>
+                </td>
+                <td class="govuk-table__cell progress-score-cell">
+                  <div class="progress-score-bad">
+                    Below average <br />
+                    <span class="progress-score-number">-0.19</span>
+                  </div>
+                </td>
+
+                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">75</td>
               </tr>
             </tbody>
           </table>
@@ -406,12 +405,12 @@ college performance data {% endblock %} {% block content %}
                 </th>
                 <th
                   scope="col"
-                  class="govuk-table__header sorting-table-header"
+                  class="govuk-table__header sorting-table-header sorted-column"
                   style="width: 15%"
                 >
                   <img
-                    class="up-down-arrow"
-                    src="/public/images/up-down-arrow.png"
+                    class="up-down-arrow-down"
+                    src="/public/images/up-down-arrow-down.png"
                   />
                   <a href="">Attainment 8</a>
                 </th>
@@ -453,7 +452,7 @@ college performance data {% endblock %} {% block content %}
                 </td>
                 <td class="govuk-table__cell">4.7</td>
                 <td class="govuk-table__cell">28.8</td>
-                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">12</td>
                 <td class="govuk-table__cell">4</td>
                 <td class="govuk-table__cell">300</td>
               </tr>
@@ -470,7 +469,7 @@ college performance data {% endblock %} {% block content %}
                 </td>
                 <td class="govuk-table__cell">6.9</td>
                 <td class="govuk-table__cell">12</td>
-                <td class="govuk-table__cell">6</td>
+                <td class="govuk-table__cell">10</td>
                 <td class="govuk-table__cell">2</td>
                 <td class="govuk-table__cell">120</td>
               </tr>
@@ -487,7 +486,7 @@ college performance data {% endblock %} {% block content %}
                 </td>
                 <td class="govuk-table__cell">2.5</td>
                 <td class="govuk-table__cell">4</td>
-                <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">9</td>
                 <td class="govuk-table__cell">6</td>
                 <td class="govuk-table__cell">430</td>
               </tr>
@@ -504,7 +503,7 @@ college performance data {% endblock %} {% block content %}
                 </td>
                 <td class="govuk-table__cell">4.7</td>
                 <td class="govuk-table__cell">28.8</td>
-                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">8</td>
                 <td class="govuk-table__cell">4</td>
                 <td class="govuk-table__cell">300</td>
               </tr>
@@ -521,7 +520,7 @@ college performance data {% endblock %} {% block content %}
                 </td>
                 <td class="govuk-table__cell">6.7</td>
                 <td class="govuk-table__cell">12</td>
-                <td class="govuk-table__cell">5</td>
+                <td class="govuk-table__cell">3</td>
                 <td class="govuk-table__cell">5</td>
                 <td class="govuk-table__cell">503</td>
               </tr>
@@ -581,12 +580,12 @@ college performance data {% endblock %} {% block content %}
               <tr class="govuk-table__row">
                 <th
                   scope="col"
-                  class="govuk-table__header sorting-table-header"
+                  class="govuk-table__header sorting-table-header sorted-column"
                   style="width: 40%"
                 >
                   <img
-                    class="up-down-arrow"
-                    src="/public/images/up-down-arrow.png"
+                    class="up-down-arrow-down"
+                    src="/public/images/up-down-arrow-down.png"
                   /><a href="">MAT name</a>
                 </th>
                 <th
@@ -625,11 +624,11 @@ college performance data {% endblock %} {% block content %}
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  <a href="">LAKESIDE TRUST</a>
+                  <a href="">EASTWOOD CHARTER TRUSTS</a>
                 </td>
-                <td class="govuk-table__cell">19</td>
+                <td class="govuk-table__cell">11</td>
                 <td class="govuk-table__cell">2</td>
-                <td class="govuk-table__cell">156</td>
+                <td class="govuk-table__cell">200</td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
@@ -639,21 +638,14 @@ college performance data {% endblock %} {% block content %}
                 <td class="govuk-table__cell">2</td>
                 <td class="govuk-table__cell">210</td>
               </tr>
+
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
-                  <a href="">SUN VALLEY TRUST FOR BOYS</a>
+                  <a href="">LAKESIDE TRUST</a>
                 </td>
-                <td class="govuk-table__cell">15</td>
-                <td class="govuk-table__cell">3</td>
-                <td class="govuk-table__cell">405</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <a href="">EASTWOOD CHARTER TRUSTS</a>
-                </td>
-                <td class="govuk-table__cell">11</td>
+                <td class="govuk-table__cell">19</td>
                 <td class="govuk-table__cell">2</td>
-                <td class="govuk-table__cell">200</td>
+                <td class="govuk-table__cell">156</td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">
@@ -670,6 +662,14 @@ college performance data {% endblock %} {% block content %}
                 <td class="govuk-table__cell">12</td>
                 <td class="govuk-table__cell">3</td>
                 <td class="govuk-table__cell">156</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <a href="">SUN VALLEY TRUST FOR BOYS</a>
+                </td>
+                <td class="govuk-table__cell">15</td>
+                <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">405</td>
               </tr>
             </tbody>
           </table>

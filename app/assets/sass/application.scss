@@ -631,6 +631,7 @@ ul .search-school-view-last {
 //COMPARISON TABLES
 .sorting-table-header {
   background-color: govuk-colour("light-grey");
+  padding: 10px 3px 10px 3px;
 }
 
 .progress-score-good {
@@ -673,12 +674,16 @@ ul .search-school-view-last {
   text-align: center;
 }
 
-.up-down-arrow {
-  width: 0.8rem;
+.up-down-arrow, .up-down-arrow-down {
+  width: 0.7rem;
   margin-left: 2px;
   float: right;
   filter: invert(33%) sepia(99%) saturate(858%) hue-rotate(179deg)
-    brightness(88%) contrast(88%);
+    brightness(100%) contrast(88%);
+}
+ .up-down-arrow-down{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7456%)
+    hue-rotate(12deg) brightness(90%) contrast(116%);
 }
 .table-page {
   float: right;
@@ -687,4 +692,11 @@ ul .search-school-view-last {
   font-size: 15px;
   padding: 5px;
   height: 100%;
+}
+.sorted-column {
+  background-color: $govuk-brand-colour;
+  color: govuk-colour("white");
+}
+.sorted-column a:visited {
+  color: govuk-colour("white");
 }
