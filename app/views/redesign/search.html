@@ -1,0 +1,182 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Search for schools,
+colleges and multi-academy trusts {% endblock %} {% block content %}
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-two-thirds" style="padding: 0; margin: 0">
+        <h1 class="govuk-heading-xl">
+          Search for schools, colleges and multi-academy trusts
+        </h1>
+      </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label" for="keywords-input">
+            Keywords (Optional)</label
+          >
+        </h1>
+        <div id="keywords-input-hint" class="govuk-hint">
+          Can include School, College or Multi-Academy Trust name or Unique
+          Reference Number (URN)
+        </div>
+        <input
+          class="govuk-input govuk-!-width-full"
+          id="keywords-input"
+          name="keywords"
+          type="text"
+          spellcheck="false"
+          aria-describedby="keywords-input-hint"
+        />
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">What location?</h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="all-locations"
+                name="location"
+                type="radio"
+                value="all locations"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="all-locations"
+              >
+                All locations
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="region"
+                name="location"
+                type="radio"
+                value="region"
+                data-aria-controls="conditional-region"
+              />
+              <label class="govuk-label govuk-radios__label" for="region">
+                Region
+              </label>
+            </div>
+            <div
+              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+              id="conditional-region"
+            >
+              <input
+                class="govuk-input"
+                id="conditional-region"
+                name="location"
+                type="text"
+              />
+            </div>
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="town-city"
+                name="location"
+                type="radio"
+                value="wales"
+                data-aria-controls="conditional-town"
+              />
+              <label class="govuk-label govuk-radios__label" for="town-city">
+                Town, city or postcode
+              </label>
+            </div>
+          </div>
+          <div
+            class="govuk-radios__conditional govuk-radios__conditional--hidden"
+            id="conditional-town"
+          >
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-text">
+                Enter town, city or postcode
+              </label>
+              <input
+                class="govuk-input govuk-!-width-full"
+                id="contact-by-text"
+                name="location"
+                type="tel"
+                autocomplete="tel"
+              />
+
+              <label class="govuk-label" for="sort"> Within </label>
+              <select
+                class="govuk-select govuk-!-width-one-quarter"
+                id="sort"
+                name="sort"
+              >
+                <option value="published">3 miles</option>
+                <option value="updated" selected>5 miles</option>
+                <option value="views">10 miles</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            <h1 class="govuk-fieldset__heading">
+              Either MAT or school, college?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="where-do-you-live"
+                name="where-do-you-live"
+                type="radio"
+                value="england"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="where-do-you-live"
+              >
+                MAT
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="where-do-you-live-2"
+                name="where-do-you-live"
+                type="radio"
+                value="scotland"
+              />
+              <label
+                class="govuk-label govuk-radios__label"
+                for="where-do-you-live-2"
+              >
+                School or college
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="search-results" role="button" class="govuk-button"> Search </a>
+    </div>
+
+    <div class="govuk-grid-column-one-third related-navigation">
+      <h2 class="govuk-heading-m">Related content</h2>
+      
+      <ul class="govuk-list">
+        <li>
+          <a href="" class="govuk-link">Apply for a secondary school place</a>
+        </li>
+        <li><a href="" class="govuk-link">Types of school</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

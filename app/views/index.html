@@ -1,106 +1,45 @@
 {% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
 block content %}
+
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-m">Find and compare schools in England</span
-        >Prototype index
+        <span class="govuk-caption-m"
+          >Find school and college performance data in England</span
+        >Design work index
       </h1>
-
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">
-          Index sections and descriptions
-        </caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width: 20%">
-              Section
-            </th>
-            <th scope="col" class="govuk-table__header" style="width: 60%">
-              Description
-            </th>
-            <th scope="col" class="govuk-table__header" style="width: 20%">
-              Link
-            </th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">GDS redesign</th>
-            <td class="govuk-table__cell">
-              Prototypes that are being redesigned in GDS, this includes:
-              <ul class="govuk-lis govuk-list--bullet">
-                <li>Results over time</li>
-                
-              </ul>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="redesign-index">Link</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">February release</th>
-            <td class="govuk-table__cell">
-              Prototypes that are currently being working on, these include:
-              <ul class="govuk-lis govuk-list--bullet">
-                <li>MAT secondary stemming from the Axure prototypes</li>
-                <li>16 to 18 stemming from the Axure prototypes</li> 
-              </ul>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="feb-index">Link</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Round 7</th>
-            <td class="govuk-table__cell">
-              From the Axure prototypes, these were lined up for User Research.
-              Includes:
-              <ul class="govuk-lis govuk-list--bullet">
-                <li>MAT 2022</li>
-                <li>secondary page</li>
-                <li>16 to 18 page</li>
-              </ul>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="round-7-index">Link</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Live system</th>
-            <td class="govuk-table__cell">
-              From the live system, includes:
-              <ul class="govuk-lis govuk-list--bullet">
-                <li>school search</li>
-                <li>secondary pages</li>
-                <li>MAT pages</li>
-              </ul>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="live-system-index">Link</a>
-            </td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Other</th>
-            <td class="govuk-table__cell">
-              Mostly from the Axure prototypes, including round 6 prototypes
-              worked on. Includes:
-              <ul class="govuk-lis govuk-list--bullet">
-                <li>school overview</li>
-                <li>MAT pages</li>
-                <li>progress 8 graph changes</li>
-              </ul>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="other-index">Link</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    </div>
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-one-half govuk-card-index">
+        <h2 class="govuk-heading-m"><a href="redesign">Redesign work</a></h2>
+        <p class="govuk-body">
+          Redesigning the pages of the current system. Relevant for the
+          potential October 2023 release.
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-card-index">
+        <h2 class="govuk-heading-m">
+          <a href="current-system">Current system</a>
+        </h2>
+        <p class="govuk-body">
+          Recreating current pages within the live system.
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-card-index">
+        <h2 class="govuk-heading-m"><a href="legacy">Legacy</a></h2>
+        <p class="govuk-body">
+          Old prototyping that has been implemented or is outdated.
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-card-index">
+        <h2 class="govuk-heading-m"><a href="">Experimental</a></h2>
+        <p class="govuk-body">
+          Working alongside the redesign piece. Includes brainstorming custom
+          components and graphs.
+        </p>
+      </div>
     </div>
   </div>
 </main>
-
 {% endblock %}

@@ -1,0 +1,164 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Current system {%
+endblock %} {% block content %}
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a href="index" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-m"
+          >Find school and college performance data in England</span
+        >Current system
+      </h1>
+      <div
+        class="govuk-accordion"
+        data-module="govuk-accordion"
+        id="accordion-default"
+      >
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-1"
+              >
+                Comparison tables
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-1"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1"
+          >
+            <p class="govuk-body">Based on a legacy prototype -</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>
+                <a
+                  href="https://jdn7xm.axshare.com/prototype/login/jdn7xm#id=yrl962&p=11_ct_mat_2019_-_selected_primary&g=1"
+                  >link to the prototype</a
+                >
+              </li>
+              <li>password - apple2021</li>
+            </ul>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">
+                Prototype
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 60%"
+                  >
+                    Page
+                  </th>
+                  <th scope="col" class="govuk-table__header">Status</th>
+                  <th scope="col" class="govuk-table__header">Prototype</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Comparison table</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Complete
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="existing-proto/comparison-table">Link</a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Comparison table - ranked</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Complete
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="existing-proto/comparison-table-ranked">Link</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-2"
+              >
+                Live system
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-2"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-2"
+          >
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">
+                Prototypes
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th
+                    scope="col"
+                    class="govuk-table__header"
+                    style="width: 60%"
+                  >
+                    Page
+                  </th>
+                  <th scope="col" class="govuk-table__header">Status</th>
+                  <th scope="col" class="govuk-table__header">Prototype</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Search page</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Complete
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="live-system/home">Link</a>
+                  </td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Results from search</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--yellow">
+                      In progress
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="live-system/school-search">Link</a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">School information</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--turquoise">
+                      Close to completion
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="feb-release/mat">Link</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
