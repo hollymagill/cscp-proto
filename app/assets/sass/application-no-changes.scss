@@ -309,3 +309,33 @@ $govuk-assets-path: "/govuk/assets/";
   border-top: $govuk-brand-colour 2px solid;
   padding-top: 15px;
 }
+
+.govuk-tag--light-green {
+  color: #20510B;
+  background: #DDEDD4;
+}
+
+.mc-toggle-button, .gem-c-govspeak .mc-toggle-button {
+  
+  color: rgb(29, 112, 184);
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(177, 180, 182);
+  border-image: initial;
+  margin: 0px;
+  padding: 10px;
+}
+
+.mc-toggle-button, .gem-c-govspeak .mc-toggle-button {
+  color: rgb(29, 112, 184);
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(177, 180, 182);
+  border-image: initial;
+  margin: 0px;
+  padding: 10px;
+}
