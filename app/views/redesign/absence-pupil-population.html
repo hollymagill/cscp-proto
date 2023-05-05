@@ -1,0 +1,158 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+<a href="#" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        St James Academy's absence and pupil population
+      </h1>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width: 40%">
+              Location
+            </th>
+            <td class="govuk-table__cell">
+              Knightsbridge<br />
+              Newcastle-upon-Tyne<br />
+              NE3 2JH
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Type of school</th>
+            <td class="govuk-table__cell">Independent school</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Pupil population</th>
+            <td class="govuk-table__cell">Mixed sex - 120 pupils</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li></li>
+        <li>
+          <a class="govuk-link" href="#">School website (opens in a new tab)</a>
+        </li>
+
+        <li>
+          <a class="govuk-link" href="#"
+            >Apply for a place (opens in a new tab)</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <hr
+        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        style="border-bottom: 4px solid #1d70b8"
+      />
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--l">
+          Pupil population for 2021 and 2022
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 50%"></th>
+            <th scope="col" class="govuk-table__header" style="width: 25%">
+              St James Academy
+            </th>
+            <th scope="col" class="govuk-table__header" style="width: 25%">
+              England
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Total number of pupils
+            </th>
+            <td class="govuk-table__cell">2,003</td>
+            <td class="govuk-table__cell">3,567,376</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Girls on roll</th>
+            <td class="govuk-table__cell">47.28%</td>
+            <td class="govuk-table__cell">49.74%</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Boys on roll</th>
+            <td class="govuk-table__cell">52.72%</td>
+            <td class="govuk-table__cell">50.26%</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Pupils with a Special Educational Need (SEN) education, health and
+              care plan
+            </th>
+            <td class="govuk-table__cell">1.15%</td>
+            <td class="govuk-table__cell">2.15%</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Pupils with a Special Educational Need (SEN) support
+            </th>
+            <td class="govuk-table__cell">10.93%</td>
+            <td class="govuk-table__cell">11.93%</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Pupils whose first language is not English
+            </th>
+            <td class="govuk-table__cell">28.3%</td>
+            <td class="govuk-table__cell">17.48%</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Pupils eligible for free school meals within the last 6 years
+            </th>
+            <td class="govuk-table__cell">35.54%</td>
+            <td class="govuk-table__cell">26.92%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-grid-column-full">
+      <hr
+        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        style="border-bottom: 4px solid #1d70b8"
+      />
+      <div class="govuk-form-group" id="footer">
+        <h2 class="govuk-heading-s">More information</h2>
+        <img
+          src="/public/images/ns_logo.png"
+          id="ns-logo"
+          alt="The figures on this page are National Statistics. 
+                      Learn more about National Statistics on the Office for National Statistics 
+                      website."
+        />
+        <ul class="govuk-list">
+          <li>
+            <a href="#" class="govuk-link"
+              >Print all information on this school</a
+            >
+          </li>
+          <li>
+            <a href="#" class="govuk-link">General guidance</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Publication timetable</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Download school data (1991-2022)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

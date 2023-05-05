@@ -14,8 +14,12 @@ block content %}
           </div>
           <div class="moj-filter__header-action"></div>
         </div>
+
         <div class="moj-filter__content">
           <div class="moj-filter__options">
+            <button class="govuk-button" data-module="govuk-button">
+              Apply filters
+            </button>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--m" for="keywords">
                 Keywords
@@ -50,6 +54,32 @@ block content %}
                 <option value="views">10 miles</option>
               </select>
             </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="status"
+                      name="status"
+                      type="checkbox"
+                      value="complete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="status"
+                    >
+                      Hide entries with no available data
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend
@@ -68,7 +98,6 @@ block content %}
                       name="status"
                       type="checkbox"
                       value="complete"
-                      checked=""
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -112,6 +141,7 @@ block content %}
                 </div>
               </fieldset>
             </div>
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend
@@ -130,7 +160,6 @@ block content %}
                       name="type"
                       type="checkbox"
                       value="1"
-                      checked=""
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -147,7 +176,6 @@ block content %}
                       name="type"
                       type="checkbox"
                       value="2"
-                      checked=""
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -198,33 +226,25 @@ block content %}
                       class="govuk-label govuk-checkboxes__label"
                       for="type-5"
                     >
-                      Not published
+                      Not available
                     </label>
                   </div>
                 </div>
               </fieldset>
             </div>
-
-            <button
-              class="govuk-button"
-              data-module="govuk-button"
-              style="margin-top: 10px; margin-bottom: 10px"
-            >
-              Apply filters
-            </button>
           </div>
         </div>
       </div>
     </div>
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m" style="float: right">432 results</h2>
+      <h2 class="govuk-heading-m" style="float: right">120 results</h2>
       <div class="govuk-form-group">
         <label class="govuk-label" for="sort"> Sort by </label>
         <select class="govuk-select" id="sort" name="sort">
-          <option value="published">Distance</option>
-          <option value="updated" selected>Ofsted rating</option>
-          <option value="views">Type</option>
-          <option value="comments">Most comments</option>
+          <option value="published">A to Z</option>
+          <option value="updated" selected>Distance</option>
+          <option value="views">Ofsted rating</option>
+          <option value="comments">Number of pupils</option>
         </select>
       </div>
     </div>
@@ -237,99 +257,314 @@ block content %}
         <li>
           <h2 class="govuk-heading-m">
             <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              <span class="govuk-body govuk-!-font-weight-bold">Distance:</span>
-              0.3 miles<br /><span class="govuk-body govuk-!-font-weight-bold">
-                Type of school:</span
-              >
-              Primary<br /><span class="govuk-body govuk-!-font-weight-bold"
-                >School type:</span
-              >
-              Not applicable <br />
-              <span class="govuk-body govuk-!-font-weight-bold"
-                >Data available:</span
-              >
-              No
-            </p>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.3 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">Secondary and College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 120 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
-        <hr
-          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-        />
+
         <li>
           <h2 class="govuk-heading-m">
-            <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              Distance: 0.3 miles<br />Type of school: Primary<br />School type:
-              Not applicable <br />
-              Data available: No
-            </p>
+            <a href="">St James Academy</a>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.5 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">Primary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Primary <br />
+                  Workforce and finance
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  3 - Requires improvement
+                  <span style="color: #505a5f">(Inspected 03 June 2021)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 80 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
-        <hr
-          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-        />
         <li>
           <h2 class="govuk-heading-m">
-            <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              Distance: 0.3 miles<br />Type of school: Primary<br />School type:
-              Not applicable <br />
-              Data available: No
-            </p>
+            <a href="">Coral Springs Academy</a>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.6 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">Primary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">None available</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  3 - Requires improvement
+                  <span style="color: #505a5f">(Inspected 06 March 2020)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 80 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
-        <hr
-          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-        />
         <li>
           <h2 class="govuk-heading-m">
-            <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              Distance: 0.3 miles<br />Type of school: Primary<br />School type:
-              Not applicable <br />
-              Data available: No
-            </p>
+            <a href="">Littlewood Grammar School</a>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.5 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  1 - Outstanding
+                  <span style="color: #505a5f"
+                    >(Inspected 23 November 2020)</span
+                  >
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 230 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
-        <hr
-          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-        />
         <li>
           <h2 class="govuk-heading-m">
-            <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              Distance: 0.3 miles<br />Type of school: Primary<br />School type:
-              Not applicable <br />
-              Data available: No
-            </p>
+            <a href="">Hillview College</a>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.7 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 02 May 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 100 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
-        <hr
-          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-        />
         <li>
           <h2 class="govuk-heading-m">
-            <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              Distance: 0.3 miles<br />Type of school: Primary<br />School type:
-              Not applicable <br />
-              Data available: No
-            </p>
+            <a href="">Westview School for Boys</a>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.8 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">Primary and Secondary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Primary<br />Workforce and finance
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  4 - Inadequate
+                  <span style="color: #505a5f">(Inspected 13 July 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Boys only - 345 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
-        <hr
-          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
-        />
         <li>
           <h2 class="govuk-heading-m">
-            <a href="">Royal Grammar School</a>
-            <p class="govuk-body">
-              Distance: 0.3 miles<br />Type of school: Primary<br />School type:
-              Not applicable <br />
-              Data available: No
-            </p>
+            <a href="">Deer River School</a>
           </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.8 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">Secondary and College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />College<br />Workforce and finance
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">Not available</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 310 pupils</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Sunnyside Grammar School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.9 miles</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Type of school</th>
+                <td class="govuk-table__cell">Secondary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />Absence and pupil population
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  1 - Outstanding
+                  <span style="color: #505a5f"
+                    >(Inspected 12 January 2019)</span
+                  >
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Pupil population
+                </th>
+                <td class="govuk-table__cell">Mixed sex - 230 pupils</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
 
         <hr
@@ -356,7 +591,7 @@ block content %}
           >
         </div>
         <ul class="govuk-pagination__list">
-          <li class="govuk-pagination__item">
+          <li class="govuk-pagination__item govuk-pagination__item--current">
             <a
               class="govuk-link govuk-pagination__link"
               href="#"
@@ -365,37 +600,27 @@ block content %}
               1
             </a>
           </li>
-          <li class="govuk-pagination__item govuk-pagination__item--ellipses">
-            &ctdot;
-          </li>
+
           <li class="govuk-pagination__item">
             <a
               class="govuk-link govuk-pagination__link"
               href="#"
               aria-label="Page 6"
             >
-              6
-            </a>
-          </li>
-          <li class="govuk-pagination__item govuk-pagination__item--current">
-            <a
-              class="govuk-link govuk-pagination__link"
-              href="#"
-              aria-label="Page 7"
-              aria-current="page"
-            >
-              7
+              2
             </a>
           </li>
           <li class="govuk-pagination__item">
             <a
               class="govuk-link govuk-pagination__link"
               href="#"
-              aria-label="Page 8"
+              aria-label="Page 7"
+              aria-current="page"
             >
-              8
+              3
             </a>
           </li>
+
           <li class="govuk-pagination__item govuk-pagination__item--ellipses">
             &ctdot;
           </li>
@@ -405,7 +630,7 @@ block content %}
               href="#"
               aria-label="Page 42"
             >
-              42
+              12
             </a>
           </li>
         </ul>

@@ -1,0 +1,473 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+<a href="#" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <span class="govuk-caption-xl">In depth look</span>
+      <h1 class="govuk-heading-xl">St James Academy's secondary measures</h1>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width: 40%">
+              Location
+            </th>
+            <td class="govuk-table__cell">
+              Knightsbridge<br />
+              Newcastle-upon-Tyne<br />
+              NE3 2JH
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Type of school</th>
+            <td class="govuk-table__cell">Independent school</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Pupil population</th>
+            <td class="govuk-table__cell">Mixed sex - 120 pupils</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li></li>
+        <li>
+          <a class="govuk-link" href="#">School website (opens in a new tab)</a>
+        </li>
+
+        <li>
+          <a class="govuk-link" href="#"
+            >Apply for a place (opens in a new tab)</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-full">
+      <div
+        class="govuk-accordion"
+        data-module="govuk-accordion"
+        id="accordion-default"
+      >
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span
+                class="govuk-accordion__section-button"
+                id="accordion-default-heading-1"
+              >
+                Progress 8 score
+              </span>
+            </h2>
+          </div>
+          <div
+            id="accordion-default-content-1"
+            class="govuk-accordion__section-content"
+            aria-labelledby="accordion-default-heading-1"
+          >
+            <p class="govuk-body">
+              The academic progress that pupils make from the end of primary
+              school to the end of secondary school. This is based on
+              performance in 8 qualifications. <br />Pupils here achieve up to
+              half a grade lower in each qualification on average, compared to
+              similar pupils across the country.
+            </p>
+            <button class="govuk-body-s mc-toggle-button">
+              <span class="mc-toggle-text"
+                >Change to table and accessible view</span
+              ><span
+                class="govuk-visually-hidden mc-toggle-status"
+                role="alert"
+              ></span>
+            </button>
+            <div style="height: 200px">
+              <canvas id="chart"></canvas>
+              <script>
+                Chart.register(ChartDataLabels);
+                var yLabels = {
+                  0: ["Well", "below", "average"],
+                  1: ["Below", "average"],
+                  2: "Average",
+                  3: ["Above", "average"],
+                  4: ["Well", "above", "average"],
+                };
+                var chrt = document.getElementById("chart").getContext("2d");
+                var chart = new Chart(chrt, {
+                  type: "scatter",
+                  data: {
+                    labels: [["Lower", "range"], "Score", ["Upper", "range"]],
+                    datasets: [
+                      {
+                        data: [
+                          { x: 0.85, y: 1 },
+                          { x: 1.25, y: 1 },
+                          { x: 1.55, y: 1 },
+                        ],
+                        backgroundColor: ["#d4351c", "#f47738", "#f47738"],
+                        borderColor: ["#0b0c0c"],
+                        borderWidth: 2,
+                        radius: 8,
+                        showLine: true,
+                      },
+                    ],
+                  },
+                  options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      tooltip: {
+                        enabled: false,
+                      },
+                      legend: {
+                        display: false,
+                      },
+                      datalabels: {
+                        align: function (context) {
+                          var index = context.dataIndex;
+
+                          if (index === 0) {
+                            return (value = "left");
+                          } else if (index === 2) {
+                            return (value = "right");
+                          } else {
+                            return "top";
+                          }
+                        },
+                        color: "#505a5f",
+                        formatter: function (value, context) {
+                          return context.chart.data.labels[context.dataIndex];
+                        },
+                        font: {
+                          family: "'GDS Transport'",
+                          size: 19,
+                        },
+                      },
+                    },
+                    scales: {
+                      y: {
+                        border: {
+                          color: "#b1b4b6",
+                        },
+                        ticks: {
+                          display: false,
+                        },
+                        grid: {
+                          display: false,
+                        },
+                      },
+                      x: {
+                        border: {
+                          color: "#b1b4b6",
+                        },
+                        max: 4,
+                        min: 0,
+                        grid: {
+                          display: true,
+                          color: "#b1b4b6",
+                        },
+                        ticks: {
+                          color: "#0b0c0c",
+                          callback: function (value, index, values) {
+                            // for a value (tick) equals to 8
+                            return yLabels[value];
+                          },
+                          font: {
+                            family: "'GDS Transport'",
+                            size: 19,
+                          },
+                        },
+                      },
+                    },
+                  },
+                });
+              </script>
+            </div>
+            <br />
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Local authority and England scores
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th
+                        scope="row"
+                        class="govuk-table__header"
+                        style="width: 33%"
+                      >
+                        Area
+                      </th>
+                      <th
+                        scope="row"
+                        class="govuk-table__header"
+                        style="width: 33%"
+                      >
+                        Score
+                      </th>
+                      <th
+                        scope="row"
+                        class="govuk-table__header"
+                        style="width: 33%"
+                      >
+                        Range
+                      </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        Newcastle upon Tyne
+                      </th>
+                      <td class="govuk-table__cell">
+                        -0.25<br />
+                        <strong class="govuk-tag govuk-tag--yellow">
+                          Average
+                        </strong>
+                      </td>
+                      <td class="govuk-table__cell">-0.5 to -0.1</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">
+                        National average
+                      </th>
+                      <td class="govuk-table__cell">
+                        -0.03<br /><strong class="govuk-tag govuk-tag--yellow">
+                          Average
+                        </strong>
+                      </td>
+                      <td class="govuk-table__cell">-0.2 to 0.09</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+            <div class="govuk-form-group">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    How many schools are in each rating?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Rating</th>
+                        <th scope="row" class="govuk-table__header">
+                          Percentage of schools
+                        </th>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--green"
+                            >Well above average</strong
+                          >
+                        </td>
+                        <td class="govuk-table__cell">20%</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--light-green"
+                            >Above average</strong
+                          >
+                        </td>
+                        <td class="govuk-table__cell">20%</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--yellow"
+                            >Average</strong
+                          >
+                        </td>
+                        <td class="govuk-table__cell">20%</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--orange"
+                            >Below average</strong
+                          >
+                        </td>
+                        <td class="govuk-table__cell">20%</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--red"
+                            >Well below average</strong
+                          >
+                        </td>
+                        <td class="govuk-table__cell">20%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span
+                  class="govuk-accordion__section-button"
+                  id="accordion-default-heading-1"
+                >
+                  EBacc (English Baccalaureate) average point score
+                </span>
+              </h2>
+            </div>
+            <div
+              id="accordion-default-content-1"
+              class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1"
+            >
+              <p class="govuk-body"></p>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span
+                  class="govuk-accordion__section-button"
+                  id="accordion-default-heading-1"
+                >
+                  Attainment 8 score
+                </span>
+              </h2>
+            </div>
+            <div
+              id="accordion-default-content-1"
+              class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1"
+            >
+              <p class="govuk-body"></p>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span
+                  class="govuk-accordion__section-button"
+                  id="accordion-default-heading-1"
+                >
+                  Grade 5 or above in English and maths GCSEs
+                </span>
+              </h2>
+            </div>
+            <div
+              id="accordion-default-content-1"
+              class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1"
+            >
+              <p class="govuk-body"></p>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span
+                  class="govuk-accordion__section-button"
+                  id="accordion-default-heading-1"
+                >
+                  Staying in education or entering employment
+                </span>
+              </h2>
+            </div>
+            <div
+              id="accordion-default-content-1"
+              class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1"
+            >
+              <p class="govuk-body"></p>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span
+                  class="govuk-accordion__section-button"
+                  id="accordion-default-heading-1"
+                >
+                  Entering Ebacc (English Baccalaureate)
+                </span>
+              </h2>
+            </div>
+            <div
+              id="accordion-default-content-1"
+              class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1"
+            >
+              <p class="govuk-body"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <hr
+        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        style="border-bottom: 4px solid #1d70b8"
+      />
+
+      <h2 class="govuk-heading-m">More secondary measures</h2>
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link"
+            >Progress 8 and attainment score by subject area</a
+          >
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Measures grouped by subject area</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link"
+            >Pupils entering key stage 4 subjects</a
+          >
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Achievements and destinations</a>
+        </li>
+
+        <li>
+          <a href="#" class="govuk-link">Measures by pupil characteristics</a>
+        </li>
+      </ul>
+      <hr
+        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        style="border-bottom: 4px solid #1d70b8"
+      />
+      <div class="govuk-form-group" id="footer">
+        <h2 class="govuk-heading-s">More information</h2>
+        <img
+          src="/public/images/ns_logo.png"
+          id="ns-logo"
+          alt="The figures on this page are National Statistics. 
+                  Learn more about National Statistics on the Office for National Statistics 
+                  website."
+        />
+        <ul class="govuk-list">
+          <li>
+            <a href="#" class="govuk-link"
+              >Print all information on this school</a
+            >
+          </li>
+          <li>
+            <a href="#" class="govuk-link">General guidance</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Publication timetable</a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">Download school data (1991-2022)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
