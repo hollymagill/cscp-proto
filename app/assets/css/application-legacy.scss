@@ -1,0 +1,691 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+
+
+/* WHOLE SERVICE */
+
+//overriding standardised padding
+.govuk-main-wrapper {
+    padding-top: 0;
+  }
+  
+  //changing font size of paragraphs, lists, labels, buttons
+  p,
+  .govuk-body,
+  .govuk-list,
+  .govuk-radios__label,
+  .govuk-label,
+  .govuk-details,
+  .govuk-summary-list,
+  .govuk-caption-m,
+  .govuk-hint,
+  .average-result-table {
+    font-size: 16px;
+  }
+  
+  .govuk-button,
+  .govuk-table,
+  .govuk-body-info,
+  #financial-info-details {
+    font-size: 14px;
+  }
+  
+  /* HOME PAGE */
+  
+  //blue line top of one third column
+  #column-data-tables {
+    border-top: 10px solid $govuk-brand-colour;
+    padding-top: 20px;
+  }
+  
+  //my schools icon and text
+  #my-schools {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-left: 30px;
+  }
+  
+  #school-list-logo {
+    max-width: 1.4em;
+    padding-right: 10px;
+  }
+  
+  //0 circle
+  .school-list-count {
+    background-color: #0b0c0c;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8em;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  /* covid banner */
+  #covid-banner.govuk-notification-banner {
+    border: 0px;
+    margin: 0px;
+  }
+  
+  #covid-banner.govuk-notification-banner .govuk-notification-banner__content {
+    background-color: $govuk-brand-colour;
+  }
+  
+  #covid-banner.govuk-notification-banner .govuk-notification-banner__heading {
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  #covid-banner.govuk-notification-banner
+    .govuk-notification-banner__heading
+    .govuk-notification-banner__link {
+    color: inherit;
+  }
+  
+  /* tabs */
+  
+  //tab titles height change - fixed from the live
+  #school-finder.govuk-tabs__list {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .js-enabled .govuk-tabs__panel {
+    border: 0px;
+  }
+  
+  //mile dropdown
+  #search-radius,
+  #search-radius-trust-sponsor {
+    font-family: "GDS Transport", arial, sans-serif;
+    font-size: inherit;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid $govuk-border-colour;
+    border-left: 0px;
+  }
+  
+  /* footer */
+  
+  #footer-links {
+    border-top: 1px solid $govuk-border-colour;
+  }
+  
+  //to align the image to the right of footer links
+  #footer-links ul,
+  #footer-links li,
+  #footer-links img {
+    display: inline-block;
+  }
+  
+  #footer-links li {
+    padding: 20px 50px 0px 0px;
+  }
+  
+  //national statistics logo
+  #ns-logo {
+    max-width: 5em;
+    height: auto;
+    float: right;
+    padding: 20px 0 0 0;
+  }
+  
+  /* other */
+  
+  //over-riding toolkit, text area and input borders
+  .govuk-textarea,
+  .govuk-input {
+    border: 1px solid $govuk-border-colour;
+  }
+  
+  //conditional reveal labels styled as govuk-heading-m
+  .govuk-radios__conditional .govuk-label {
+    padding: 10px 0;
+    font-weight: 700;
+  }
+  
+  /* SCHOOL SEARCH */
+  
+  //sorting the radios on the left side
+  .search-school-radios .govuk-radios__item,
+  .search-school-checkbox .govuk-checkboxes__item {
+    border-top: 1px $govuk-border-colour solid;
+    border-right: 1px $govuk-border-colour solid;
+    border-left: 1px $govuk-border-colour solid;
+    margin: 0;
+    width: 85%;
+    min-height: 0;
+    padding-left: 40px;
+  }
+  
+  .search-school-radios .last-input,
+  .search-school-checkbox .last-input {
+    width: 85%;
+    border-bottom: 1px $govuk-border-colour solid;
+  }
+  
+  .search-school-radios label,
+  .search-school-checkbox label {
+    color: $govuk-border-colour;
+    padding-left: 0;
+  }
+  
+  .search-school-radios p,
+  .search-school-checkbox p {
+    color: black;
+    margin: 0;
+  }
+  
+  .search-school-radios .govuk-radios__label::before,
+  .search-school-checkbox .govuk-checkboxes__label::before {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+  }
+  
+  .search-school-radios .govuk-radios__label::after {
+    width: -1px;
+    height: -1px;
+  }
+  
+  .search-school-checkbox .govuk-checkboxes__label::after {
+    width: 17px;
+    height: 9px;
+    margin-top: 5px;
+    margin-left: 3px;
+  }
+  
+  .school-classification {
+    background-color: govuk-colour("mid-grey");
+    font-size: 13px;
+    padding: 3px;
+  }
+  
+  li .search-school-list {
+    line-height: 1.7;
+    font-size: 14px;
+  }
+  
+  ul .search-school-view {
+    border-top: 1px solid govuk-colour("mid-grey");
+    padding-top: 10px;
+  }
+  
+  ul .search-school-view-last {
+    border-bottom: 1px solid govuk-colour("mid-grey");
+  }
+  
+  .search-school-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.7;
+  }
+  
+  .ofsted-rating {
+    background-color: govuk-colour("blue");
+    font-size: 15px;
+    padding: 3px;
+    color: white;
+  }
+  
+  .ofsted-inspected {
+    color: govuk-colour("mid-grey");
+  }
+  
+  /* SCHOOL OVERVIEW */
+  
+  .back-search,
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search {
+    margin-left: auto;
+    margin-right: 0;
+    float: right;
+  }
+  
+  #search-icon {
+    width: 1.3em;
+    padding: 5px;
+  }
+  
+  //moving 'share this page' to match the h1
+  .share-this-page {
+    margin-top: 30px;
+  }
+  
+  //getting both top buttons on one line
+  .view-trusts {
+    width: 49%;
+  }
+  
+  //table formatting
+  .school-info-table .govuk-table__header,
+  .school-info-table .govuk-table__cell {
+    font-weight: 100;
+    border: 0;
+    padding: 10px 0px 0px 0;
+  }
+  
+  //styling the panels - including vertically centering the content with hard coding padding
+  .school-panel {
+    border: 1px solid $govuk-input-border-colour;
+    margin-top: 20px;
+    padding-top: 30px;
+  }
+  
+  .school-panel button {
+    float: right;
+  }
+  
+  //view buttons aligning right
+  .school-panel .govuk-button {
+    font-size: 18px;
+  }
+  
+  // SCHOOL OVERVIEW UPDATE!
+  
+  .overview-tab {
+    width: 15%;
+  }
+  
+  .overview-tab a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .js-enabled .overview-tab .govuk-tabs__tab:visited {
+    color: $govuk-link-colour;
+  }
+  
+  #info-error {
+    width: 40px;
+  }
+  
+  #region-info {
+    width: 7%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  
+  .school-info-table .govuk-table__cell {
+    font-weight: bold;
+  }
+  
+  .details-overview-updated {
+    font-size: 14px;
+  }
+  
+  //styling the error box
+  .error-info-icon {
+    width: 7%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .error-info {
+    width: 92%;
+    display: inline-block;
+  }
+  
+  .school-info-heading {
+    line-height: 100%;
+    font-size: 120%;
+  }
+  
+  /* ALL SCHOOL PAGES*/
+  
+  //link formatting for share this page
+  .share-page a {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  //share this page icon formatting
+  .social-media {
+    width: 1.3em;
+    margin-top: 1px;
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+  
+  //view map icon formatting
+  #view-map {
+    width: 1em;
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+  
+  //multi-academy info icon
+  #multi-info {
+    width: 1.2em;
+    margin-left: 5px;
+    vertical-align: top;
+  }
+  
+  /* SCHOOL SECONDARY */
+  
+  //progress 8 graph width
+  #progress-8 {
+    width: 100%;
+  }
+  
+  //sizing all the school charts
+  .school-charts {
+    height: 100px;
+    width: 100%;
+  }
+  
+  .school-charts-three {
+    height: 150px;
+    width: 100%;
+  }
+  
+  //changing the height of the sections so they match
+  .secondary-half-section {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px govuk-colour("light-grey") solid;
+    min-height: 250px;
+  }
+  
+  .secondary-header {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px govuk-colour("light-grey") solid;
+    min-height: 430px;
+  }
+  .secondary-header-expanded {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px govuk-colour("light-grey") solid;
+    min-height: 565px;
+  }
+  
+  .secondary-half-section-three {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px govuk-colour("light-grey") solid;
+    min-height: 320px;
+  }
+  
+  .secondary-half-section-three-mobile {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px govuk-colour("light-grey") solid;
+    min-height: 280px;
+  }
+  
+  //full pane links at the bottom
+  .full-width-link {
+    border-top: 4px govuk-colour("blue") solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .school-key-stage-4-full {
+    border-bottom: 4px govuk-colour("blue") solid;
+  
+    border-width: 90%;
+  }
+  
+  .full-width-link .govuk-link {
+    display: inline-block;
+    width: 80%;
+  }
+  
+  .arrow-right {
+    float: right;
+    margin-top: -5px;
+    width: 30px;
+  }
+  
+  .full-width-link .govuk-link {
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: govuk-colour("blue");
+  }
+  
+  //changing margins per paragraph under about this data
+  .about-data br {
+    margin-bottom: 15px;
+  }
+  
+  .about-data .govuk-details {
+    margin-bottom: 10px;
+  }
+  
+  //print full information - bottom of page
+  #printer-icon {
+    max-width: 1.4em;
+    padding-right: 10px;
+  }
+  
+  .print-information {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+  }
+  .progress-8-callout {
+    border: $govuk-border-colour 0.5px solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  @media only screen and (max-device-width: 640px) {
+    .show-mobile {
+      display: block;
+    }
+    .show-desktop {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-device-width: 641px) {
+    .show-mobile {
+      display: none;
+    }
+    .show-desktop {
+      display: block;
+    }
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #ffffff;
+    width: 60%; /* Could be more or less, depending on screen size */
+    margin: 15% auto; /* 15% from the top and centered */
+  }
+  
+  .modal-body {
+    padding: 20px;
+    padding-top: 40px;
+    border: 1px solid #888;
+  }
+  
+  /* The Close Button */
+  .close {
+    float: right;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .icon-modal {
+    cursor: pointer;
+  }
+  
+  #showDisadvantaged,
+  #showMATCharacteristics,
+  #showSchoolsKey,
+  #showSecondary,
+  #full-width-link,
+  #showApplied,
+  #showAcademicQualifications,
+  #showApplied {
+    margin-top: 30px;
+  }
+  
+  .disadvantaged-table,
+  .school-links {
+    line-height: 180%;
+  }
+  
+  //secondary and 16-18 pages recreate
+  
+  .secondary-charts {
+    max-height: 140px;
+  }
+  
+  .full-length-bottom {
+    border-bottom: 4px govuk-colour("blue") solid;
+    color: govuk-colour("blue");
+  }
+  
+  .secondary-header-top {
+    min-height: 350px;
+    border-top: 1px govuk-colour("light-grey") solid;
+    padding-top: 20px;
+  }
+  
+  .full-width-link-top {
+    border-top: 4px govuk-colour("blue") solid;
+    border-bottom: 4px govuk-colour("blue") solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .full-width-link-bottom {
+    border-bottom: 4px govuk-colour("blue") solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .full-width-link-top .govuk-link,
+  .full-width-link-bottom .govuk-link {
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: govuk-colour("blue");
+  }
+  
+  #open-all {
+    float: right;
+    cursor: pointer;
+  }
+  
+  
+  .plus-minus {
+    float: right;
+    margin-top: -5px;
+    width: 30px;
+  }
+  
+  //COMPARISON TABLES
+  .sorting-table-header {
+    background-color: govuk-colour("light-grey");
+    padding: 10px 3px 10px 3px;
+  }
+  
+  .progress-score-good {
+    display: inline-block;
+    width: min-content;
+    min-width: 60%;
+    text-align: center;
+    background-color: govuk-colour("green");
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .progress-score-average {
+    display: inline-block;
+    width: min-content;
+    min-width: 60%;
+    text-align: center;
+    background-color: govuk-colour("yellow");
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .progress-score-bad {
+    display: inline-block;
+    width: min-content;
+    min-width: 60%;
+    text-align: center;
+    background-color: govuk-colour("red");
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .progress-score-number {
+    font-size: 16px;
+  }
+  
+  .progress-score-cell {
+    text-align: center;
+  }
+  
+  .up-down-arrow, .up-down-arrow-down {
+    width: 0.7rem;
+    margin-left: 2px;
+    float: right;
+    filter: invert(33%) sepia(99%) saturate(858%) hue-rotate(179deg)
+      brightness(100%) contrast(88%);
+  }
+   .up-down-arrow-down{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7456%)
+      hue-rotate(12deg) brightness(90%) contrast(116%);
+  }
+  .table-page {
+    float: right;
+  }
+  .govuk-select {
+    font-size: 15px;
+    padding: 5px;
+    height: 100%;
+  }
+  .sorted-column {
+    background-color: $govuk-brand-colour;
+    color: govuk-colour("white");
+  }
+  .sorted-column a:visited {
+    color: govuk-colour("white");
+  }
+  
+  

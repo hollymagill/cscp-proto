@@ -5,7 +5,58 @@ block content %}
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-      <span class="govuk-caption-xl">Academy sponsor led</span>
+      <span class="govuk-caption-xl"
+        >Academy sponsor led
+        <img
+          id="multi-info"
+          class="modal-button icon-modal"
+          href="#academy-sponsor-led"
+          src="/public/images/information-question.png"
+        />
+
+        <div id="academy-sponsor-led" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close"><a href="#" class="close">Close</a></span>
+
+            <div class="modal-body">
+              <h2 class="govuk-heading-m">Academy sponsor led</h2>
+              <p class="govuk-body">
+                These academies differ from other academies in that they are run
+                by a trust that was established by a sponsor. Also, although any
+                academy can have a sponsor, those which are 'sponsor led' were
+                typically underperforming and in need of help from a sponsor to
+                improve performance. Some sponsor led academies were entirely
+                new schools built to meet an increased need for school places.
+              </p>
+              <h2 class="govuk-heading-m">Academy</h2>
+              <p class="govuk-body">
+                Academies are schools funded directly by the government, not a
+                local authority. They don't have to follow the
+                <a href="#">national curriculum</a> (although many academies
+                choose to follow it) and can set their own term dates. They
+                still have to follow the same rules on
+                <a href="#">Ofsted inspections</a>, special educational needs
+                and exclusions as other state schools.
+              </p>
+              <p class="govuk-body">
+                Academies are run by an academy trust which sets the admissions
+                policy and employs the staff. Some schools are part of
+                multi-academy trusts (MATs) that control more than one school.
+                As part of a MAT they can share staff and expertise, and make
+                savings when buying goods and services. Some academies have
+                sponsors such as businesses, universities, other schools, faith
+                groups or voluntary groups.
+              </p>
+              <p class="govuk-body">
+                Most academies lease land and buildings from a local authority
+                at a peppercorn rent. In some cases, the freehold may be held by
+                the academy or by a charitable foundation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </span>
 
       <h1 class="govuk-heading-xl">
         Jesmond Park Academy
@@ -30,6 +81,7 @@ block content %}
         <a href="#" class="govuk-link">Heaton Manor School</a> for previous
         record.
       </div>
+      <p body="govuk-body">Part of <a href="#">QED ACADEMY TRUST</a></p>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -46,8 +98,78 @@ block content %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Ofsted rating</th>
             <td class="govuk-table__cell">
-              2 - Good<br />
-              <a href="#" class="govuk-link">Oftsed report</a>
+              2 - Good
+              <img
+                id="multi-info"
+                class="modal-button icon-modal"
+                href="#ofsted-rating"
+                src="/public/images/information-question.png"
+              />
+
+              <div id="ofsted-rating" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close"><a href="#" class="close">Close</a></span>
+
+                  <div class="modal-body">
+                    <h2 class="govuk-heading-m">Ofsted rating</h2>
+                    <p class="govuk-body">
+                      <a href="#">Ofsted</a> rates schools and colleges on a
+                      four point scale.
+                    </p>
+
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">
+                            Rating
+                          </th>
+                          <th scope="col" class="govuk-table__header">
+                            Meaning
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">1</td>
+                          <td class="govuk-table__cell">Outstanding</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">2</td>
+                          <td class="govuk-table__cell">Good</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">3</td>
+                          <td class="govuk-table__cell">
+                            Requires Improvement
+                          </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">4</td>
+                          <td class="govuk-table__cell">Inadequate</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">-</td>
+                          <td class="govuk-table__cell">Not available</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p class="govuk-body">
+                      It typically takes 1 to 2 months, and can take longer in
+                      some circumstances, for Ofsted data to be made available
+                      and updated here following an inspection.
+                    </p>
+                    <p class="govuk-body">
+                      For the very latest Ofsted data, please visit the
+                      <a href="#">Ofsted website</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <a href="#" class="govuk-link">Ofsted report</a><br />
+              Inspected 14 Jul 2022
             </td>
           </tr>
         </tbody>
@@ -78,7 +200,9 @@ block content %}
                 <td class="govuk-table__cell">Does not apply</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Local authority</th>
+                <th scope="row" class="govuk-table__header">
+                  Local authority:
+                </th>
                 <td class="govuk-table__cell">
                   <a href="#" class="govuk-link">Newcastle upon Tyne</a>
                 </td>
@@ -93,7 +217,42 @@ block content %}
                 <th scope="row" class="govuk-table__header">
                   Admissions policy:
                 </th>
-                <td class="govuk-table__cell">Non-selective</td>
+                <td class="govuk-table__cell">
+                  Non-selective
+                  <img
+                    id="multi-info"
+                    class="modal-button icon-modal"
+                    href="#admissions-policy"
+                    src="/public/images/information-question.png"
+                  />
+
+                  <div id="admissions-policy" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close"
+                        ><a href="#" class="close">Close</a></span
+                      >
+
+                      <div class="modal-body">
+                        <h2 class="govuk-heading-m">Non-selective</h2>
+                        <p class="govuk-body">
+                          The admissions policy is that pupils are not selected
+                          on the basis of academic achievement or aptitude, in
+                          contrast to the selective school system, where
+                          admission is restricted on the basis of selection
+                          criteria. Criteria may include the distance from the
+                          pupil's home to school and whether a sibling is
+                          already at the school.
+                        </p>
+
+                        <p class="govuk-body">
+                          For more information on admissions visit the
+                          <a href="#">school's website</a>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">
@@ -117,6 +276,37 @@ block content %}
                   <a href="#" class="govuk-link"
                     >Schools financial benchmarking</a
                   >
+                  <img
+                    id="multi-info"
+                    class="modal-button icon-modal"
+                    href="#financial-information"
+                    src="/public/images/information-question.png"
+                  />
+
+                  <div id="financial-information" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close"
+                        ><a href="#" class="close">Close</a></span
+                      >
+
+                      <div class="modal-body">
+                        <h2 class="govuk-heading-m">Financial information</h2>
+                        <p class="govuk-body">
+                          Schools financial benchmarking is a service that
+                          allows you to compare a school’s income and
+                          expenditure with other schools in England. You can:
+                        </p>
+
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>View a school’s financial data</li>
+                          <li>
+                            See how similar schools allocate their resource
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </td>
               </tr>
               <tr class="govuk-table__row">
@@ -127,6 +317,43 @@ block content %}
                   <a href="#" class="govuk-link"
                     >Get information about schools</a
                   >
+                  <img
+                    id="multi-info"
+                    class="modal-button icon-modal"
+                    href="#gias"
+                    src="/public/images/information-question.png"
+                  />
+
+                  <div id="gias" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close"
+                        ><a href="#" class="close">Close</a></span
+                      >
+
+                      <div class="modal-body">
+                        <h2 class="govuk-heading-m">
+                          Get information about schools
+                        </h2>
+                        <p class="govuk-body">
+                          'Get information about schools' is a register of
+                          schools and colleges in England. You can search for
+                          and download information on establishments,
+                          establishment groups or governors. Schools, local
+                          authorities and academy trusts can also update details
+                          by signing in to their Secure Access account.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Download data 2019-2022:
+                </th>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link">Download data</a>
                 </td>
               </tr>
             </tbody>
@@ -135,44 +362,79 @@ block content %}
       </details>
     </div>
 
-    <div class="govuk-grid-column-one-half">
-      <h2 class="govuk-heading-m">
-        <a href="">Secondary</a>
-      </h2>
-      <p class="body">
-        These are final results for pupils who completed key stage 4 in the
-        summer of 2022, except where stated otherwise.
-      </p>
+    <div class="govuk-grid-column-full">
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Secondary</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <p class="govuk-body">
+            These are final results for pupils who completed key stage 4 in the
+            summer of 2022, except where stated otherwise.
+          </p>
+          <button
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">16 to 18</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <p class="body">
+            These are final results for students at this school or college who
+            were at the end of their 16 to 18 phase of education, except where
+            stated otherwise.
+          </p>
+          <button
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Absence and pupil population
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <p class="body">
+            This includes absence rates, pupil numbers and information on pupils
+            attending the school.
+          </p>
+          <button
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Workforce and finance</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <p class="body">
+            This includes information on the numbers of teachers and support
+            staff, school income and spending.
+          </p>
+          <button
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            View
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="govuk-grid-column-one-half">
-      <h2 class="govuk-heading-m">
-        <a href="">16 to 18</a>
-      </h2>
-      <p class="body">
-        These are final results for students at this school or college who were
-        at the end of their 16 to 18 phase of education, except where stated
-        otherwise.
-      </p>
-    </div>
-    <div class="govuk-grid-column-one-half">
-      <h2 class="govuk-heading-m">
-        <a href="">Absence and pupil population</a>
-      </h2>
-      <p class="body">
-        This includes absence rates, pupil numbers and information on pupils
-        attending the school.
-      </p>
-    </div>
-    <div class="govuk-grid-column-one-half">
-      <h2 class="govuk-heading-m">
-        <a href="">Workforce and finance </a>
-      </h2>
-      <p class="body">
-        This includes information on the numbers of teachers and support staff,
-        school income and spending.
-      </p>
-    </div>
-
     <div class="govuk-grid-column-full">
       <p class="govuk-body">
         <a href="#" class="govuk-link"
@@ -180,7 +442,7 @@ block content %}
         >
       </p>
       <hr
-        class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
       />
       <div class="govuk-form-group" id="footer">
         <img
@@ -264,11 +526,11 @@ block content %}
                 Send
               </button>
             </div>
+
+            {% endblock %}
           </div>
         </details>
       </div>
     </div>
   </div>
 </main>
-
-{% endblock %}
