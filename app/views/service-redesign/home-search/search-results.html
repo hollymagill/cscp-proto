@@ -1,0 +1,813 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<a href="download-data" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Schools and colleges within 5 miles of Newcastle-upon-Tyne, Tyne & Wear
+      </h1>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="moj-filter">
+        <div class="moj-filter__header">
+          <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
+          </div>
+          <div class="moj-filter__header-action"></div>
+        </div>
+
+        <div class="moj-filter__content">
+          <div class="moj-filter__options">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="keywords">
+                Town, city or postcode
+              </label>
+              <input
+                class="govuk-input"
+                id="keywords"
+                name="keywords"
+                type="text"
+                value="Newcastle-upon-Tyne, Tyne & Wear"
+              />
+
+              <label class="govuk-label" for="sort"> <br />Within </label>
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="published">3 miles</option>
+                <option value="updated" selected>5 miles</option>
+                <option value="views">10 miles</option>
+              </select>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="status"
+                      name="status"
+                      type="checkbox"
+                      value="complete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="status"
+                    >
+                      Hide entries with no available data
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend
+                  class="govuk-fieldset__legend govuk-fieldset__legend--m"
+                >
+                  Education phase
+                </legend>
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="primary"
+                      name="phase"
+                      type="checkbox"
+                      value="complete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="primary"
+                    >
+                      Primary
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="secondary"
+                      name="phase"
+                      type="checkbox"
+                      value="incomplete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="secondary"
+                    >
+                      Secondary
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="college"
+                      name="phase"
+                      type="checkbox"
+                      value="inprogress"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="college"
+                    >
+                      College
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend
+                  class="govuk-fieldset__legend govuk-fieldset__legend--m"
+                >
+                  Ofsted rating
+                </legend>
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="outstanding"
+                      name="ofsted"
+                      type="checkbox"
+                      value="1"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="outstanding"
+                    >
+                      1 - Outstanding
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="good"
+                      name="ofsted"
+                      type="checkbox"
+                      value="2"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="good"
+                    >
+                      2 - Good
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="requires-improvement"
+                      name="ofsted"
+                      type="checkbox"
+                      value="3"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="requires-improvement"
+                    >
+                      3 - Requires Improvement
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="inadequate"
+                      name="ofsted"
+                      type="checkbox"
+                      value="4"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="inadequate"
+                    >
+                      4 - Inadequate
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="not-available"
+                      name="ofsted"
+                      type="checkbox"
+                      value="5"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="not-available"
+                    >
+                      Not available
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend
+                  class="govuk-fieldset__legend govuk-fieldset__legend--m"
+                >
+                  School type
+                </legend>
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="academy"
+                      name="type"
+                      type="checkbox"
+                      value="complete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="academy"
+                    >
+                      Academy
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="maintained-school"
+                      name="type"
+                      type="checkbox"
+                      value="incomplete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="maintained-school"
+                    >
+                      Maintained school
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="independent-school"
+                      name="type"
+                      type="checkbox"
+                      value="inprogress"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="independent-school"
+                    >
+                      Independent school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="special-school"
+                      name="type"
+                      type="checkbox"
+                      value="inprogress"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="special-school"
+                    >
+                      Special school
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Update results
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort"> Sort by </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published">A to Z</option>
+          <option value="updated" selected>Distance</option>
+          <option value="views">Ofsted rating</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <a href="" class="govuk-link" style="float: right">View on map</a>
+      <p class="govuk-body">Showing 60 to 70 of 426 schools and colleges</p>
+      <ul class="govuk-list">
+        <hr
+          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        />
+        <li>
+          <span class="govuk-caption-m">Independant school</span>
+          <h2 class="govuk-heading-m">
+            <a href="">Royal Grammar School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.3 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Eskdale Terrace, Newcastle-upon-Tyne, NE2 4DX
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Secondary and College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+
+        <li>
+          <span class="govuk-caption-m">Special School</span>
+          <h2 class="govuk-heading-m">
+            <a href="">Royal Sun School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.4 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Shieldfield Green, Newcastle upon Tyne, NE2 1XA
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Primary and secondary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  1 - Outstanding
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  Absence and pupil population
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Prep Grammar School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.5 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  6 Eslington Road, Newcastle-upon-Tyne, NE2 4RH
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Secondary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  3 - Requires improvement
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Girls Counties School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.6 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">Tankerville Terrace, NE2 3BA</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">Not available</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  College<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <span class="govuk-caption-m">Independant school</span>
+          <h2 class="govuk-heading-m">
+            <a href="">Futures Primary School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.7 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Stephenson Square, Newcastle Upon Tyne, NE1 3AS
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Primary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">Primary</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <span class="govuk-caption-m">Maintained school</span>
+          <h2 class="govuk-heading-m">
+            <a href="">Hawthorn School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.8 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  72 Sceptre Street, Newcastle-upon-Tyne, NE4 6PR
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Secondary and College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  College<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Royal Grammar School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.9 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Eskdale Terrace, Newcastle-upon-Tyne, NE2 4DX
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Secondary and College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Royal Sun School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">0.96 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Shieldfield Green, Newcastle upon Tyne, NE2 1XA
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Primary and secondary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  1 - Outstanding
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  Absence and pupil population
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Futures Primary School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">1.1 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Stephenson Square, Newcastle Upon Tyne, NE1 3AS
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Primary</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">Primary</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <hr class="govuk-section-break govuk-section-break--m" />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Hawthorn School</a>
+          </h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 35%">
+                  Distance
+                </th>
+                <td class="govuk-table__cell">1.5 miles</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  72 Sceptre Street, Newcastle-upon-Tyne, NE4 6PR
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">School phase</th>
+                <td class="govuk-table__cell">Secondary and College</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Ofsted rating</th>
+                <td class="govuk-table__cell">
+                  2 - Good
+                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Available data</th>
+                <td class="govuk-table__cell">
+                  Secondary<br />
+                  College<br />
+                  Absence and pupil population<br />Workforce and finance
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+      <nav class="govuk-pagination" role="navigation" aria-label="results">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg
+              class="govuk-pagination__icon govuk-pagination__icon--prev"
+              xmlns="http://www.w3.org/2000/svg"
+              height="13"
+              width="15"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 15 13"
+            >
+              <path
+                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"
+              ></path>
+            </svg>
+            <span class="govuk-pagination__link-title">Previous</span></a
+          >
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 1"
+            >
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--ellipses">
+            &ctdot;
+          </li>
+          <li class="govuk-pagination__item">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 6"
+            >
+              6
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 7"
+              aria-current="page"
+            >
+              7
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 8"
+            >
+              8
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--ellipses">
+            &ctdot;
+          </li>
+          <li class="govuk-pagination__item">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 42"
+            >
+              42
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">Next</span>
+            <svg
+              class="govuk-pagination__icon govuk-pagination__icon--next"
+              xmlns="http://www.w3.org/2000/svg"
+              height="13"
+              width="15"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 15 13"
+            >
+              <path
+                d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+              ></path></svg
+          ></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</main>
+{% endblock %}
