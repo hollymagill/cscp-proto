@@ -1,0 +1,464 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Multi-Academy Trusts in
+Newcastle-upon-Tyne, NE1, Tyne & Wear {% endblock %} {% block content %}
+<a href="/service-redesign/home-search-index" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Multi-Academy Trusts in Newcastle-upon-Tyne, NE1, Tyne & Wear
+      </h1>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="moj-filter">
+        <div class="moj-filter__header">
+          <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
+          </div>
+          <div class="moj-filter__header-action"></div>
+        </div>
+
+        <div class="moj-filter__content">
+          <div class="moj-filter__options">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="keywords">
+                Town, city or postcode
+              </label>
+              <input
+                class="govuk-input"
+                id="keywords"
+                name="keywords"
+                type="text"
+                value="Newcastle-upon-Tyne, NE1, Tyne & Wear"
+              />
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="status"
+                      name="status"
+                      type="checkbox"
+                      value="complete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="status"
+                    >
+                      Hide trusts with no available data
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend
+                  class="govuk-fieldset__legend govuk-fieldset__legend--m"
+                >
+                  Number of schools
+                </legend>
+                <div
+                  class="govuk-checkboxes govuk-checkboxes--small"
+                  data-module="govuk-checkboxes"
+                >
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="1-9"
+                      name="number-schools"
+                      type="checkbox"
+                      value="complete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="1-9"
+                    >
+                      1 to 9
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="10-19"
+                      name="number-schools"
+                      type="checkbox"
+                      value="incomplete"
+                    />
+                    <label
+                      class="govuk-label govuk-checkboxes__label"
+                      for="10-19"
+                    >
+                      10 to 19
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input
+                      class="govuk-checkboxes__input"
+                      id="20"
+                      name="number-schools"
+                      type="checkbox"
+                      value="inprogress"
+                    />
+                    <label class="govuk-label govuk-checkboxes__label" for="20">
+                      20 or more
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Update results
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort"> Sort by </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published" selected>A to Z</option>
+          <option value="views">Number of schools</option>
+        </select>
+      </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">
+        Showing 1 to 5 of 13 Multi-Academy Trusts and sponsors
+      </p>
+      <ul class="govuk-list">
+        <hr
+          class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
+        />
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Ace Academy Trust</a>
+          </h2>
+          <p class="govuk-body">
+            3 out of 8 schools and colleges are in the search area
+          </p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Akenside School</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Lakeside School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">South Hylton School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results not in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Ace Academy</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Excel School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Sideview Primary School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Thomas Moore School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Westside School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <hr
+          class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+        />
+
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Christian Schools Trust</a>
+          </h2>
+          <p class="govuk-body">
+            3 out of 8 schools and colleges are in the search area
+          </p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Akenside School</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Lakeside School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">South Hylton School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results not in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Ace Academy</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Excel School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Sideview Primary School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Thomas Moore School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Westside School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <hr
+          class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+        />
+
+        <li>
+          <h2 class="govuk-heading-m">Dean Prep Schools</h2>
+          <p class="govuk-body">
+            3 out of 8 schools and colleges are in the search area
+          </p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Akenside School</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Lakeside School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">South Hylton School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results not in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Eastview Academies</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Excel School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Sideview Primary School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Thomas Moore School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Westside School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <hr
+          class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+        />
+
+        <li>
+          <h2 class="govuk-heading-m">Futures Primary School</h2>
+          <p class="govuk-body">
+            3 out of 8 schools and colleges are in the search area
+          </p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Akenside School</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Lakeside School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">South Hylton School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results not in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Ace Academy</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Excel School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Sideview Primary School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Thomas Moore School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Westside School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <hr
+          class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+        />
+
+        <li>
+          <h2 class="govuk-heading-m">
+            <a href="">Hawthorn School</a>
+          </h2>
+          <p class="govuk-body">
+            3 out of 8 schools and colleges are in the search area
+          </p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Akenside School</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Lakeside School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">South Hylton School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Results not in the search area
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li><a class="govuk-link" href="#">Ace Academy</a></li>
+                <li>
+                  <a class="govuk-link" href="#">Excel School for Boys</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Sideview Primary School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Thomas Moore School</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#">Westside School</a>
+                </li>
+              </ul>
+            </div>
+          </details>
+        </li>
+        <hr
+          class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+        />
+      </ul>
+      <nav class="govuk-pagination" role="navigation" aria-label="results">
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 1"
+              aria-current="page"
+            >
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 2"
+            >
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a
+              class="govuk-link govuk-pagination__link"
+              href="#"
+              aria-label="Page 3"
+            >
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">Next</span>
+            <svg
+              class="govuk-pagination__icon govuk-pagination__icon--next"
+              xmlns="http://www.w3.org/2000/svg"
+              height="13"
+              width="15"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 15 13"
+            >
+              <path
+                d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"
+              ></path></svg
+          ></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
