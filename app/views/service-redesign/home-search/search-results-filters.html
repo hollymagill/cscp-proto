@@ -1,11 +1,12 @@
-{% extends "layout-index.html" %} {% block pageTitle %} Schools and colleges in
-Newcastle upon Tyne {% endblock %} {% block content %}
+{% extends "layout-index.html" %} {% block pageTitle %}         Schools and colleges within 5 miles of Newcastle-upon-Tyne, Tyne & Wear
+{% endblock %} {%
+block content %}
 <a href="/service-redesign/home-search-index" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Schools and colleges in Newcastle upon Tyne
+        Schools and colleges within 5 miles of Newcastle-upon-Tyne, Tyne & Wear
       </h1>
     </div>
     <div class="govuk-grid-column-one-third">
@@ -18,18 +19,96 @@ Newcastle upon Tyne {% endblock %} {% block content %}
         </div>
 
         <div class="moj-filter__content">
+          <div class="moj-filter__selected">
+            <div class="moj-filter__selected-heading">
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Selected filters</h2>
+              </div>
+
+              <div class="moj-filter__heading-action">
+                <p>
+                  <a class="govuk-link govuk-link--no-visited-state" href=""
+                    >Clear filters</a
+                  >
+                </p>
+              </div>
+            </div>
+            <ul class="moj-filter-tags">
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  Hide entries with no available data</a
+                >
+              </li>
+            </ul>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Education phase
+            </h3>
+
+            <ul class="moj-filter-tags">
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  Primary</a
+                >
+              </li>
+
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  College</a
+                >
+              </li>
+            </ul>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Ofsted rating
+            </h3>
+
+            <ul class="moj-filter-tags">
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  1 - Outstanding</a
+                >
+              </li>
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  2 - Good</a
+                >
+              </li>
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  Not available</a
+                >
+              </li>
+            </ul>
+          </div>
           <div class="moj-filter__options">
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--m" for="keywords">
-                Local authority
+                Town, city or postcode
               </label>
               <input
                 class="govuk-input"
                 id="keywords"
                 name="keywords"
                 type="text"
-                value="Newcastle upon Tyne"
+                value="Newcastle-upon-Tyne, Tyne & Wear"
               />
+
+              <label class="govuk-label" for="sort"> <br />Within </label>
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="published">1 mile</option>
+                <option value="updated">3 miles</option>
+                <option value="views" selected>5 miles</option>
+                <option value="views">10 miles</option>
+                <option value="views">15 miles</option>
+                <option value="views">20 miles</option>
+                <option value="views">25 miles</option>
+              </select>
             </div>
 
             <div class="govuk-form-group">
@@ -45,6 +124,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
                       name="status"
                       type="checkbox"
                       value="complete"
+                      checked
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -75,6 +155,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
                       name="phase"
                       type="checkbox"
                       value="complete"
+                      checked
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -107,6 +188,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
                       name="phase"
                       type="checkbox"
                       value="inprogress"
+                      checked
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -137,6 +219,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
                       name="ofsted"
                       type="checkbox"
                       value="1"
+                      checked
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -153,6 +236,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
                       name="ofsted"
                       type="checkbox"
                       value="2"
+                      checked
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -198,6 +282,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
                       name="ofsted"
                       type="checkbox"
                       value="5"
+                      checked
                     />
                     <label
                       class="govuk-label govuk-checkboxes__label"
@@ -299,7 +384,8 @@ Newcastle upon Tyne {% endblock %} {% block content %}
       <div class="govuk-form-group">
         <label class="govuk-label" for="sort"> Sort by </label>
         <select class="govuk-select" id="sort" name="sort">
-          <option value="published" selected>A to Z</option>
+          <option value="published">A to Z</option>
+          <option value="updated" selected>Distance</option>
           <option value="views">Ofsted rating</option>
         </select>
       </div>
@@ -307,7 +393,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
 
     <div class="govuk-grid-column-two-thirds">
       <a href="" class="govuk-link" style="float: right">View on map</a>
-      <p class="govuk-body">Showing 61 to 70 of 426 schools and colleges</p>
+      <p class="govuk-body">Showing 11 to 20 of 25 schools and colleges</p>
       <ul class="govuk-list">
         <hr
           class="govuk-section-break govuk-section-break--m govuk-section-break--visible"
@@ -375,7 +461,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Education phase</th>
-                <td class="govuk-table__cell">Primary and secondary</td>
+                <td class="govuk-table__cell">Primary</td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Ofsted rating</th>
@@ -387,7 +473,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Available data</th>
                 <td class="govuk-table__cell">
-                  Secondary<br />
+                  Primary<br />
                   Absence and pupil population
                 </td>
               </tr>
@@ -419,10 +505,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Ofsted rating</th>
-                <td class="govuk-table__cell">
-                  3 - Requires improvement
-                  <span style="color: #505a5f">(Inspected 23 June 2022)</span>
-                </td>
+                <td class="govuk-table__cell">Not available</td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Available data</th>
@@ -582,7 +665,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Available data</th>
                 <td class="govuk-table__cell">
-                  Secondary<br />
+                  College<br />
                   Absence and pupil population<br />Workforce and finance
                 </td>
               </tr>
@@ -610,7 +693,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Education phase</th>
-                <td class="govuk-table__cell">Primary and secondary</td>
+                <td class="govuk-table__cell">Primary and Secondary</td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Ofsted rating</th>
@@ -622,7 +705,7 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Available data</th>
                 <td class="govuk-table__cell">
-                  Secondary<br />
+                  Primary<br />
                   Absence and pupil population
                 </td>
               </tr>
@@ -697,47 +780,23 @@ Newcastle upon Tyne {% endblock %} {% block content %}
               1
             </a>
           </li>
-          <li class="govuk-pagination__item govuk-pagination__item--ellipses">
-            &ctdot;
-          </li>
-          <li class="govuk-pagination__item">
-            <a
-              class="govuk-link govuk-pagination__link"
-              href="#"
-              aria-label="Page 6"
-            >
-              6
-            </a>
-          </li>
           <li class="govuk-pagination__item govuk-pagination__item--current">
             <a
               class="govuk-link govuk-pagination__link"
               href="#"
-              aria-label="Page 7"
+              aria-label="Page 2"
               aria-current="page"
             >
-              7
+              2
             </a>
           </li>
           <li class="govuk-pagination__item">
             <a
               class="govuk-link govuk-pagination__link"
               href="#"
-              aria-label="Page 8"
+              aria-label="Page 3"
             >
-              8
-            </a>
-          </li>
-          <li class="govuk-pagination__item govuk-pagination__item--ellipses">
-            &ctdot;
-          </li>
-          <li class="govuk-pagination__item">
-            <a
-              class="govuk-link govuk-pagination__link"
-              href="#"
-              aria-label="Page 42"
-            >
-              42
+              3
             </a>
           </li>
         </ul>
