@@ -18,108 +18,151 @@ Newcastle-upon-Tyne, NE1, Tyne & Wear {% endblock %} {% block content %}
         </div>
 
         <div class="moj-filter__content">
-          <div class="moj-filter__options">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--m" for="keywords">
-                Town, city or postcode
-              </label>
-              <input
-                class="govuk-input"
-                id="keywords"
-                name="keywords"
-                type="text"
-                value="Newcastle-upon-Tyne, NE1, Tyne & Wear"
-              />
+          <div class="moj-filter__selected">
+            <div class="moj-filter__selected-heading">
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Selected filters</h2>
+              </div>
+
+              <div class="moj-filter__heading-action">
+                <p>
+                  <a class="govuk-link govuk-link--no-visited-state" href=""
+                    >Clear filters</a
+                  >
+                </p>
+              </div>
             </div>
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <div
-                  class="govuk-checkboxes govuk-checkboxes--small"
-                  data-module="govuk-checkboxes"
+            <ul class="moj-filter-tags">
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  Hide trusts with no available data</a
                 >
-                  <div class="govuk-checkboxes__item">
-                    <input
-                      class="govuk-checkboxes__input"
-                      id="status"
-                      name="status"
-                      type="checkbox"
-                      value="complete"
-                    />
-                    <label
-                      class="govuk-label govuk-checkboxes__label"
-                      for="status"
-                    >
-                      Hide trusts with no available data
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+              </li>
+            </ul>
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Number of schools
+            </h3>
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend
-                  class="govuk-fieldset__legend govuk-fieldset__legend--m"
+            <ul class="moj-filter-tags">
+              <li>
+                <a class="moj-filter__tag" href="#"
+                  ><span class="govuk-visually-hidden">Remove this filter</span>
+                  1 to 9</a
                 >
-                  Number of schools
-                </legend>
-                <div
-                  class="govuk-checkboxes govuk-checkboxes--small"
-                  data-module="govuk-checkboxes"
-                >
-                  <div class="govuk-checkboxes__item">
-                    <input
-                      class="govuk-checkboxes__input"
-                      id="1-9"
-                      name="number-schools"
-                      type="checkbox"
-                      value="complete"
-                    />
-                    <label
-                      class="govuk-label govuk-checkboxes__label"
-                      for="1-9"
-                    >
-                      1 to 9
-                    </label>
-                  </div>
+              </li>
+            </ul>
+          </div>
 
-                  <div class="govuk-checkboxes__item">
-                    <input
-                      class="govuk-checkboxes__input"
-                      id="10-19"
-                      name="number-schools"
-                      type="checkbox"
-                      value="incomplete"
-                    />
-                    <label
-                      class="govuk-label govuk-checkboxes__label"
-                      for="10-19"
-                    >
-                      10 to 19
-                    </label>
-                  </div>
+          <div class="moj-filter__content">
+            <div class="moj-filter__options">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="keywords">
+                  Town, city or postcode
+                </label>
+                <input
+                  class="govuk-input"
+                  id="keywords"
+                  name="keywords"
+                  type="text"
+                  value="Newcastle-upon-Tyne, NE1, Tyne & Wear"
+                />
+              </div>
 
-                  <div class="govuk-checkboxes__item">
-                    <input
-                      class="govuk-checkboxes__input"
-                      id="20"
-                      name="number-schools"
-                      type="checkbox"
-                      value="inprogress"
-                    />
-                    <label class="govuk-label govuk-checkboxes__label" for="20">
-                      20 or more
-                    </label>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div
+                    class="govuk-checkboxes govuk-checkboxes--small"
+                    data-module="govuk-checkboxes"
+                  >
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="status"
+                        name="status"
+                        type="checkbox"
+                        value="complete"
+                        checked
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="status"
+                      >
+                        Hide trusts with no available data
+                      </label>
+                    </div>
                   </div>
-                </div>
-              </fieldset>
-            </div>
+                </fieldset>
+              </div>
 
-            <div class="govuk-form-group">
-              <button class="govuk-button" data-module="govuk-button">
-                Update results
-              </button>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend
+                    class="govuk-fieldset__legend govuk-fieldset__legend--m"
+                  >
+                    Number of schools
+                  </legend>
+                  <div
+                    class="govuk-checkboxes govuk-checkboxes--small"
+                    data-module="govuk-checkboxes"
+                  >
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="1-9"
+                        name="number-schools"
+                        type="checkbox"
+                        value="complete"
+                        checked
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="1-9"
+                      >
+                        1 to 9
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="10-19"
+                        name="number-schools"
+                        type="checkbox"
+                        value="incomplete"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="10-19"
+                      >
+                        10 to 19
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="20"
+                        name="number-schools"
+                        type="checkbox"
+                        value="inprogress"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="20"
+                      >
+                        20 or more
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Update results
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -251,7 +294,7 @@ Newcastle-upon-Tyne, NE1, Tyne & Wear {% endblock %} {% block content %}
         />
 
         <li>
-          <h2 class="govuk-heading-m">Dean Prep Schools</h2>
+          <h2 class="govuk-heading-m"><a href="">Dean Prep Schools</a></h2>
           <p class="govuk-body">
             3 out of 8 schools and colleges are in the search area
           </p>
@@ -303,7 +346,7 @@ Newcastle-upon-Tyne, NE1, Tyne & Wear {% endblock %} {% block content %}
         />
 
         <li>
-          <h2 class="govuk-heading-m">Futures Primary School</h2>
+          <h2 class="govuk-heading-m"><a href="">Futures Primary School</a></h2>
           <p class="govuk-body">
             3 out of 8 schools and colleges are in the search area
           </p>
