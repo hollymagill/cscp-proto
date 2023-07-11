@@ -1,0 +1,37 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+<a href="download-1" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Question 2 of 3</span>
+            <h1 class="govuk-fieldset__heading">
+              What academic year do you want to download data from?
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <div id="subject-hint" class="govuk-hint">
+              If a year is missing it is because this is not published for this
+              local authority
+            </div>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="published">2021 to 2022</option>
+              <option value="updated" selected>2020 to 2021</option>
+              <option value="views">2019 to 2020</option>
+              <option value="comments">2018 to 2019</option>
+              <option value="comments">2017 to 2018</option>
+              <option value="comments">2016 to 2017</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+      <a href="download-3" role="button" class="govuk-button"> Continue </a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

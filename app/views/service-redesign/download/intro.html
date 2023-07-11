@@ -1,0 +1,45 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Download school data {% endblock %} {%
+block content %}
+<a href="" class="govuk-back-link">Return to home page</a>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Download school data</h1>
+      <p class="govuk-body">
+        You can use this service to download data for Local authorities and all
+        of England for specific years.
+      </p>
+      <p class="govuk-body">You can download:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>general school information</li>
+        <li>16 to 18 information</li>
+        <li>key stage 2 and 4</li>
+        <li>pupil absence, population and types</li>
+        <li>workforce</li>
+        <li>spend per pupil</li>
+      </ul>
+
+      <a
+        href="download-1"
+        role="button"
+        draggable="false"
+        class="govuk-button govuk-button--start"
+        data-module="govuk-button"
+      >
+        Start now
+        <svg
+          class="govuk-button__start-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="17.5"
+          height="19"
+          viewBox="0 0 33 40"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" /></svg
+      ></a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
