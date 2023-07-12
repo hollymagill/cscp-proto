@@ -1,0 +1,62 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Index {% endblock %} {%
+block content %}
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">Your requested files</h1>
+          </legend>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Final 16 to 18 study</li>
+            <li>Pupil absence</li>
+          </ul>
+          <p class="govuk-body">
+            Your files will download as a ZIP file, open the ZIP to access your
+            requested files.
+          </p>
+          <button class="govuk-button" data-module="govuk-button">
+            Download as CSV
+          </button>
+          <button class="govuk-button" data-module="govuk-button">
+            Download as XLS
+          </button>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What is the difference between CSV and XLS formats?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              You can open CSV files in any spreadsheet program. They can not
+              contain formulas or formatting.<br />You can only open XLS files
+              in Microsoft Excel. They can contain formulas and formatting.
+            </div>
+          </details>
+          <h1 class="govuk-heading-m">Guidance documents</h1>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#">Download guidance documents</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#"
+                >Download explanation of terminology</a
+              >
+            </li>
+          </ul>
+          <button
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+          >
+            Return to home
+          </button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
