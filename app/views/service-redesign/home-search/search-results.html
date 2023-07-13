@@ -1,7 +1,19 @@
 {% extends "layout-index.html" %} {% block pageTitle %} Schools and colleges
 within 5 miles of Newcastle-upon-Tyne, Tyne & Wear {% endblock %} {% block
 content %}
-<a href="/service-redesign/home-search-index" class="govuk-back-link">Back</a>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search">Search</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-results">Search results</a>
+    </li>
+  </ol>
+</div>
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
