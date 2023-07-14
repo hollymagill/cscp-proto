@@ -1,23 +1,18 @@
 {% extends "layout-index.html" %} {% block pageTitle %} What academic year do
 you want data for? {% endblock %} {% block content %}
-<a href="where" class="govuk-back-link">Back</a>
+<a href="intro" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            
             <h1 class="govuk-fieldset__heading">
-             What academic year do you want to download?
+              What academic year do you want to download?
             </h1>
           </legend>
 
           <div class="govuk-form-group">
-            <div id="subject-hint" class="govuk-hint">
-              If an academic year is missing it is not available or published
-              for this local authority.
-            </div>
             <label class="govuk-label" for="sort"> Academic year </label>
             <select class="govuk-select" id="sort" name="sort">
               <option value="choose" selected>Choose academic year</option>
@@ -31,7 +26,7 @@ you want data for? {% endblock %} {% block content %}
           </div>
         </fieldset>
       </div>
-      <a href="types-files" role="button" class="govuk-button"> Continue </a>
+      <a href="where" role="button" class="govuk-button"> Continue </a>
     </div>
   </div>
 </main>
