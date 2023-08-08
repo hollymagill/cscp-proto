@@ -1,7 +1,4 @@
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-#progress-8 {
-  width: 80%;
-}
 
 /* RESULTS OVER TIME! */
 
@@ -27,15 +24,17 @@
 }
 
 .js-enabled .govuk-accordion {
-  border-bottom: 2px solid govuk-colour("blue");
+  border-bottom: 2px solid #b1b4b6;
 }
 
 .js-enabled .govuk-accordion__section-button {
-  border-top: 2px solid govuk-colour("blue");
+  border-top: 2px solid #b1b4b6;
+  border-bottom: 0px;
 }
 
 .js-enabled .govuk-accordion__section-button {
-  padding-bottom: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /* footer */
@@ -290,17 +289,17 @@
 }
 
 .govuk-tag--light-green {
-  color: #20510B;
-  background: #DDEDD4;
+  color: #20510b;
+  background: #ddedd4;
 }
 
 .govuk-tag--green {
   color: #194409;
-  background: #C2D9B5;
+  background: #c2d9b5;
 }
 
-.mc-toggle-button, .gem-c-govspeak .mc-toggle-button {
-  
+.mc-toggle-button,
+.gem-c-govspeak .mc-toggle-button {
   color: rgb(29, 112, 184);
   cursor: pointer;
   background-color: rgb(255, 255, 255);
@@ -312,7 +311,8 @@
   padding: 10px;
 }
 
-.mc-toggle-button, .gem-c-govspeak .mc-toggle-button {
+.mc-toggle-button,
+.gem-c-govspeak .mc-toggle-button {
   color: rgb(29, 112, 184);
   cursor: pointer;
   background-color: rgb(255, 255, 255);
@@ -323,9 +323,6 @@
   margin: 0px;
   padding: 10px;
 }
-
-
-
 
 //FROM THE OLD STUFF
 
@@ -416,14 +413,15 @@
   text-align: center;
 }
 
-.up-down-arrow, .up-down-arrow-down {
+.up-down-arrow,
+.up-down-arrow-down {
   width: 0.7rem;
   margin-left: 2px;
   float: right;
   filter: invert(33%) sepia(99%) saturate(858%) hue-rotate(179deg)
     brightness(100%) contrast(88%);
 }
- .up-down-arrow-down{
+.up-down-arrow-down {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7456%)
     hue-rotate(12deg) brightness(90%) contrast(116%);
 }
@@ -443,3 +441,12 @@
   color: govuk-colour("white");
 }
 
+.chart-large {
+  min-height: 220px;
+}
+
+.divider {
+  border-top: 3px solid #1d70b8;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

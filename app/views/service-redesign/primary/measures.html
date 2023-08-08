@@ -1,0 +1,614 @@
+{% extends "layout-index.html" %} {% block pageTitle %} St Paul's CofE Primary
+School overview {% endblock %} {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Search</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search">Search results</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search"
+        >St Paul's CofE Primary School overview</a
+      >
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search"
+        >School measures</a
+      >
+    </li>
+  </ol>
+</div>
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Voluntary aided school</span>
+      <h1 class="govuk-heading-xl">St Paul's CofE Primary School measures</h1>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="max-width:100%;
+          white-space:nowrap;">
+            What year is this data from?
+          </th>
+          <td class="govuk-table__cell">2019</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Address</th>
+          <td class="govuk-table__cell">
+            Summerhill Terrace, Newcastle-upon-Tyne, NE4 6EB
+          </td>
+        </tr>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Apply for a place</th>
+            <td class="govuk-table__cell">
+              <a href=""> Apply for a Primary place (opens in a new tab)</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Share this page</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">Twitter</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Facebook</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Email</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-full">
+      <hr class="divider" />
+    </div>
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">
+        Progress 8 score in reading, writing and maths
+      </h2>
+      <p class="govuk-body">
+        The academic progress that pupils make from the end of primary school to
+        the end of secondary school. This is based on 8 qualifications.
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Reading</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--yellow">Average</strong>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">2.9</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">-0.3 to 6.2</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 4 are included in
+          calculating this.
+        </div>
+      </details>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Writing</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green"
+                >Well above average</strong
+              >
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">5.7</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">2.7 to 8.7</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 4 are included in
+          calculating this.
+        </div>
+      </details>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Maths</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--yellow">Average</strong>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">2.5</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">-0.4 to 5.3</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 2 are included in
+          calculating this.
+        </div>
+      </details>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <hr
+        class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+      />
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">
+        Pupils meeting expected standard in reading, writing and maths
+      </h2>
+      <p class="govuk-body">
+        The expected standard is a scaled score of 100 or more in reading and
+        maths tests. A teacher also has to assess you as 'working at the
+        expected standard' or better in writing.
+      </p>
+      <div>
+        <canvas id="expectedStandard"></canvas>
+        <script>
+          Chart.register(ChartDataLabels);
+          const chart1 = document.getElementById("expectedStandard");
+          const expectedStandard = new Chart(chart1, {
+            type: "bar",
+            data: {
+              labels: [
+                "School",
+                ["Local authority", "average"],
+                "England average",
+              ],
+              datasets: [
+                {
+                  data: [67, 66, 65],
+                  backgroundColor: ["#003078", "#912b88", "#00703c"],
+                  barThickness: 30,
+                },
+              ],
+            },
+            options: {
+              layout: {
+                padding: {
+                  right: 10,
+                },
+              },
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                tooltip: {
+                  enabled: false,
+                },
+                datalabels: {
+                  color: "#FFFFFF",
+                  anchor: "middle",
+                  align: "middle",
+                  clamp: true,
+                  font: {
+                    family: "'GDS Transport'",
+                    size: 19,
+                  },
+                  formatter: function (value, chart3) {
+                    return value + "%";
+                  },
+                },
+                legend: {
+                  display: false,
+                },
+              },
+              indexAxis: "y",
+              scales: {
+                y: {
+                  border: {
+                    color: "#0b0c0c",
+                  },
+                  ticks: {
+                    color: "#0b0c0c",
+                    font: {
+                      family: "'GDS Transport'",
+                      size: 19,
+                    },
+                  },
+
+                  grid: {
+                    display: false,
+                  },
+                },
+                x: {
+                  beginAtZero: true,
+                  display: false,
+                  suggestedMax: 100,
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">
+        Pupils meeting higher standard in reading, writing and maths
+      </h2>
+      <p class="govuk-body">
+        The higher standard is a scaled score of 110 or more in reading and
+        maths tests. A teacher also has to assess you as 'working at a greater
+        depth within the expected standard' in writing.
+      </p>
+      <div>
+        <canvas id="higherStandard"></canvas>
+        <script>
+          Chart.register(ChartDataLabels);
+          const chart2 = document.getElementById("higherStandard");
+          const higherStandard = new Chart(chart2, {
+            type: "bar",
+            data: {
+              labels: [
+                "School",
+                ["Local authority", "average"],
+                "England average",
+              ],
+              datasets: [
+                {
+                  data: [20, 12, 11],
+                  backgroundColor: ["#003078", "#912b88", "#00703c"],
+                  barThickness: 30,
+                },
+              ],
+            },
+            options: {
+              layout: {
+                padding: {
+                  right: 10,
+                },
+              },
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                tooltip: {
+                  enabled: false,
+                },
+                datalabels: {
+                  color: "#0b0c0c",
+                  anchor: "end",
+                  align: "end",
+                  font: {
+                    family: "'GDS Transport'",
+                    size: 19,
+                  },
+                  formatter: function (value, chart3) {
+                    return value + "%";
+                  },
+                },
+                legend: {
+                  display: false,
+                },
+              },
+              indexAxis: "y",
+              scales: {
+                y: {
+                  border: {
+                    color: "#0b0c0c",
+                  },
+                  ticks: {
+                    color: "#0b0c0c",
+                    font: {
+                      family: "'GDS Transport'",
+                      size: 19,
+                    },
+                  },
+
+                  grid: {
+                    display: false,
+                  },
+                },
+                x: {
+                  beginAtZero: true,
+                  display: false,
+                  suggestedMax: 100,
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <hr
+        class="govuk-section-break govuk-section-break--l govuk-section-break--visible"
+      />
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">Average score in reading</h2>
+      <p class="govuk-body">
+        This is based on the key stage 2 reading test performance.
+      </p>
+      <div class="chart-large">
+        <canvas id="averageReading"></canvas>
+        <script>
+          Chart.register(ChartDataLabels);
+          const chart3 = document.getElementById("averageReading");
+          const averageReading = new Chart(chart3, {
+            type: "bar",
+            data: {
+              labels: [
+                "School",
+                ["Local authority", "average"],
+                "England average",
+              ],
+              datasets: [
+                {
+                  data: [104, 105, 103],
+                  backgroundColor: ["#003078", "#912b88", "#00703c"],
+                  barThickness: 30,
+                },
+              ],
+            },
+            options: {
+              layout: {
+                padding: {
+                  right: 10,
+                },
+              },
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                tooltip: {
+                  enabled: false,
+                },
+                datalabels: {
+                  color: "#FFFFFF",
+                  anchor: "center",
+                  align: "center",
+                  clamp: true,
+                  font: {
+                    family: "'GDS Transport'",
+                    size: 19,
+                  },
+                },
+                legend: {
+                  display: false,
+                },
+              },
+              indexAxis: "y",
+              scales: {
+                y: {
+                  border: {
+                    color: "#0b0c0c",
+                  },
+                  ticks: {
+                    color: "#0b0c0c",
+                    font: {
+                      family: "'GDS Transport'",
+                      size: 19,
+                    },
+                  },
+                  grid: {
+                    display: false,
+                  },
+                },
+                x: {
+                  suggestedMax: 120,
+                  suggestedMin: 80,
+                  beginAtZero: false,
+                  border: {
+                    color: "#0b0c0c",
+                  },
+                  ticks: {
+                    stepSize: 20,
+                    color: "#0b0c0c",
+                    callback: function (label, index, labels) {
+                      switch (label) {
+                        case 80:
+                          return ["80", "Lowest"];
+                        case 100:
+                          return ["100", "Expected"];
+                        case 120:
+                          return ["120", "Highest"];
+                      }
+                    },
+                    font: {
+                      family: "'GDS Transport'",
+                      size: 19,
+                    },
+                  },
+                  grid: {
+                    display: false,
+                  },
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">Average score in maths</h2>
+      <p class="govuk-body">
+        This is based on the key stage 2 maths test performance.
+      </p>
+      <div class="chart-large">
+        <canvas id="averageMaths"></canvas>
+        <script>
+          Chart.register(ChartDataLabels);
+          const chart4 = document.getElementById("averageMaths");
+          const averageMaths = new Chart(chart4, {
+            type: "bar",
+            data: {
+              labels: [
+                "School",
+                ["Local authority", "average"],
+                "England average",
+              ],
+              datasets: [
+                {
+                  data: [104, 105, 103],
+                  backgroundColor: ["#003078", "#912b88", "#00703c"],
+                  barThickness: 30,
+                },
+              ],
+            },
+            options: {
+              layout: {
+                padding: {
+                  right: 10,
+                },
+              },
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                tooltip: {
+                  enabled: false,
+                },
+                datalabels: {
+                  color: "#FFFFFF",
+                  anchor: "center",
+                  align: "center",
+                  clamp: true,
+                  font: {
+                    family: "'GDS Transport'",
+                    size: 19,
+                  },
+                },
+                legend: {
+                  display: false,
+                },
+              },
+              indexAxis: "y",
+              scales: {
+                y: {
+                  border: {
+                    color: "#0b0c0c",
+                  },
+                  ticks: {
+                    color: "#0b0c0c",
+                    font: {
+                      family: "'GDS Transport'",
+                      size: 19,
+                    },
+                  },
+                  grid: {
+                    display: false,
+                  },
+                },
+                x: {
+                  suggestedMax: 120,
+                  suggestedMin: 80,
+                  beginAtZero: false,
+                  border: {
+                    color: "#0b0c0c",
+                  },
+                  ticks: {
+                    stepSize: 20,
+                    color: "#0b0c0c",
+                    callback: function (label, index, labels) {
+                      switch (label) {
+                        case 80:
+                          return ["80", "Lowest"];
+                        case 100:
+                          return ["100", "Expected"];
+                        case 120:
+                          return ["120", "Highest"];
+                      }
+                    },
+                    font: {
+                      family: "'GDS Transport'",
+                      size: 19,
+                    },
+                  },
+                  grid: {
+                    display: false,
+                  },
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <div class="govuk-grid-column-full">
+      <hr class="divider" />
+
+      <h2 class="govuk-heading-m">More Primary measures</h2>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="">More information about Progress 8</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="results-over-time">Results over time</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Results by pupil characteristics</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
