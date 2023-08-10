@@ -1,0 +1,272 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Find and check the
+performance of schools and colleges in England {% endblock %} {% block content
+%}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h2 class="govuk-heading-m">
+        MAT Progress 8 score <img src="/public/images/help.svg" />
+      </h2>
+
+      <p class="govuk-body">
+        The academic progress that pupils make from the end of key stage 2 to
+        the end of key stage 4. This is based on 8 qualifications.
+        <br />This rating is above average because the entire interval is above
+        0, and the score is greater than 0 but lower than 0.5.<br />
+      </p>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--light-green"
+                >Above average</strong
+              >
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">0.25</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">0.05 to 0.39</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 4 are included in
+          calculating this.
+        </div>
+      </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Local authority and England scores
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 33%">
+                  Area
+                </th>
+                <th scope="row" class="govuk-table__header" style="width: 33%">
+                  Score
+                </th>
+                <th scope="row" class="govuk-table__header" style="width: 33%">
+                  Confidence interval
+                </th>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Newcastle upon Tyne
+                </th>
+                <td class="govuk-table__cell">
+                  -0.25<br />
+                  <strong class="govuk-tag govuk-tag--yellow"> Average </strong>
+                </td>
+                <td class="govuk-table__cell">-0.5 to -0.1</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">England</th>
+                <td class="govuk-table__cell">
+                  -0.03<br /><strong class="govuk-tag govuk-tag--yellow">
+                    Average
+                  </strong>
+                </td>
+                <td class="govuk-table__cell">Not applicable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Show Progress 8 graph
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <div style="height: 130px">
+            <canvas id="chart"></canvas>
+            <script>
+              Chart.register(ChartDataLabels);
+              var yLabels = {
+                "-2": ["Well", "below", "average"],
+                "-1": ["Below", "average"],
+                0: "Average",
+                1: ["Above", "average"],
+                2: ["Well", "above", "average"],
+              };
+              var chrt = document.getElementById("chart").getContext("2d");
+              var chart = new Chart(chrt, {
+                type: "scatter",
+                data: {
+                  labels: [["Lower", "range"], "Score", ["Upper", "range"]],
+                  datasets: [
+                    {
+                      data: [
+                        { x: 0.18, y: 1 },
+                        { x: 0.37, y: 1 },
+                        { x: 0.56, y: 1 },
+                      ],
+                      backgroundColor: ["#ffdd00", "#ffdd00", "#85994b"],
+                      borderColor: ["#0b0c0c"],
+                      borderWidth: 2,
+                      radius: 4,
+                      showLine: true,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    tooltip: {
+                      enabled: false,
+                    },
+                    legend: {
+                      display: false,
+                    },
+                    datalabels: {
+                      align: function (context) {
+                        var index = context.dataIndex;
+
+                        if (index === 0) {
+                          return (value = "left");
+                        } else if (index === 2) {
+                          return (value = "right");
+                        } else {
+                          return "top";
+                        }
+                      },
+                      color: "#505a5f",
+                      formatter: function (value, context) {
+                        return context.chart.data.labels[context.dataIndex];
+                      },
+                      font: {
+                        family: "'GDS Transport'",
+                        size: 14,
+                      },
+                    },
+                  },
+                  scales: {
+                    y: {
+                      border: {
+                        color: "#b1b4b6",
+                      },
+                      ticks: {
+                        display: false,
+                      },
+                      grid: {
+                        display: false,
+                      },
+                    },
+                    x: {
+                      border: {
+                        color: "#b1b4b6",
+                      },
+                      max: 2.5,
+                      min: -2.5,
+                      grid: {
+                        display: true,
+                        color: "#b1b4b6",
+                        offset: true,
+                      },
+                      ticks: {
+                        color: "#0b0c0c",
+                        callback: function (value, index, values) {
+                          // for a value (tick) equals to 8
+                          return yLabels[value];
+                        },
+                        font: {
+                          family: "'GDS Transport'",
+                          size: 14,
+                        },
+                      },
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How many schools are in each rating?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Rating</th>
+                <th scope="row" class="govuk-table__header">
+                  Percentage of schools
+                </th>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green"
+                    >Well above average</strong
+                  >
+                </td>
+                <td class="govuk-table__cell">13%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--light-green"
+                    >Above average</strong
+                  >
+                </td>
+                <td class="govuk-table__cell">15%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--yellow">Average</strong>
+                </td>
+                <td class="govuk-table__cell">33%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--orange"
+                    >Below average</strong
+                  >
+                </td>
+                <td class="govuk-table__cell">17%</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--red"
+                    >Well below average</strong
+                  >
+                </td>
+                <td class="govuk-table__cell">22%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

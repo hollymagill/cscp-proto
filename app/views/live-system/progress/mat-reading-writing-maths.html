@@ -1,0 +1,132 @@
+{% extends "layout-index.html" %} {% block pageTitle %} Find and check the
+performance of schools and colleges in England {% endblock %} {% block content
+%}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">
+        MAT progress score in reading, writing and maths
+        <img src="/public/images/help.svg" />
+      </h2>
+      <p class="govuk-body">
+        The academic progress that pupils make from the end of key stage 1 to
+        the end of key stage 2.
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Reading</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--yellow">Average</strong>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">2.9</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">-0.3 to 6.2</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 4 are included in
+          calculating this.
+        </div>
+      </details>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Writing</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green"
+                >Well above average</strong
+              >
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">5.7</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">2.7 to 8.7</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 4 are included in
+          calculating this.
+        </div>
+      </details>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-s">Maths</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Rating</th>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--yellow">Average</strong>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Score</th>
+            <td class="govuk-table__cell">2.5</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Confidence interval</th>
+            <td class="govuk-table__cell">-0.4 to 5.3</td>
+          </tr>
+        </tbody>
+      </table>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            More information about this score
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Pupils here achieve up to half a grade lower in each qualification,
+          compared to similar pupils across the country.<br />
+          121 out of 151 pupils at the end of Key stage 2 are included in
+          calculating this.
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
