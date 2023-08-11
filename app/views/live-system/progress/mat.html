@@ -15,7 +15,9 @@ performance of schools and colleges in England {% endblock %} {% block content
         The academic progress that pupils make from the end of key stage 2 to
         the end of key stage 4. This is based on 8 qualifications.
         <br />This rating is above average because the entire interval is above
-        0, and the score is greater than 0 but lower than 0.5.<br />
+        0, and the score is greater than 0 but lower than 0.5.<br />Pupils here
+        achieve up to half a grade lower in each qualification, compared to
+        similar pupils across the country.<br />
       </p>
 
       <table class="govuk-table">
@@ -39,62 +41,6 @@ performance of schools and colleges in England {% endblock %} {% block content
           </tr>
         </tbody>
       </table>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information about this score
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Pupils here achieve up to half a grade lower in each qualification,
-          compared to similar pupils across the country.<br />
-          121 out of 151 pupils at the end of Key stage 4 are included in
-          calculating this.
-        </div>
-      </details>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Local authority and England scores
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 33%">
-                  Area
-                </th>
-                <th scope="row" class="govuk-table__header" style="width: 33%">
-                  Score
-                </th>
-                <th scope="row" class="govuk-table__header" style="width: 33%">
-                  Confidence interval
-                </th>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">
-                  Newcastle upon Tyne
-                </th>
-                <td class="govuk-table__cell">
-                  -0.25<br />
-                  <strong class="govuk-tag govuk-tag--yellow"> Average </strong>
-                </td>
-                <td class="govuk-table__cell">-0.5 to -0.1</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">England</th>
-                <td class="govuk-table__cell">
-                  -0.03<br /><strong class="govuk-tag govuk-tag--yellow">
-                    Average
-                  </strong>
-                </td>
-                <td class="govuk-table__cell">Not applicable</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -205,6 +151,50 @@ performance of schools and colleges in England {% endblock %} {% block content
               });
             </script>
           </div>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Local authority and England scores
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width: 33%">
+                  Area
+                </th>
+                <th scope="row" class="govuk-table__header" style="width: 33%">
+                  Score
+                </th>
+                <th scope="row" class="govuk-table__header" style="width: 33%">
+                  Confidence interval
+                </th>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">
+                  Newcastle upon Tyne
+                </th>
+                <td class="govuk-table__cell">
+                  -0.25<br />
+                  <strong class="govuk-tag govuk-tag--yellow"> Average </strong>
+                </td>
+                <td class="govuk-table__cell">-0.5 to -0.1</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">England</th>
+                <td class="govuk-table__cell">
+                  -0.03<br /><strong class="govuk-tag govuk-tag--yellow">
+                    Average
+                  </strong>
+                </td>
+                <td class="govuk-table__cell">Not applicable</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </details>
 
