@@ -3,6 +3,7 @@ performance of schools and colleges in England {% endblock %} {% block content
 %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.1.2/chartjs-plugin-annotation.min.js"></script>
 
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
@@ -10,252 +11,333 @@ performance of schools and colleges in England {% endblock %} {% block content
       <h2 class="govuk-heading-m">
         Progression score <img src="/public/images/help.svg" />
       </h2>
-
       <p class="govuk-body">
         This score tells you the proportion of students from this school or
         college that go on to degrees, higher apprenticeships or other study at
         level 4 or above after leaving advanced level qualifications (level 3),
-        <br />This rating is above average because the entire interval is above
-        0, and the score is greater than 0 but lower than 0.5.
+        <br />This rating is about average because the interval includes 0. When
+        this happens the score is ignored.
       </p>
-    </div>
-    <div class="govuk-grid-column-one-half">
-      <table class="govuk-table">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Rating</th>
-            <td class="govuk-table__cell">
-              <strong class="govuk-tag govuk-tag--light-green"
-                >Above average</strong
-              >
-            </td>
-          </tr>
+      <div class="govuk-grid-column-one-half">
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Rating</th>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--yellow"
+                  >About average</strong
+                >
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Score</th>
-            <td class="govuk-table__cell">0.25</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Confidence interval</th>
-            <td class="govuk-table__cell">0.05 to 0.39</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="govuk-grid-column-full">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Show Progress 8 graph
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <div style="height: 130px">
-            <canvas id="chart"></canvas>
-            <script>
-              Chart.register(ChartDataLabels);
-              var yLabels = {
-                "-2": ["Well", "below", "average"],
-                "-1": ["Below", "average"],
-                0: "Average",
-                1: ["Above", "average"],
-                2: ["Well", "above", "average"],
-              };
-              var chrt = document.getElementById("chart").getContext("2d");
-              var chart = new Chart(chrt, {
-                type: "scatter",
-                data: {
-                  labels: [["Lower", "range"], "Score", ["Upper", "range"]],
-                  datasets: [
-                    {
-                      data: [
-                        { x: 0.18, y: 1 },
-                        { x: 0.37, y: 1 },
-                        { x: 0.56, y: 1 },
-                      ],
-                      backgroundColor: ["#ffdd00", "#ffdd00", "#85994b"],
-                      borderColor: ["#0b0c0c"],
-                      borderWidth: 2,
-                      radius: 4,
-                      showLine: true,
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  plugins: {
-                    tooltip: {
-                      enabled: false,
-                    },
-                    legend: {
-                      display: false,
-                    },
-                    datalabels: {
-                      align: function (context) {
-                        var index = context.dataIndex;
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Score</th>
+              <td class="govuk-table__cell">-5</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">
+                Confidence interval
+              </th>
+              <td class="govuk-table__cell">-25 to 15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-grid-column-full">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Show progression score graph
+            </span>
+          </summary>
+          <div class="govuk-details__text govuk-details-noborder">
+            <div style="height: 200px">
+              <canvas id="hello"></canvas>
+              <script>
+                Chart.register(ChartDataLabels);
+                var xLabels = {
+                  "-24": ["Well", "below", "average"],
+                  "-10": ["Below", "average"],
+                  10: ["Above", "average"],
+                  24: ["Well", "above", "average"],
+                };
 
-                        if (index === 0) {
-                          return (value = "left");
-                        } else if (index === 2) {
-                          return (value = "right");
-                        } else {
-                          return "top";
-                        }
+                var averageLabel = {
+                  0: "Average",
+                };
+
+                var chrt = document.getElementById("hello").getContext("2d");
+                const myChart = new Chart(hello, {
+                  type: "scatter",
+                  data: {
+                    labels: [["Lower", "range"], "Score", ["Upper", "range"]],
+                    datasets: [
+                      {
+                        //update to clamp upper & lower limits to -1.4/1.4
+                        data: [
+                          { x: -25, y: 1 },
+                          { x: -5, y: 1 },
+                          { x: 15, y: 1 },
+                        ],
+                        backgroundColor: "#ffdd00",
+                        borderColor: ["#0b0c0c"],
+                        borderWidth: 2,
+                        radius: 4,
+                        showLine: true,
+                        datalabels: {
+                          labels: {
+                            name: {
+                              align: function (context) {
+                                const index = context.dataIndex;
+                                const value = context.dataset.data[index].x;
+                                if (index === 0 && value >= -8) return -145;
+                                else if (index === 2 && value <= 8) return -35;
+                                else return "top";
+                              },
+                              formatter: function (value, ctx) {
+                                return ctx.chart.data.labels[ctx.dataIndex];
+                              },
+                            },
+                            value: {
+                              align: function (context) {
+                                const index = context.dataIndex;
+                                const value = context.dataset.data[index].x;
+                                if (index === 0 && value >= -8) return 145;
+                                if (index === 2 && value <= 8) return 35;
+                                else return "bottom";
+                              },
+                              formatter: function (value, ctx) {
+                                //update if clamping, to show original score not x co-ord
+                                return value.x;
+                              },
+                            },
+                          },
+                        },
                       },
-                      color: "#505a5f",
-                      formatter: function (value, context) {
-                        return context.chart.data.labels[context.dataIndex];
-                      },
-                      font: {
-                        family: "'GDS Transport'",
-                        size: 14,
-                      },
-                    },
+                    ],
                   },
-                  scales: {
-                    y: {
-                      border: {
-                        color: "#b1b4b6",
+                  options: {
+                    stacked: true,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      annotation: {
+                        annotations: {
+                          average: {
+                            type: "line",
+                            borderDash: [3, 3],
+                            xMin: 0,
+                            xMax: 0,
+                            borderColor: "#b1b4b6",
+                            drawTime: "beforeDraw",
+                            borderWidth: 2,
+                          },
+                          aboveAverage: {
+                            borderColor: "#b1b4b6",
+                            drawTime: "beforeDraw",
+                            type: "line",
+                            xMin: 18,
+                            xMax: 18,
+                            beforeDraw: true,
+                            borderWidth: 1,
+                          },
+                          wellAboveAverage: {
+                            borderColor: "#b1b4b6",
+                            drawTime: "beforeDraw",
+                            type: "line",
+                            xMin: 30,
+                            xMax: 30,
+                            beforeDraw: true,
+                            borderWidth: 2,
+                          },
+                          belowAverage: {
+                            borderColor: "#b1b4b6",
+                            drawTime: "beforeDraw",
+                            type: "line",
+                            xMin: -18,
+                            xMax: -18,
+                            beforeDraw: true,
+                            borderWidth: 1,
+                          },
+                          wellBelowAverage: {
+                            borderColor: "#cdcdcd",
+                            drawTime: "beforeDraw",
+                            type: "line",
+                            xMin: -30,
+                            xMax: -30,
+                            beforeDraw: true,
+                            borderWidth: 2,
+                          },
+                        },
                       },
-                      ticks: {
+                      tooltip: {
+                        enabled: false,
+                      },
+                      legend: {
                         display: false,
                       },
-                      grid: {
-                        display: false,
-                      },
-                    },
-                    x: {
-                      border: {
-                        color: "#b1b4b6",
-                      },
-                      max: 2.5,
-                      min: -2.5,
-                      grid: {
-                        display: true,
-                        color: "#b1b4b6",
-                        offset: true,
-                      },
-                      ticks: {
+                      datalabels: {
                         color: "#0b0c0c",
-                        callback: function (value, index, values) {
-                          // for a value (tick) equals to 8
-                          return yLabels[value];
-                        },
                         font: {
-                          family: "'GDS Transport'",
-                          size: 14,
+                          family: "nta, Arial, sans-serif",
+                          size: 12,
+                        },
+                      },
+                    },
+                    scales: {
+                      y: {
+                        display: false,
+                      },
+                      x: {
+                        afterTickToLabelConversion: function (chart) {
+                          chart.ticks.push({
+                            value: 0,
+                            label: ["0", "Average"],
+                          });
+                        },
+                        max: 30,
+                        min: -30,
+                        grid: {
+                          display: false,
+                        },
+                        ticks: {
+                          stepSize: 0.5,
+                          color: "#0b0c0c",
+                          callback: function (value, index, values) {
+                            return xLabels[value];
+                          },
+                          font: {
+                            family: "nta, Arial, sans-serif",
+                            size: 12,
+                          },
                         },
                       },
                     },
                   },
-                },
-              });
-            </script>
+                });
+              </script>
+            </div>
           </div>
-        </div>
-      </details>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Local authority and England scores
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" style="width: 33%">
-                  Area
-                </th>
-                <th scope="row" class="govuk-table__header" style="width: 33%">
-                  Score
-                </th>
-                <th scope="row" class="govuk-table__header" style="width: 33%">
-                  Confidence interval
-                </th>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">
-                  Newcastle upon Tyne
-                </th>
-                <td class="govuk-table__cell">
-                  -0.25<br />
-                  <strong class="govuk-tag govuk-tag--yellow"> Average </strong>
-                </td>
-                <td class="govuk-table__cell">-0.5 to -0.1</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">England</th>
-                <td class="govuk-table__cell">
-                  -0.03<br /><strong class="govuk-tag govuk-tag--yellow">
-                    Average
-                  </strong>
-                </td>
-                <td class="govuk-table__cell">Not applicable</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
+        </details>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            How many schools are in each rating?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Rating</th>
-                <th scope="row" class="govuk-table__header">
-                  Percentage of schools
-                </th>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--green"
-                    >Well above average</strong
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Local authority and England scores
+            </span>
+          </summary>
+          <div class="govuk-details__text govuk-details-noborder">
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th
+                    scope="row"
+                    class="govuk-table__header"
+                    style="width: 33%"
                   >
-                </td>
-                <td class="govuk-table__cell">13%</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--light-green"
-                    >Above average</strong
+                    Area
+                  </th>
+                  <th
+                    scope="row"
+                    class="govuk-table__header"
+                    style="width: 33%"
                   >
-                </td>
-                <td class="govuk-table__cell">15%</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--yellow">Average</strong>
-                </td>
-                <td class="govuk-table__cell">33%</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--orange"
-                    >Below average</strong
+                    Score
+                  </th>
+                  <th
+                    scope="row"
+                    class="govuk-table__header"
+                    style="width: 33%"
                   >
-                </td>
-                <td class="govuk-table__cell">17%</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--red"
-                    >Well below average</strong
-                  >
-                </td>
-                <td class="govuk-table__cell">22%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
+                    Confidence interval
+                  </th>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Newcastle upon Tyne
+                  </th>
+                  <td class="govuk-table__cell">
+                    -0.25<br />
+                    <strong class="govuk-tag govuk-tag--yellow">
+                      About Average
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">-0.5 to -0.1</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">England</th>
+                  <td class="govuk-table__cell">
+                    -0.03<br /><strong class="govuk-tag govuk-tag--yellow">
+                      About Average
+                    </strong>
+                  </td>
+                  <td class="govuk-table__cell">Not applicable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How many schools and colleges are in each rating?
+            </span>
+          </summary>
+          <div class="govuk-details__text govuk-details-noborder">
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Rating</th>
+                  <th scope="row" class="govuk-table__header">
+                    Percentage of schools and colleges
+                  </th>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green"
+                      >Well above average</strong
+                    >
+                  </td>
+                  <td class="govuk-table__cell">13%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--light-green"
+                      >Above average</strong
+                    >
+                  </td>
+                  <td class="govuk-table__cell">15%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--yellow"
+                      >About Average</strong
+                    >
+                  </td>
+                  <td class="govuk-table__cell">33%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--orange"
+                      >Below average</strong
+                    >
+                  </td>
+                  <td class="govuk-table__cell">17%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--red"
+                      >Well below average</strong
+                    >
+                  </td>
+                  <td class="govuk-table__cell">22%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </main>
